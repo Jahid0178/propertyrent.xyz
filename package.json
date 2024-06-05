@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=21.1.0",
+    "node": ">=20.12.2",
     "pnpm": ">=8.6.0",
     "npm": "please-use-pnpm"
   },
