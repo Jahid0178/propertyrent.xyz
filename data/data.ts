@@ -56,3 +56,31 @@ export const navigationMenus: {
     href: "/become-a-freelancer",
   },
 ];
+
+export const footerLinks: { id: number; name: string; href: string }[] = [
+  {
+    id: 1,
+    name: "About Us",
+    href: "/about-us",
+  },
+  {
+    id: 2,
+    name: "Terms and Conditions",
+    href: "/terms-and-conditions",
+  },
+  {
+    id: 3,
+    name: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    id: 4,
+    name: "FAQ",
+    href: "/faq",
+  },
+  {
+    id: 5,
+    name: "Contact Us",
+    href: "/contact-us",
+  },
+];
