@@ -1,9 +1,10 @@
+import Header from "@/components/common/Header/Header";
 import React from "react";
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <header>Header</header>
+      <Header />
       <main>{children}</main>
       <footer>Footer</footer>
     </>
