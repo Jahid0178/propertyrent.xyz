@@ -12,6 +12,9 @@ import {
 import { navigationMenus } from "@/data/data";
 import Link from "next/link";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { FaUser } from "react-icons/fa";
+import { FaHouse } from "react-icons/fa6";
 
 const HeaderMenus = () => {
   return (
@@ -50,6 +53,18 @@ const HeaderMenus = () => {
             )}
           </NavigationMenuItem>
         ))}
+        <NavigationMenuItem className="!ml-5 flex gap-4">
+          <Button asChild>
+            <Link href="/add-property">
+              <FaHouse className="mr-2 h-4 w-4" /> Add Property
+            </Link>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <Link href="/login">
+              <FaUser />
+            </Link>
+          </Button>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
