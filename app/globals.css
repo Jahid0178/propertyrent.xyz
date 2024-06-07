@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  section {
+    @apply py-6;
+  }
+}
+
+@layer components {
+  .hero-section {
+    @apply h-dvh bg-[url('/images/home/hero-banner-img.jpg')] bg-cover bg-center bg-no-repeat flex justify-center items-center;
+  }
+  .property-search-form-wrapper {
+    @apply p-4 bg-white rounded-md;
+  }
+}

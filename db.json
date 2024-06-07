@@ -1,0 +1,76 @@
+{
+  "propertyType": [
+    {
+      "id": 1,
+      "name": "Family",
+      "value": "family"
+    },
+    {
+      "id": 2,
+      "name": "Bachelor",
+      "value": "bachelor"
+    },
+    {
+      "id": 3,
+      "name": "Office",
+      "value": "office"
+    },
+    {
+      "id": 4,
+      "name": "Sublet",
+      "value": "sublet"
+    },
+    {
+      "id": 5,
+      "name": "Hostel",
+      "value": "hostel"
+    },
+    {
+      "id": 6,
+      "name": "Shop",
+      "value": "shop"
+    }
+  ],
+  "location": [
+    {
+      "id": 1,
+      "name": "Barisal",
+      "value": "barisal"
+    },
+    {
+      "id": 2,
+      "name": "Chittagong",
+      "value": "chittagong"
+    },
+    {
+      "id": 3,
+      "name": "Dhaka",
+      "value": "dhaka"
+    },
+    {
+      "id": 4,
+      "name": "Khulna",
+      "value": "khulna"
+    },
+    {
+      "id": 5,
+      "name": "Rajshahi",
+      "value": "rajshahi"
+    },
+    {
+      "id": 6,
+      "name": "Sylhet",
+      "value": "sylhet"
+    },
+    {
+      "id": 7,
+      "name": "Rangpur",
+      "value": "rangpur"
+    },
+    {
+      "id": 8,
+      "name": "Mymensingh",
+      "value": "mymensingh"
+    }
+  ]
+}
