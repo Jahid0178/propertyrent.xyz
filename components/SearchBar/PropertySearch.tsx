@@ -15,6 +15,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getAllLocations } from "../../lib/actions/location.action";
 import { getAllPropertiesType } from "../../lib/actions/property.action";
+import { BsSearch } from "react-icons/bs";
+import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 
 const FormSchema = z.object({
   propertyType: z.string({
@@ -141,7 +143,13 @@ const PropertySearch = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button>
+            <HiAdjustmentsHorizontal className="mr-2 h-5 w-5" /> Advanced
+          </Button>
+          <Button type="submit">
+            <BsSearch className="mr-2 h-5 w-5" />
+            Search Property
+          </Button>
         </div>
       </form>
     </Form>
