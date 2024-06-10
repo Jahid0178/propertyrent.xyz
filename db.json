@@ -72,5 +72,71 @@
       "name": "Mymensingh",
       "value": "mymensingh"
     }
+  ],
+  "popularLocation": [
+    {
+      "id": 1,
+      "name": "Barisal",
+      "value": "barisal",
+      "image": "/images/location-image/barisal.webp",
+      "properties": [],
+      "totalProperties": 984
+    },
+    {
+      "id": 2,
+      "name": "Chittagong",
+      "value": "chittagong",
+      "image": "/images/location-image/chittagong.webp",
+      "properties": [],
+      "totalProperties": 960
+    },
+    {
+      "id": 3,
+      "name": "Dhaka",
+      "value": "dhaka",
+      "image": "/images/location-image/dhaka.webp",
+      "properties": [],
+      "totalProperties": 7589
+    },
+    {
+      "id": 4,
+      "name": "Khulna",
+      "value": "khulna",
+      "image": "/images/location-image/khulna.webp",
+      "properties": [],
+      "totalProperties": 150
+    },
+    {
+      "id": 5,
+      "name": "Rajshahi",
+      "value": "rajshahi",
+      "image": "/images/location-image/rajshahi.webp",
+      "properties": [],
+      "totalProperties": 744
+    },
+    {
+      "id": 6,
+      "name": "Sylhet",
+      "value": "sylhet",
+      "image": "/images/location-image/sylhet.webp",
+      "properties": [],
+      "totalProperties": 368
+    },
+    {
+      "id": 7,
+      "name": "Rangpur",
+      "value": "rangpur",
+      "image": "/images/location-image/rangpur.webp",
+      "properties": [],
+      "totalProperties": 150
+    },
+    {
+      "id": 8,
+      "name": "Mymensingh",
+      "value": "mymensingh",
+      "image": "/images/location-image/mymensingh.webp",
+      "properties": [],
+      "totalProperties": 288
+    }
   ]
 }
