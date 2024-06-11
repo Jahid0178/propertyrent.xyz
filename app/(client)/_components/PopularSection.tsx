@@ -7,13 +7,14 @@ const PopularSection = async () => {
   const { data: popularProperties } = await axios.get(
     "http://localhost:4000/popularLocation"
   );
-  console.log("popularProperties", popularProperties);
+
   return (
     <section>
       <div className="container">
         <SectionHeading
           title="Explore Popular Properties"
           subTitle="Find your next property near you"
+          titleClassName="text-xl md:text-2xl"
         />
         <div className="mt-8">
           <PopularSectionSlider popularProperties={popularProperties} />
