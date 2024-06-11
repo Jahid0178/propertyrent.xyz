@@ -138,5 +138,127 @@
       "properties": [],
       "totalProperties": 288
     }
+  ],
+  "trendingProperties": [
+    {
+      "id": "1",
+      "name": "Cozy Family Home",
+      "location": "Dhaka",
+      "price": 1200,
+      "currency": "BDT",
+      "views": 5000,
+      "inquiries": 50,
+      "image": "/"
+    },
+    {
+      "id": "2",
+      "name": "Modern Apartment in Downtown",
+      "location": "Cumilla",
+      "price": 2500,
+      "currency": "BDT",
+      "views": 4000,
+      "inquiries": 40,
+      "image": "/"
+    },
+    {
+      "id": "3",
+      "name": "Luxury Penthouse",
+      "location": "Dhaka",
+      "price": 8000,
+      "currency": "BDT",
+      "views": 3000,
+      "inquiries": 35,
+      "image": "/"
+    },
+    {
+      "id": "4",
+      "name": "Spacious Villa with Private Pool",
+      "location": "Chittagong",
+      "price": 5000,
+      "currency": "BDT",
+      "views": 6000,
+      "inquiries": 55,
+      "image": "/"
+    },
+    {
+      "id": "5",
+      "name": "Beachfront Condo",
+      "location": "Barisal",
+      "price": 3000,
+      "currency": "BDT",
+      "views": 4500,
+      "inquiries": 45,
+      "image": "/"
+    },
+    {
+      "id": "6",
+      "name": "Charming Studio",
+      "location": "Dhaka",
+      "price": 800,
+      "currency": "BDT",
+      "views": 2000,
+      "inquiries": 20,
+      "image": "/"
+    },
+    {
+      "id": "7",
+      "name": "Modern Loft",
+      "location": "Dhaka",
+      "price": 2200,
+      "currency": "BDT",
+      "views": 3500,
+      "inquiries": 30,
+      "image": "/"
+    },
+    {
+      "id": "8",
+      "name": "Countryside Cottage",
+      "location": "Chittagong",
+      "price": 1500,
+      "currency": "BDT",
+      "views": 3100,
+      "inquiries": 28,
+      "image": "/"
+    },
+    {
+      "id": "9",
+      "name": "Urban Apartment",
+      "location": "Khulna",
+      "price": 1900,
+      "currency": "BDT",
+      "views": 3300,
+      "inquiries": 25,
+      "image": "/"
+    },
+    {
+      "id": "10",
+      "name": "Luxury Villa",
+      "location": "Rajshahi",
+      "price": 7000,
+      "currency": "BDT",
+      "views": 4800,
+      "inquiries": 42,
+      "image": "/"
+    },
+    {
+      "id": "11",
+      "name": "City Center Apartment",
+      "location": "Sylhet",
+      "price": 2700,
+      "currency": "BDT",
+      "views": 3600,
+      "inquiries": 33,
+      "image": "/"
+    },
+    {
+      "id": "12",
+      "name": "Cozy Cabin",
+      "location": "Sylhet",
+      "price": 1400,
+      "currency": "BDT",
+      "views": 2500,
+      "inquiries": 22,
+      "image": "/"
+    }
   ]
 }
