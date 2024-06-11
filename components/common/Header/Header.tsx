@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();
-  console.log("pathname", pathname);
   return (
     <header
       className={`py-6 border-b ${pathname === "/" ? "fixed top-0 left-0 right-0" : ""} z-10 bg-white`}
