@@ -17,3 +17,17 @@ export interface ITrendingProperty {
   inquiries: number;
   image: string;
 }
+
+export interface PropertyProps {
+  id: string;
+  name: string;
+  location: string;
+  price: number;
+  currency: string;
+  bedrooms: number;
+  bathrooms: number;
+  squareFeet: number;
+  type: string;
+  image: string;
+  description: string;
+}
