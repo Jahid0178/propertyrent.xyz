@@ -272,7 +272,10 @@
       "bathrooms": 2,
       "squareFeet": 1500,
       "type": "House",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A cozy family home located in a quiet neighborhood, perfect for families."
     },
     {
@@ -285,7 +288,8 @@
       "bathrooms": 2,
       "squareFeet": 1000,
       "type": "Apartment",
-      "image": "/",
+      "image": {},
+      "listingType": "Rent",
       "description": "A modern apartment located in the upscale Gulshan area with stunning city views."
     },
     {
@@ -298,7 +302,10 @@
       "bathrooms": 4,
       "squareFeet": 3500,
       "type": "Penthouse",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Sell",
       "description": "A luxury penthouse with panoramic views of the city."
     },
     {
@@ -311,7 +318,10 @@
       "bathrooms": 5,
       "squareFeet": 4500,
       "type": "Villa",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A spacious villa with a private pool, located in a prestigious area."
     },
     {
@@ -324,7 +334,10 @@
       "bathrooms": 2,
       "squareFeet": 1800,
       "type": "Condo",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A beautiful beachfront condo with stunning ocean views and modern amenities."
     },
     {
@@ -337,7 +350,10 @@
       "bathrooms": 1,
       "squareFeet": 500,
       "type": "Studio",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1603425013520-e0b30e6e37dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A charming studio apartment located in the heart of the city, perfect for singles or couples."
     },
     {
@@ -350,7 +366,10 @@
       "bathrooms": 2,
       "squareFeet": 1100,
       "type": "Loft",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1668438712649-ffd85f756de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A modern loft with an open floor plan and industrial design elements."
     },
     {
@@ -363,7 +382,10 @@
       "bathrooms": 2,
       "squareFeet": 1600,
       "type": "Cottage",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1568605115459-4b731184f961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A charming countryside cottage with a beautiful garden and peaceful surroundings."
     },
     {
@@ -376,7 +398,10 @@
       "bathrooms": 2,
       "squareFeet": 900,
       "type": "Apartment",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1515120263166-b676e1f61045?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "An urban apartment located in a vibrant neighborhood with easy access to amenities."
     },
     {
@@ -389,7 +414,10 @@
       "bathrooms": 6,
       "squareFeet": 5000,
       "type": "Villa",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A luxury villa with elegant interiors and a large private garden."
     },
     {
@@ -402,7 +430,10 @@
       "bathrooms": 2,
       "squareFeet": 1200,
       "type": "Apartment",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1580041065738-e72023775cdc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A modern apartment located in the city center, close to shopping and dining."
     },
     {
@@ -415,7 +446,10 @@
       "bathrooms": 1,
       "squareFeet": 900,
       "type": "Cabin",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1631756964162-25c8c07579b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A cozy cabin nestled in the woods, perfect for a peaceful retreat."
     },
     {
@@ -428,7 +462,10 @@
       "bathrooms": 4,
       "squareFeet": 2500,
       "type": "Apartment",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A luxury high-rise apartment with stunning views and top-notch amenities."
     },
     {
@@ -441,7 +478,10 @@
       "bathrooms": 4,
       "squareFeet": 4000,
       "type": "Villa",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1617156053441-77819b996d49?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A beautiful riverside villa with serene views and luxurious interiors."
     },
     {
@@ -454,7 +494,10 @@
       "bathrooms": 2,
       "squareFeet": 1300,
       "type": "Loft",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1573760464283-3ba64302271f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A spacious downtown loft with modern design and close proximity to amenities."
     },
     {
@@ -467,7 +510,8 @@
       "bathrooms": 2,
       "squareFeet": 1500,
       "type": "Cottage",
-      "image": "/",
+      "image": {},
+      "listingType": "Rent",
       "description": "A charming seaside cottage with beautiful ocean views and a cozy interior."
     },
     {
@@ -480,7 +524,10 @@
       "bathrooms": 3,
       "squareFeet": 2100,
       "type": "Townhouse",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1492889971304-ac16ab4a4a5a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "An elegant townhouse with spacious rooms and modern amenities."
     },
     {
@@ -493,7 +540,10 @@
       "bathrooms": 1,
       "squareFeet": 1200,
       "type": "Cabin",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Buy",
       "description": "A cozy mountain cabin with breathtaking views and a peaceful atmosphere."
     },
     {
@@ -506,7 +556,10 @@
       "bathrooms": 3,
       "squareFeet": 2200,
       "type": "Duplex",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A modern duplex with stylish interiors and a great location."
     },
     {
@@ -519,7 +572,10 @@
       "bathrooms": 7,
       "squareFeet": 7000,
       "type": "Mansion",
-      "image": "/",
+      "image": {
+        "url": "https://images.unsplash.com/photo-1702226580087-a416fe3e145a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "listingType": "Rent",
       "description": "A historical mansion with grand architecture and rich history."
     }
   ]
