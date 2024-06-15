@@ -264,6 +264,7 @@
   "properties": [
     {
       "id": "1",
+      "propertyId": 100001,
       "name": "Cozy Family Home",
       "location": "Dhaka",
       "price": 40000,
@@ -296,6 +297,7 @@
     },
     {
       "id": "2",
+      "propertyId": 100002,
       "name": "Modern Apartment in Gulshan",
       "location": "Dhaka",
       "price": 70000,
@@ -326,6 +328,7 @@
     },
     {
       "id": "3",
+      "propertyId": 100003,
       "name": "Luxury Penthouse",
       "location": "Dhaka",
       "price": 300000,
@@ -358,6 +361,7 @@
     },
     {
       "id": "4",
+      "propertyId": 100004,
       "name": "Spacious Villa with Private Pool",
       "location": "Chattogram",
       "price": 250000,
@@ -390,6 +394,7 @@
     },
     {
       "id": "5",
+      "propertyId": 100005,
       "name": "Beachfront Condo",
       "location": "Cox's Bazar",
       "price": 100000,
@@ -422,6 +427,7 @@
     },
     {
       "id": "6",
+      "propertyId": 100006,
       "name": "Charming Studio",
       "location": "Dhaka",
       "price": 25000,
@@ -454,6 +460,7 @@
     },
     {
       "id": "7",
+      "propertyId": 100007,
       "name": "Modern Loft",
       "location": "Dhaka",
       "price": 60000,
@@ -486,6 +493,7 @@
     },
     {
       "id": "8",
+      "propertyId": 100008,
       "name": "Countryside Cottage",
       "location": "Sylhet",
       "price": 50000,
@@ -518,6 +526,7 @@
     },
     {
       "id": "9",
+      "propertyId": 100009,
       "name": "Urban Apartment",
       "location": "Dhaka",
       "price": 55000,
@@ -550,6 +559,7 @@
     },
     {
       "id": "10",
+      "propertyId": 100010,
       "name": "Luxury Villa",
       "location": "Chattogram",
       "price": 300000,
@@ -582,6 +592,7 @@
     },
     {
       "id": "11",
+      "propertyId": 100011,
       "name": "City Center Apartment",
       "location": "Dhaka",
       "price": 80000,
@@ -614,6 +625,7 @@
     },
     {
       "id": "12",
+      "propertyId": 100012,
       "name": "Cozy Cabin",
       "location": "Sylhet",
       "price": 45000,
@@ -646,6 +658,7 @@
     },
     {
       "id": "13",
+      "propertyId": 100013,
       "name": "Luxury High-Rise Apartment",
       "location": "Dhaka",
       "price": 200000,
@@ -678,6 +691,7 @@
     },
     {
       "id": "14",
+      "propertyId": 100014,
       "name": "Riverside Villa",
       "location": "Sylhet",
       "price": 240000,
@@ -710,6 +724,7 @@
     },
     {
       "id": "15",
+      "propertyId": 100015,
       "name": "Downtown Loft",
       "location": "Dhaka",
       "price": 90000,
@@ -742,6 +757,7 @@
     },
     {
       "id": "16",
+      "propertyId": 100016,
       "name": "Seaside Cottage",
       "location": "Cox's Bazar",
       "price": 60000,
@@ -772,6 +788,7 @@
     },
     {
       "id": "17",
+      "propertyId": 100017,
       "name": "Elegant Townhouse",
       "location": "Dhaka",
       "price": 170000,
@@ -804,6 +821,7 @@
     },
     {
       "id": "18",
+      "propertyId": 100018,
       "name": "Mountain Cabin",
       "location": "Bandarban",
       "price": 50000,
@@ -836,6 +854,7 @@
     },
     {
       "id": "19",
+      "propertyId": 100019,
       "name": "Modern Duplex",
       "location": "Dhaka",
       "price": 190000,
@@ -868,6 +887,7 @@
     },
     {
       "id": "20",
+      "propertyId": 100020,
       "name": "Historical Mansion",
       "location": "Dhaka",
       "price": 500000,

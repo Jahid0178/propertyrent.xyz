@@ -37,6 +37,7 @@ export interface ITrendingProperty {
 
 export interface PropertyProps {
   id: string;
+  propertyId: number;
   name: string;
   location: string;
   price: number;
