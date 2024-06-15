@@ -1,3 +1,20 @@
+export interface AuthorInfo {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+  contactInformation: {
+    phone: string;
+    email: string;
+  };
+  avatar: string;
+  points: number;
+  rating: number;
+  credit: number;
+  paymentMethod: string;
+}
+
 export interface IPopularLocation {
   id: number;
   name: string;
@@ -33,4 +50,5 @@ export interface PropertyProps {
   };
   listingType: "Rent" | "Sell" | "Buy" | "Lease";
   description: string;
+  author?: AuthorInfo;
 }

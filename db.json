@@ -276,7 +276,23 @@
         "url": "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A cozy family home located in a quiet neighborhood, perfect for families."
+      "description": "A cozy family home located in a quiet neighborhood, perfect for families.",
+      "author": {
+        "id": "101",
+        "name": "Ayesha Siddique",
+        "phone": "+8801712345689",
+        "email": "ayesha.siddique@example.com",
+        "address": "123 Palm St, Chattogram",
+        "contactInformation": {
+          "phone": "+8801712345689",
+          "email": "ayesha.siddique@example.com"
+        },
+        "avatar": "https://example.com/avatars/ayesha_siddique.jpg",
+        "points": 1800,
+        "rating": 4.6,
+        "credit": 6000,
+        "paymentMethod": "PayPal"
+      }
     },
     {
       "id": "2",
@@ -290,7 +306,23 @@
       "type": "Apartment",
       "image": {},
       "listingType": "Rent",
-      "description": "A modern apartment located in the upscale Gulshan area with stunning city views."
+      "description": "A modern apartment located in the upscale Gulshan area with stunning city views.",
+      "author": {
+        "id": "102",
+        "name": "Mohammad Khan",
+        "phone": "+8801712345678",
+        "email": "mohammad.khan@example.com",
+        "address": "456 Maple St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801712345678",
+          "email": "mohammad.khan@example.com"
+        },
+        "avatar": "https://example.com/avatars/mohammad_khan.jpg",
+        "points": 1500,
+        "rating": 4.5,
+        "credit": 5000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "3",
@@ -306,7 +338,23 @@
         "url": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Sell",
-      "description": "A luxury penthouse with panoramic views of the city."
+      "description": "A luxury penthouse with panoramic views of the city.",
+      "author": {
+        "id": "103",
+        "name": "Amina Begum",
+        "phone": "+8801712345679",
+        "email": "amina.begum@example.com",
+        "address": "789 Oak St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801712345679",
+          "email": "amina.begum@example.com"
+        },
+        "avatar": "https://example.com/avatars/amina_begum.jpg",
+        "points": 1600,
+        "rating": 4.7,
+        "credit": 7000,
+        "paymentMethod": "PayPal"
+      }
     },
     {
       "id": "4",
@@ -322,7 +370,23 @@
         "url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A spacious villa with a private pool, located in a prestigious area."
+      "description": "A spacious villa with a private pool, located in a prestigious area.",
+      "author": {
+        "id": "104",
+        "name": "Ayesha Siddique",
+        "phone": "+8801712345689",
+        "email": "ayesha.siddique@example.com",
+        "address": "123 Palm St, Chattogram",
+        "contactInformation": {
+          "phone": "+8801712345689",
+          "email": "ayesha.siddique@example.com"
+        },
+        "avatar": "https://example.com/avatars/ayesha_siddique.jpg",
+        "points": 1800,
+        "rating": 4.6,
+        "credit": 6000,
+        "paymentMethod": "PayPal"
+      }
     },
     {
       "id": "5",
@@ -338,7 +402,23 @@
         "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A beautiful beachfront condo with stunning ocean views and modern amenities."
+      "description": "A beautiful beachfront condo with stunning ocean views and modern amenities.",
+      "author": {
+        "id": "105",
+        "name": "Rahim Uddin",
+        "phone": "+8801712345680",
+        "email": "rahim.uddin@example.com",
+        "address": "123 Pine St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801712345680",
+          "email": "rahim.uddin@example.com"
+        },
+        "avatar": "https://example.com/avatars/rahim_uddin.jpg",
+        "points": 1700,
+        "rating": 4.8,
+        "credit": 8000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "6",
@@ -354,7 +434,23 @@
         "url": "https://images.unsplash.com/photo-1603425013520-e0b30e6e37dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A charming studio apartment located in the heart of the city, perfect for singles or couples."
+      "description": "A charming studio apartment located in the heart of the city, perfect for singles or couples.",
+      "author": {
+        "id": "106",
+        "name": "Imran Hossain",
+        "phone": "+8801712345682",
+        "email": "imran.hossain@example.com",
+        "address": "456 Bay St, Cox's Bazar",
+        "contactInformation": {
+          "phone": "+8801712345682",
+          "email": "imran.hossain@example.com"
+        },
+        "avatar": "https://example.com/avatars/imran_hossain.jpg",
+        "points": 1900,
+        "rating": 4.9,
+        "credit": 9000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "7",
@@ -370,7 +466,23 @@
         "url": "https://images.unsplash.com/photo-1668438712649-ffd85f756de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A modern loft with an open floor plan and industrial design elements."
+      "description": "A modern loft with an open floor plan and industrial design elements.",
+      "author": {
+        "id": "107",
+        "name": "Laila Akter",
+        "phone": "+8801712345683",
+        "email": "laila.akter@example.com",
+        "address": "789 Elm St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801712345683",
+          "email": "laila.akter@example.com"
+        },
+        "avatar": "https://example.com/avatars/laila_akter.jpg",
+        "points": 1400,
+        "rating": 4.4,
+        "credit": 4000,
+        "paymentMethod": "Bank Transfer"
+      }
     },
     {
       "id": "8",
@@ -386,7 +498,23 @@
         "url": "https://images.unsplash.com/photo-1568605115459-4b731184f961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A charming countryside cottage with a beautiful garden and peaceful surroundings."
+      "description": "A charming countryside cottage with a beautiful garden and peaceful surroundings.",
+      "author": {
+        "id": "108",
+        "name": "Sadia Akter",
+        "phone": "+8801712345691",
+        "email": "sadia.akter@example.com",
+        "address": "789 City St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801712345691",
+          "email": "sadia.akter@example.com"
+        },
+        "avatar": "https://example.com/avatars/sadia_akter.jpg",
+        "points": 1300,
+        "rating": 4.4,
+        "credit": 4000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "9",
@@ -402,7 +530,23 @@
         "url": "https://images.unsplash.com/photo-1515120263166-b676e1f61045?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "An urban apartment located in a vibrant neighborhood with easy access to amenities."
+      "description": "An urban apartment located in a vibrant neighborhood with easy access to amenities.",
+      "author": {
+        "id": "109",
+        "name": "Abdul Karim",
+        "phone": "+8801812345692",
+        "email": "abdul.karim@example.com",
+        "address": "123 Industrial St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801812345692",
+          "email": "abdul.karim@example.com"
+        },
+        "avatar": "https://example.com/avatars/abdul_karim.jpg",
+        "points": 1400,
+        "rating": 4.3,
+        "credit": 4500,
+        "paymentMethod": "Bank Transfer"
+      }
     },
     {
       "id": "10",
@@ -418,7 +562,23 @@
         "url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A luxury villa with elegant interiors and a large private garden."
+      "description": "A luxury villa with elegant interiors and a large private garden.",
+      "author": {
+        "id": "110",
+        "name": "Nasrin Jahan",
+        "phone": "+8801712345693",
+        "email": "nasrin.jahan@example.com",
+        "address": "456 Green St, Sylhet",
+        "contactInformation": {
+          "phone": "+8801712345693",
+          "email": "nasrin.jahan@example.com"
+        },
+        "avatar": "https://example.com/avatars/nasrin_jahan.jpg",
+        "points": 1700,
+        "rating": 4.5,
+        "credit": 5500,
+        "paymentMethod": "PayPal"
+      }
     },
     {
       "id": "11",
@@ -434,7 +594,23 @@
         "url": "https://images.unsplash.com/photo-1580041065738-e72023775cdc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A modern apartment located in the city center, close to shopping and dining."
+      "description": "A modern apartment located in the city center, close to shopping and dining.",
+      "author": {
+        "id": "111",
+        "name": "Faisal Ahmed",
+        "phone": "+8801812345694",
+        "email": "faisal.ahmed@example.com",
+        "address": "789 Central St, Dhaka",
+        "contactInformation": {
+          "phone": "+8801812345694",
+          "email": "faisal.ahmed@example.com"
+        },
+        "avatar": "https://example.com/avatars/faisal_ahmed.jpg",
+        "points": 2100,
+        "rating": 4.8,
+        "credit": 8000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "12",
@@ -450,7 +626,23 @@
         "url": "https://images.unsplash.com/photo-1631756964162-25c8c07579b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A cozy cabin nestled in the woods, perfect for a peaceful retreat."
+      "description": "A cozy cabin nestled in the woods, perfect for a peaceful retreat.",
+      "author": {
+        "id": "112",
+        "name": "Zara Islam",
+        "phone": "+8801712345695",
+        "email": "zara.islam@example.com",
+        "address": "123 Mountain Rd, Bandarban",
+        "contactInformation": {
+          "phone": "+8801712345695",
+          "email": "zara.islam@example.com"
+        },
+        "avatar": "https://example.com/avatars/zara_islam.jpg",
+        "points": 2200,
+        "rating": 4.9,
+        "credit": 9000,
+        "paymentMethod": "Bank Transfer"
+      }
     },
     {
       "id": "13",
@@ -466,7 +658,23 @@
         "url": "https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A luxury high-rise apartment with stunning views and top-notch amenities."
+      "description": "A luxury high-rise apartment with stunning views and top-notch amenities.",
+      "author": {
+        "id": "113",
+        "name": "Kamrul Hasan",
+        "phone": "+8801712345696",
+        "email": "kamrul.hasan@example.com",
+        "address": "456 Lake Rd, Rangamati",
+        "contactInformation": {
+          "phone": "+8801712345696",
+          "email": "kamrul.hasan@example.com"
+        },
+        "avatar": "https://example.com/avatars/kamrul_hasan.jpg",
+        "points": 1800,
+        "rating": 4.6,
+        "credit": 6000,
+        "paymentMethod": "PayPal"
+      }
     },
     {
       "id": "14",
@@ -482,7 +690,23 @@
         "url": "https://images.unsplash.com/photo-1617156053441-77819b996d49?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A beautiful riverside villa with serene views and luxurious interiors."
+      "description": "A beautiful riverside villa with serene views and luxurious interiors.",
+      "author": {
+        "id": "114",
+        "name": "Farzana Haque",
+        "phone": "+8801712345697",
+        "email": "farzana.haque@example.com",
+        "address": "789 Colonial St, Khulna",
+        "contactInformation": {
+          "phone": "+8801712345697",
+          "email": "farzana.haque@example.com"
+        },
+        "avatar": "https://example.com/avatars/farzana_haque.jpg",
+        "points": 2000,
+        "rating": 4.7,
+        "credit": 7000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "15",
@@ -498,7 +722,23 @@
         "url": "https://images.unsplash.com/photo-1573760464283-3ba64302271f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A spacious downtown loft with modern design and close proximity to amenities."
+      "description": "A spacious downtown loft with modern design and close proximity to amenities.",
+      "author": {
+        "id": "115",
+        "name": "Tanvir Alam",
+        "phone": "+8801712345698",
+        "email": "tanvir.alam@example.com",
+        "address": "123 River St, Sylhet",
+        "contactInformation": {
+          "phone": "+8801712345698",
+          "email": "tanvir.alam@example.com"
+        },
+        "avatar": "https://example.com/avatars/tanvir_alam.jpg",
+        "points": 1500,
+        "rating": 4.4,
+        "credit": 4500,
+        "paymentMethod": "Bank Transfer"
+      }
     },
     {
       "id": "16",
@@ -512,7 +752,23 @@
       "type": "Cottage",
       "image": {},
       "listingType": "Rent",
-      "description": "A charming seaside cottage with beautiful ocean views and a cozy interior."
+      "description": "A charming seaside cottage with beautiful ocean views and a cozy interior.",
+      "author": {
+        "id": "116",
+        "name": "Sara Khan",
+        "phone": "+8801712345687",
+        "email": "sara.khan@example.com",
+        "address": "789 Oak St, Sylhet",
+        "contactInformation": {
+          "phone": "+8801712345687",
+          "email": "sara.khan@example.com"
+        },
+        "avatar": "https://example.com/avatars/sara_khan.jpg",
+        "points": 1000,
+        "rating": 4.0,
+        "credit": 2000,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "17",
@@ -528,7 +784,23 @@
         "url": "https://images.unsplash.com/photo-1492889971304-ac16ab4a4a5a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "An elegant townhouse with spacious rooms and modern amenities."
+      "description": "An elegant townhouse with spacious rooms and modern amenities.",
+      "author": {
+        "id": "117",
+        "name": "Ismail Hossain",
+        "phone": "+8801712345690",
+        "email": "ismail.hossain@example.com",
+        "address": "123 Bay St, Sylhet",
+        "contactInformation": {
+          "phone": "+8801712345690",
+          "email": "ismail.hossain@example.com"
+        },
+        "avatar": "https://example.com/avatars/ismail_hossain.jpg",
+        "points": 700,
+        "rating": 3.7,
+        "credit": 1100,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "18",
@@ -544,7 +816,23 @@
         "url": "https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Buy",
-      "description": "A cozy mountain cabin with breathtaking views and a peaceful atmosphere."
+      "description": "A cozy mountain cabin with breathtaking views and a peaceful atmosphere.",
+      "author": {
+        "id": "118",
+        "name": "Nazmul Haque",
+        "phone": "+8801712345691",
+        "email": "nazmul.haque@example.com",
+        "address": "456 Elm St, Chattogram",
+        "contactInformation": {
+          "phone": "+8801712345691",
+          "email": "nazmul.haque@example.com"
+        },
+        "avatar": "https://example.com/avatars/nazmul_haque.jpg",
+        "points": 600,
+        "rating": 3.6,
+        "credit": 1000,
+        "paymentMethod": "Bank Transfer"
+      }
     },
     {
       "id": "19",
@@ -560,7 +848,23 @@
         "url": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A modern duplex with stylish interiors and a great location."
+      "description": "A modern duplex with stylish interiors and a great location.",
+      "author": {
+        "id": "119",
+        "name": "Rina Akter",
+        "phone": "+8801712345692",
+        "email": "rina.akter@example.com",
+        "address": "123 Pine St, Chattogram",
+        "contactInformation": {
+          "phone": "+8801712345692",
+          "email": "rina.akter@example.com"
+        },
+        "avatar": "https://example.com/avatars/rina_akter.jpg",
+        "points": 500,
+        "rating": 3.5,
+        "credit": 900,
+        "paymentMethod": "Credit Card"
+      }
     },
     {
       "id": "20",
@@ -576,7 +880,23 @@
         "url": "https://images.unsplash.com/photo-1702226580087-a416fe3e145a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "listingType": "Rent",
-      "description": "A historical mansion with grand architecture and rich history."
+      "description": "A historical mansion with grand architecture and rich history.",
+      "author": {
+        "id": "120",
+        "name": "Sohel Ahmed",
+        "phone": "+8801712345693",
+        "email": "sohel.ahmed@example.com",
+        "address": "456 Oak St, Chattogram",
+        "contactInformation": {
+          "phone": "+8801712345693",
+          "email": "sohel.ahmed@example.com"
+        },
+        "avatar": "https://example.com/avatars/sohel_ahmed.jpg",
+        "points": 400,
+        "rating": 3.4,
+        "credit": 800,
+        "paymentMethod": "PayPal"
+      }
     }
   ]
 }
