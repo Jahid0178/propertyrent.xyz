@@ -9,6 +9,7 @@ import { IoBedOutline } from "react-icons/io5";
 import { RxSize } from "react-icons/rx";
 import { TbBath } from "react-icons/tb";
 import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
+import { Badge } from "../ui/badge";
 
 interface IPropertyCard {
   propertyData: PropertyProps;
@@ -25,16 +26,22 @@ const PropertyCard = ({ propertyData }: IPropertyCard) => {
     bedrooms,
     currency,
     squareFeet,
+    listingType,
   } = propertyData;
+  const imageURL = image?.url ? image?.url : "/images/placeholder.png";
   return (
     <Link href={`/properties/${id}`}>
       <Card className="overflow-hidden">
-        <CardHeader className="px-0 pt-0 pb-6">
+        <CardHeader className="px-0 pt-0 pb-6 relative">
+          <Badge className="absolute top-3 left-3">{listingType}</Badge>
           <Image
-            src={"/images/placeholder.png"}
+            src={imageURL}
             alt={name}
             width={800}
             height={800}
+            className="!m-0 h-52"
+            loading="lazy"
+            blurDataURL={imageURL}
           />
         </CardHeader>
         <CardContent>

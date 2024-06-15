@@ -28,6 +28,9 @@ export interface PropertyProps {
   bathrooms: number;
   squareFeet: number;
   type: string;
-  image: string;
+  image: {
+    url?: string;
+  };
+  listingType: "Rent" | "Sell" | "Buy" | "Lease";
   description: string;
 }
