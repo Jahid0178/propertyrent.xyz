@@ -264,9 +264,10 @@
   "properties": [
     {
       "id": "1",
-      "propertyId": 100001,
+      "propertyId": "100001",
       "name": "Cozy Family Home",
       "location": "Dhaka",
+      "address": "12/A, Gulshan Avenue, Gulshan-2, Dhaka-1212",
       "price": 40000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -274,10 +275,43 @@
       "squareFeet": 1500,
       "type": "House",
       "image": {
-        "url": "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A cozy family home located in a quiet neighborhood, perfect for families.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "101",
         "name": "Ayesha Siddique",
@@ -297,9 +331,10 @@
     },
     {
       "id": "2",
-      "propertyId": 100002,
+      "propertyId": "100002",
       "name": "Modern Apartment in Gulshan",
       "location": "Dhaka",
+      "address": "House-34, Road-11, Block-F, Banani, Dhaka-1213",
       "price": 70000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -309,6 +344,33 @@
       "image": {},
       "listingType": "Rent",
       "description": "A modern apartment located in the upscale Gulshan area with stunning city views.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2022",
+        "constructionYear": "2014",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "102",
         "name": "Mohammad Khan",
@@ -328,9 +390,10 @@
     },
     {
       "id": "3",
-      "propertyId": 100003,
+      "propertyId": "100003",
       "name": "Luxury Penthouse",
       "location": "Dhaka",
+      "address": "House-76, Road-4, Dhanmondi R/A, Dhaka-1209",
       "price": 300000,
       "currency": "BDT",
       "bedrooms": 4,
@@ -338,10 +401,43 @@
       "squareFeet": 3500,
       "type": "Penthouse",
       "image": {
-        "url": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Sell",
       "description": "A luxury penthouse with panoramic views of the city.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2019",
+        "constructionYear": "2002",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "103",
         "name": "Amina Begum",
@@ -361,9 +457,10 @@
     },
     {
       "id": "4",
-      "propertyId": 100004,
+      "propertyId": "100004",
       "name": "Spacious Villa with Private Pool",
       "location": "Chattogram",
+      "address": "House-2, Road-1, Nasirabad Housing Society, Chattogram",
       "price": 250000,
       "currency": "BDT",
       "bedrooms": 5,
@@ -371,10 +468,43 @@
       "squareFeet": 4500,
       "type": "Villa",
       "image": {
-        "url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A spacious villa with a private pool, located in a prestigious area.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2015",
+        "constructionYear": "2011",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "104",
         "name": "Ayesha Siddique",
@@ -394,9 +524,10 @@
     },
     {
       "id": "5",
-      "propertyId": 100005,
+      "propertyId": "100005",
       "name": "Beachfront Condo",
       "location": "Cox's Bazar",
+      "address": "25, Kolatoli Road, Cox's Bazar-4700",
       "price": 100000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -404,10 +535,43 @@
       "squareFeet": 1800,
       "type": "Condo",
       "image": {
-        "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A beautiful beachfront condo with stunning ocean views and modern amenities.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2024",
+        "constructionYear": "2010",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "105",
         "name": "Rahim Uddin",
@@ -427,9 +591,10 @@
     },
     {
       "id": "6",
-      "propertyId": 100006,
+      "propertyId": "100006",
       "name": "Charming Studio",
       "location": "Dhaka",
+      "address": "House-76, Road-4, Dhanmondi R/A, Dhaka-1209",
       "price": 25000,
       "currency": "BDT",
       "bedrooms": 1,
@@ -437,10 +602,43 @@
       "squareFeet": 500,
       "type": "Studio",
       "image": {
-        "url": "https://images.unsplash.com/photo-1603425013520-e0b30e6e37dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1603425013520-e0b30e6e37dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A charming studio apartment located in the heart of the city, perfect for singles or couples.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2003",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "106",
         "name": "Imran Hossain",
@@ -460,9 +658,10 @@
     },
     {
       "id": "7",
-      "propertyId": 100007,
+      "propertyId": "100007",
       "name": "Modern Loft",
       "location": "Dhaka",
+      "address": "House-15, Road-2, Sector-9, Uttara, Dhaka-1230",
       "price": 60000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -470,10 +669,43 @@
       "squareFeet": 1100,
       "type": "Loft",
       "image": {
-        "url": "https://images.unsplash.com/photo-1668438712649-ffd85f756de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1668438712649-ffd85f756de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A modern loft with an open floor plan and industrial design elements.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "107",
         "name": "Laila Akter",
@@ -493,9 +725,10 @@
     },
     {
       "id": "8",
-      "propertyId": 100008,
+      "propertyId": "100008",
       "name": "Countryside Cottage",
       "location": "Sylhet",
+      "address": "23, Amberkhana Road, Sylhet-3100",
       "price": 50000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -503,10 +736,43 @@
       "squareFeet": 1600,
       "type": "Cottage",
       "image": {
-        "url": "https://images.unsplash.com/photo-1568605115459-4b731184f961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1568605115459-4b731184f961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A charming countryside cottage with a beautiful garden and peaceful surroundings.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2021",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "108",
         "name": "Sadia Akter",
@@ -526,9 +792,10 @@
     },
     {
       "id": "9",
-      "propertyId": 100009,
+      "propertyId": "100009",
       "name": "Urban Apartment",
       "location": "Dhaka",
+      "address": "House-15, Road-2, Sector-9, Uttara, Dhaka-1230",
       "price": 55000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -536,10 +803,43 @@
       "squareFeet": 900,
       "type": "Apartment",
       "image": {
-        "url": "https://images.unsplash.com/photo-1515120263166-b676e1f61045?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1515120263166-b676e1f61045?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "An urban apartment located in a vibrant neighborhood with easy access to amenities.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2024",
+        "constructionYear": "2006",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "109",
         "name": "Abdul Karim",
@@ -559,9 +859,10 @@
     },
     {
       "id": "10",
-      "propertyId": 100010,
+      "propertyId": "100010",
       "name": "Luxury Villa",
       "location": "Chattogram",
+      "address": "45, Agrabad Commercial Area, Chattogram-4100",
       "price": 300000,
       "currency": "BDT",
       "bedrooms": 6,
@@ -569,10 +870,43 @@
       "squareFeet": 5000,
       "type": "Villa",
       "image": {
-        "url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A luxury villa with elegant interiors and a large private garden.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2008",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "110",
         "name": "Nasrin Jahan",
@@ -592,9 +926,10 @@
     },
     {
       "id": "11",
-      "propertyId": 100011,
+      "propertyId": "100011",
       "name": "City Center Apartment",
       "location": "Dhaka",
+      "address": "House-10, Road-7, Block-H, Mohammadpur, Dhaka-1207",
       "price": 80000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -602,10 +937,43 @@
       "squareFeet": 1200,
       "type": "Apartment",
       "image": {
-        "url": "https://images.unsplash.com/photo-1580041065738-e72023775cdc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1580041065738-e72023775cdc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A modern apartment located in the city center, close to shopping and dining.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2018",
+        "constructionYear": "2009",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "111",
         "name": "Faisal Ahmed",
@@ -625,9 +993,10 @@
     },
     {
       "id": "12",
-      "propertyId": 100012,
+      "propertyId": "100012",
       "name": "Cozy Cabin",
       "location": "Sylhet",
+      "address": "House-5, Road-3, Block-B, Subhanighat, Sylhet",
       "price": 45000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -635,10 +1004,43 @@
       "squareFeet": 900,
       "type": "Cabin",
       "image": {
-        "url": "https://images.unsplash.com/photo-1631756964162-25c8c07579b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1631756964162-25c8c07579b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A cozy cabin nestled in the woods, perfect for a peaceful retreat.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "--",
+        "constructionYear": "2021",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "112",
         "name": "Zara Islam",
@@ -658,9 +1060,10 @@
     },
     {
       "id": "13",
-      "propertyId": 100013,
+      "propertyId": "100013",
       "name": "Luxury High-Rise Apartment",
       "location": "Dhaka",
+      "address": "12/C, Gulshan Avenue, Gulshan-2, Dhaka-1212",
       "price": 200000,
       "currency": "BDT",
       "bedrooms": 4,
@@ -668,10 +1071,43 @@
       "squareFeet": 2500,
       "type": "Apartment",
       "image": {
-        "url": "https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A luxury high-rise apartment with stunning views and top-notch amenities.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "113",
         "name": "Kamrul Hasan",
@@ -691,9 +1127,10 @@
     },
     {
       "id": "14",
-      "propertyId": 100014,
+      "propertyId": "100014",
       "name": "Riverside Villa",
       "location": "Sylhet",
+      "address": "19, Zindabazar Road, Sylhet-3100",
       "price": 240000,
       "currency": "BDT",
       "bedrooms": 5,
@@ -701,10 +1138,43 @@
       "squareFeet": 4000,
       "type": "Villa",
       "image": {
-        "url": "https://images.unsplash.com/photo-1617156053441-77819b996d49?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1617156053441-77819b996d49?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A beautiful riverside villa with serene views and luxurious interiors.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "--",
+        "constructionYear": "2011",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "114",
         "name": "Farzana Haque",
@@ -724,9 +1194,10 @@
     },
     {
       "id": "15",
-      "propertyId": 100015,
+      "propertyId": "100015",
       "name": "Downtown Loft",
       "location": "Dhaka",
+      "address": "12/C, Gulshan Avenue 2, Gulshan-3, Dhaka-1212",
       "price": 90000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -734,10 +1205,43 @@
       "squareFeet": 1300,
       "type": "Loft",
       "image": {
-        "url": "https://images.unsplash.com/photo-1573760464283-3ba64302271f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1573760464283-3ba64302271f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A spacious downtown loft with modern design and close proximity to amenities.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "115",
         "name": "Tanvir Alam",
@@ -757,9 +1261,10 @@
     },
     {
       "id": "16",
-      "propertyId": 100016,
+      "propertyId": "100016",
       "name": "Seaside Cottage",
       "location": "Cox's Bazar",
+      "address": "15, Laboni Beach Road, Cox's Bazar-4700",
       "price": 60000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -769,6 +1274,33 @@
       "image": {},
       "listingType": "Rent",
       "description": "A charming seaside cottage with beautiful ocean views and a cozy interior.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "116",
         "name": "Sara Khan",
@@ -788,9 +1320,10 @@
     },
     {
       "id": "17",
-      "propertyId": 100017,
+      "propertyId": "100017",
       "name": "Elegant Townhouse",
       "location": "Dhaka",
+      "address": "11/D, Gulshan Shopping Road, Gulshan-4, Dhaka-1212",
       "price": 170000,
       "currency": "BDT",
       "bedrooms": 4,
@@ -798,10 +1331,43 @@
       "squareFeet": 2100,
       "type": "Townhouse",
       "image": {
-        "url": "https://images.unsplash.com/photo-1492889971304-ac16ab4a4a5a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1492889971304-ac16ab4a4a5a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "An elegant townhouse with spacious rooms and modern amenities.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "117",
         "name": "Ismail Hossain",
@@ -821,9 +1387,10 @@
     },
     {
       "id": "18",
-      "propertyId": 100018,
+      "propertyId": "100018",
       "name": "Mountain Cabin",
       "location": "Bandarban",
+      "address": "5, Himchari Road, Cox's Bazar-4700",
       "price": 50000,
       "currency": "BDT",
       "bedrooms": 2,
@@ -831,10 +1398,43 @@
       "squareFeet": 1200,
       "type": "Cabin",
       "image": {
-        "url": "https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Buy",
       "description": "A cozy mountain cabin with breathtaking views and a peaceful atmosphere.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "118",
         "name": "Nazmul Haque",
@@ -854,9 +1454,10 @@
     },
     {
       "id": "19",
-      "propertyId": 100019,
+      "propertyId": "100019",
       "name": "Modern Duplex",
       "location": "Dhaka",
+      "address": "Apartment-3C, Road-11, Banani, Dhaka-1213",
       "price": 190000,
       "currency": "BDT",
       "bedrooms": 3,
@@ -864,10 +1465,43 @@
       "squareFeet": 2200,
       "type": "Duplex",
       "image": {
-        "url": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A modern duplex with stylish interiors and a great location.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "119",
         "name": "Rina Akter",
@@ -887,9 +1521,10 @@
     },
     {
       "id": "20",
-      "propertyId": 100020,
+      "propertyId": "100020",
       "name": "Historical Mansion",
       "location": "Dhaka",
+      "address": "5, Mirpur Road-10, Dhaka-1216",
       "price": 500000,
       "currency": "BDT",
       "bedrooms": 7,
@@ -897,10 +1532,43 @@
       "squareFeet": 7000,
       "type": "Mansion",
       "image": {
-        "url": "https://images.unsplash.com/photo-1702226580087-a416fe3e145a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "url": "https://images.unsplash.com/photo-1702226580087-a416fe3e145a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1638799869566-b17fa794c4de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
       },
       "listingType": "Rent",
       "description": "A historical mansion with grand architecture and rich history.",
+      "propertyFeatures": {
+        "parking": "Garage",
+        "coolingSystem": "Central",
+        "heatingSystem": "Central",
+        "flooring": "Hardwood",
+        "renovation": "2017",
+        "constructionYear": "2015",
+        "furnishing": "Semi-furnished"
+      },
+      "propertyUtilities": {
+        "water": "City Water",
+        "electricity": "Available",
+        "gas": "Natural Gas",
+        "internet": "High-speed Fiber"
+      },
+      "outdoorFeatures": {
+        "garden": "Yes",
+        "pool": "No",
+        "playground": "Yes",
+        "fencing": "Wood"
+      },
+      "nearby": {
+        "schools": ["Greenfield International School", "Sunshine Kindergarten"],
+        "hospitals": ["Dhaka Medical College", "United Hospital"],
+        "shoppingCenters": ["Bashundhara City Mall", "Jamuna Future Park"],
+        "publicTransport": ["Bus Stop - 200m", "Metro Station - 1km"]
+      },
       "author": {
         "id": "120",
         "name": "Sohel Ahmed",
