@@ -15,6 +15,10 @@
   .property-search-form-wrapper {
     @apply p-4 bg-white rounded-md;
   }
+
+  .form-wrapper {
+    @apply w-full md:w-2/5 h-full p-4 mx-auto border rounded-sm bg-white;
+  }
 }
 
 .property-image-gallery-slider {
