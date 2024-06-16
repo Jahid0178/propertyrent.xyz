@@ -37,9 +37,10 @@ export interface ITrendingProperty {
 
 export interface PropertyProps {
   id: string;
-  propertyId: number;
+  propertyId: string;
   name: string;
   location: string;
+  address: string;
   price: number;
   currency: string;
   bedrooms: number;
@@ -48,8 +49,36 @@ export interface PropertyProps {
   type: string;
   image: {
     url?: string;
+    gallery?: string[];
   };
   listingType: "Rent" | "Sell" | "Buy" | "Lease";
   description: string;
+  propertyFeatures: {
+    parking: string;
+    coolingSystem: string;
+    heatingSystem: string;
+    flooring: string;
+    renovation: string;
+    constructionYear: string;
+    furnishing: string;
+  };
+  propertyUtilities: {
+    water: string;
+    electricity: string;
+    gas: string;
+    internet: string;
+  };
+  outdoorFeatures: {
+    garden: string;
+    pool: string;
+    playground: string;
+    fencing: string;
+  };
+  nearby: {
+    schools: string[];
+    hospitals: string[];
+    shoppingCenters: string[];
+    publicTransport: string[];
+  };
   author?: AuthorInfo;
 }
