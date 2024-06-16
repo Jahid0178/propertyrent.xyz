@@ -25,7 +25,7 @@ const loginFormSchema = z.object({
 });
 // register form validation schema
 const registerFormSchema = z.object({
-  fullName: z.string().trim().min(3, "Name is required"),
+  name: z.string().trim().min(3, "Full name is required"),
   phoneNumber: z.string().trim().min(3, "Email is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
@@ -44,7 +44,7 @@ const UserAuthenticationForm = () => {
   const registerForm = useForm<z.infer<typeof registerFormSchema>>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
-      fullName: "",
+      name: "",
       phoneNumber: "",
       password: "",
     },
@@ -122,7 +122,7 @@ const UserAuthenticationForm = () => {
               >
                 <FormField
                   control={registerForm.control}
-                  name="fullName"
+                  name="name"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Full Name:</FormLabel>
