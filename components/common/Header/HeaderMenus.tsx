@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,11 +11,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { navigationMenus } from "@/data/data";
-import Link from "next/link";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { FaUser } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import UserAuthenticationForm from "@/components/Forms/UserAuthenticationForm";
 
 const HeaderMenus = () => {
   return (
@@ -59,11 +59,7 @@ const HeaderMenus = () => {
               <FaHouse className="mr-2 h-4 w-4" /> Add Property
             </Link>
           </Button>
-          <Button variant="outline" size="icon" asChild>
-            <Link href="/login">
-              <FaUser />
-            </Link>
-          </Button>
+          <UserAuthenticationForm />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

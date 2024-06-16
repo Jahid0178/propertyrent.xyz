@@ -5,11 +5,12 @@ import React from "react";
 interface LogoProps {
   type: "image" | "text";
   href: string;
+  className?: string;
 }
 
-const Logo = ({ type, href }: LogoProps) => {
+const Logo = ({ type, href, className }: LogoProps) => {
   return (
-    <div>
+    <div className={className}>
       <Link href={href}>
         {type === "image" ? (
           <Image
