@@ -5,7 +5,6 @@ import { getAllProperties } from "@/lib/actions/property.action";
 
 const PropertiesPage = async () => {
   const properties = await getAllProperties();
-  console.log("properties", properties);
   return (
     <section>
       <div className="container">
