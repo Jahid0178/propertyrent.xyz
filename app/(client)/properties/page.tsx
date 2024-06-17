@@ -3,8 +3,13 @@ import PropertyCard from "@/components/Cards/PropertyCard";
 import PropertyListingTopbar from "@/components/PropertyListingTopbar/PropertyListingTopbar";
 import { getAllProperties } from "@/lib/actions/property.action";
 
-const PropertiesPage = async () => {
-  const properties = await getAllProperties();
+type PropertiesPageProps = {
+  searchParams: any;
+};
+
+const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
+  const params = searchParams;
+  const properties = await getAllProperties(params.search);
   return (
     <section>
       <div className="container">

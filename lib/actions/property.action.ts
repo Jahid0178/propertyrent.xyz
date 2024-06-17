@@ -9,10 +9,10 @@ export const getAllPropertiesType = async () => {
   } catch (error) {}
 };
 
-export const getAllProperties = async () => {
+export const getAllProperties = async (searchParams: string = "") => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties?featuredType=${searchParams}`
     );
     return response.data;
   } catch (error) {}

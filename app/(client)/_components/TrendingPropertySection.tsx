@@ -19,7 +19,7 @@ const TrendingPropertySection = async () => {
             titleClassName="text-xl md:text-2xl"
           />
           <Button asChild variant="outline">
-            <Link href="/properties">See More</Link>
+            <Link href="/properties?search=trending">See More</Link>
           </Button>
         </div>
         <div className="mt-8">
