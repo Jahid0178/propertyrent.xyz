@@ -8,7 +8,7 @@ import TredingPropertyCard from "@/components/Cards/TrendingPropertyCard";
 
 const FeaturedPropertySection = async () => {
   const { data: trendingProperties } = await axios.get(
-    "http://localhost:4000/trendingProperties"
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/trendingProperties`
   );
   return (
     <section>
