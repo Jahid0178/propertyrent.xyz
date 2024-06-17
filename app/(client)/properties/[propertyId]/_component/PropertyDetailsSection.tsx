@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import AuthorCard from "@/components/Cards/AuthorCard";
 import { PropertyProps } from "@/typescript/interface";
 import { IoBedOutline, IoLocationOutline, IoBusOutline } from "react-icons/io5";
 import { TbBath, TbFence } from "react-icons/tb";
@@ -30,14 +31,16 @@ const PropertyDetailsSection = ({
     bathrooms,
     squareFeet,
     address,
+    author,
     propertyFeatures: { constructionYear, renovation },
     propertyUtilities: { gas, electricity, internet, water },
     outdoorFeatures: { pool, garden, playground, fencing },
     nearby: { schools, hospitals, shoppingCenters, publicTransport },
     location,
   } = propertyData;
+
   return (
-    <div className="grid grid-cols-12 gap-4 mt-6">
+    <div className="grid grid-cols-12 gap-6 mt-6">
       <div className="col-span-12 md:col-span-8 space-y-6">
         <div>
           <h2 className="mb-2 text-xl font-semibold">Description</h2>
@@ -217,7 +220,9 @@ const PropertyDetailsSection = ({
           </div>
         </div>
       </div>
-      <div className="col-span-12 md:col-span-4">2</div>
+      <div className="col-span-12 md:col-span-4">
+        {author && <AuthorCard author={author} />}
+      </div>
     </div>
   );
 };
