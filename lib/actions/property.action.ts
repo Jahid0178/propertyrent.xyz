@@ -10,7 +10,6 @@ export const getAllPropertiesType = async () => {
 };
 
 export const getAllProperties = async (searchParams: string = "") => {
-  console.log("searchParams", searchParams);
   try {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties?featuredType=${searchParams}`
