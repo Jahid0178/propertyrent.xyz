@@ -21,32 +21,32 @@ export const navigationMenus: {
       {
         id: 2,
         name: "Barisal Division",
-        href: "/properties/barisal",
+        href: "/property-region/barisal",
       },
       {
         id: 3,
         name: "Chittagong Division",
-        href: "/properties/chittagong",
+        href: "/property-region/chittagong",
       },
       {
         id: 4,
         name: "Dhaka Division",
-        href: "/properties/dhaka",
+        href: "/property-region/dhaka",
       },
       {
         id: 5,
         name: "Khulna Division",
-        href: "/properties/khulna",
+        href: "/property-region/khulna",
       },
       {
         id: 6,
         name: "Rajshahi Division",
-        href: "/properties/rajshahi",
+        href: "/property-region/rajshahi",
       },
       {
         id: 7,
         name: "Sylhet Division",
-        href: "/properties/sylhet",
+        href: "/property-region/sylhet",
       },
     ],
   },
