@@ -10,7 +10,7 @@ interface PopularPropertyCardProps {
 
 const PopularPropertyCard = ({ popularProperty }: PopularPropertyCardProps) => {
   return (
-    <Link href={`/property/division/${popularProperty.value}`}>
+    <Link href={`/property-region/${popularProperty.value}`}>
       <Card className="rounded-lg overflow-hidden relative group">
         <CardHeader className="p-0">
           <Image

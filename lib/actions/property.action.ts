@@ -91,3 +91,16 @@ export const getPropertyById = async (
     return defaultProperty;
   }
 };
+
+export const getPropertyByRegion = async (
+  regionName: string
+): Promise<PropertyProps[]> => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties?location=${regionName}`
+    );
+    return response.data;
+  } catch (error) {
+    return [];
+  }
+};
