@@ -3,7 +3,7 @@ import axios from "axios";
 export const getAllPropertiesType = async () => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/propertyType`
+      `${process.env.NEXT_PUBLIC_TEST_API_URL}/propertyType`
     );
     return response.data;
   } catch (error) {}
@@ -12,7 +12,7 @@ export const getAllPropertiesType = async () => {
 export const getAllProperties = async (searchParams: string = "") => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties?featuredType=${searchParams}`
+      `${process.env.NEXT_PUBLIC_TEST_API_URL}/properties?featuredType=${searchParams}`
     );
     return response.data;
   } catch (error) {}
@@ -83,7 +83,7 @@ export const getPropertyById = async (
 ): Promise<PropertyProps> => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties/${propertyId}`
+      `${process.env.NEXT_PUBLIC_TEST_API_URL}/properties/${propertyId}`
     );
     return response.data ?? defaultProperty;
   } catch (error) {
@@ -97,7 +97,7 @@ export const getPropertyByRegion = async (
 ): Promise<PropertyProps[]> => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/properties?location=${regionName}`
+      `${process.env.NEXT_PUBLIC_TEST_API_URL}/properties?location=${regionName}`
     );
     return response.data;
   } catch (error) {

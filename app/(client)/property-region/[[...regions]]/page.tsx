@@ -15,7 +15,7 @@ const PropertyRegionPage = async ({ params }: PropertyRegionPageProps) => {
   const { regions } = params;
   const regionName = regions ? regions[0] : "Your Region";
   const { data: regionLocations } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/popularLocation`
+    `${process.env.NEXT_PUBLIC_TEST_API_URL}/popularLocation`
   );
 
   const firstRegion = (regions && regions[0]) || "";

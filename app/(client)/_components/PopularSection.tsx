@@ -5,7 +5,7 @@ import PopularSectionSlider from "@/components/Sliders/PopularSectionSlider";
 
 const PopularSection = async () => {
   const { data: popularProperties } = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/popularLocation`
+    `${process.env.NEXT_PUBLIC_TEST_API_URL}/popularLocation`
   );
 
   return (
