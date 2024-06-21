@@ -20,13 +20,13 @@ import { FaUser } from "react-icons/fa";
 
 // login form validation schema
 const loginFormSchema = z.object({
-  phoneNumber: z.string().trim().min(3, "Email is required"),
+  phoneNumber: z.string().trim().min(3, "Phone number is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
 // register form validation schema
 const registerFormSchema = z.object({
   name: z.string().trim().min(3, "Full name is required"),
-  phoneNumber: z.string().trim().min(3, "Email is required"),
+  phoneNumber: z.string().trim().min(3, "Phone number is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
 
