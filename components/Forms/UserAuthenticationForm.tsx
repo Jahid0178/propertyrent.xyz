@@ -27,6 +27,7 @@ const loginFormSchema = z.object({
 const registerFormSchema = z.object({
   name: z.string().trim().min(3, "Full name is required"),
   phoneNumber: z.string().trim().min(3, "Phone number is required"),
+  email: z.string().trim().email("Email is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
 
@@ -46,6 +47,7 @@ const UserAuthenticationForm = () => {
     defaultValues: {
       name: "",
       phoneNumber: "",
+      email: "",
       password: "",
     },
   });
@@ -148,6 +150,23 @@ const UserAuthenticationForm = () => {
                           placeholder="Enter your phone number"
                           {...field}
                           type="text"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={registerForm.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email Address:</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your email address"
+                          {...field}
+                          type="email"
                         />
                       </FormControl>
                       <FormMessage />
