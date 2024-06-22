@@ -17,6 +17,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { FaUser } from "react-icons/fa";
+import { handleRegisterUser } from "@/lib/actions/user.action";
+import { toast } from "react-toastify";
 
 // login form validation schema
 const loginFormSchema = z.object({
@@ -56,6 +58,17 @@ const UserAuthenticationForm = () => {
   const onSubmit = (data: z.infer<typeof loginFormSchema>) => {
     console.log("user_auth_form_data", data);
     loginForm.reset();
+  };
+
+  const handleRegisterOnSubmit = async (
+    data: z.infer<typeof registerFormSchema>
+  ) => {
+    const response = await handleRegisterUser(data);
+    if (response.statusText === "OK") {
+      toast.success(response.data.message);
+
+      console.log("user_auth_register_form_data", response.data);
+    }
     registerForm.reset();
   };
 
@@ -119,7 +132,7 @@ const UserAuthenticationForm = () => {
           <TabsContent value="register">
             <Form {...registerForm}>
               <form
-                onSubmit={registerForm.handleSubmit(onSubmit)}
+                onSubmit={registerForm.handleSubmit(handleRegisterOnSubmit)}
                 className="space-y-6"
               >
                 <FormField
