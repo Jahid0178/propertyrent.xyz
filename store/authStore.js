@@ -1,12 +1,23 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth, googleProvider } from "@/config/firebase.config";
 
 const authStore = create(
   devtools((set) => ({
     user: null,
     setUser: (user) => set({ user }),
+
+    // handle user observer
+    handleUserObserver: () => {
+      return onAuthStateChanged(auth, (user) => {
+        if (user) {
+          set({ user });
+        } else {
+          set({ user: null });
+        }
+      });
+    },
 
     // google sign in
     handleGoogleSignIn: async () => {
