@@ -68,7 +68,7 @@ const HeaderMenus = () => {
         ))}
         <NavigationMenuItem className="!ml-5 flex gap-4">
           <Button asChild>
-            <Link href="/add-property">
+            <Link href={`${user ? "/user/dashboard/add-property" : "/"}`}>
               <FaHouse className="mr-2 h-4 w-4" /> Add Property
             </Link>
           </Button>
@@ -89,13 +89,13 @@ const HeaderMenus = () => {
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link href="/profile">Profile</Link>
+                  <Link href="/user/dashboard/profile">Profile</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard">Dashboard</Link>
+                  <Link href="/user/dashboard">Dashboard</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/settings">Settings</Link>
+                  <Link href="/user/dashboard/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={logout}>Log out</DropdownMenuItem>
