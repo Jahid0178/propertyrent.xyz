@@ -83,8 +83,10 @@ const UserAuthenticationForm = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        setUser(user);
         console.log("user authenticated", user);
       } else {
+        logout();
         console.log("user not authenticated");
       }
     });
