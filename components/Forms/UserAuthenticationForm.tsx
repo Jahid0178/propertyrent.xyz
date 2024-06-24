@@ -84,7 +84,7 @@ const UserAuthenticationForm = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        console.log("user authenticated", user);
+        console.log("user authenticated");
       } else {
         logout();
         console.log("user not authenticated");
@@ -93,8 +93,6 @@ const UserAuthenticationForm = () => {
 
     return () => unsubscribe();
   }, []);
-
-  console.log("user information", user);
 
   return (
     <Dialog>
@@ -152,6 +150,16 @@ const UserAuthenticationForm = () => {
                 <Button type="submit">Login</Button>
               </form>
             </Form>
+            <hr className="my-5 block" />
+            <div>
+              <Button
+                className="w-full"
+                variant="secondary"
+                onClick={handleGoogleSignIn}
+              >
+                <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
+              </Button>
+            </div>
           </TabsContent>
           <TabsContent value="register">
             <Form {...registerForm}>
