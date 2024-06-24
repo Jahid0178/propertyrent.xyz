@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { z } from "zod";
 import { Input } from "../ui/input";
 import { useForm } from "react-hook-form";
@@ -19,6 +19,11 @@ import { Button } from "../ui/button";
 import { FaUser } from "react-icons/fa";
 import { handleRegisterUser } from "@/lib/actions/user.action";
 import { toast } from "react-toastify";
+import { FaGoogle } from "react-icons/fa";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/config/firebase.config";
+
+import authStore from "@/store/authStore";
 
 // login form validation schema
 const loginFormSchema = z.object({
@@ -34,6 +39,9 @@ const registerFormSchema = z.object({
 });
 
 const UserAuthenticationForm = () => {
+  const { user, setUser, logout, handleGoogleSignIn } = authStore(
+    (state: any) => state
+  );
   // login form
   const loginForm = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -55,9 +63,9 @@ const UserAuthenticationForm = () => {
   });
 
   // onsubmit handler for form
-  const onSubmit = (data: z.infer<typeof loginFormSchema>) => {
-    console.log("user_auth_form_data", data);
-    loginForm.reset();
+  const onSubmit = async (data: z.infer<typeof loginFormSchema>) => {
+    console.log("user_auth_login_form_data", data);
+    // loginForm.reset();
   };
 
   const handleRegisterOnSubmit = async (
@@ -71,6 +79,20 @@ const UserAuthenticationForm = () => {
     }
     registerForm.reset();
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("user authenticated", user);
+      } else {
+        console.log("user not authenticated");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  console.log("user information", user);
 
   return (
     <Dialog>
@@ -206,6 +228,16 @@ const UserAuthenticationForm = () => {
                 <Button type="submit">Register</Button>
               </form>
             </Form>
+            <hr className="my-5 block" />
+            <div>
+              <Button
+                className="w-full"
+                variant="secondary"
+                onClick={handleGoogleSignIn}
+              >
+                <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
+              </Button>
+            </div>
           </TabsContent>
         </Tabs>
       </DialogContent>
