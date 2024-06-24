@@ -14,9 +14,22 @@ import { navigationMenus } from "@/data/data";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { FaHouse } from "react-icons/fa6";
+import { MdOutlineLogout } from "react-icons/md";
 import UserAuthenticationForm from "@/components/Forms/UserAuthenticationForm";
+import authStore from "@/store/authStore";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const HeaderMenus = () => {
+  const { user, logout } = authStore((state) => state);
+  console.log("user", user);
   return (
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
@@ -59,7 +72,38 @@ const HeaderMenus = () => {
               <FaHouse className="mr-2 h-4 w-4" /> Add Property
             </Link>
           </Button>
-          <UserAuthenticationForm />
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <Avatar>
+                  <AvatarImage
+                    src={user?.photoURL}
+                    alt={user?.displayName || ""}
+                  />
+                  <AvatarFallback>
+                    {user?.displayName.slice(0, 1)}
+                  </AvatarFallback>
+                </Avatar>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/profile">Profile</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/settings">Settings</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={logout}>Log out</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <UserAuthenticationForm />
+          )}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
