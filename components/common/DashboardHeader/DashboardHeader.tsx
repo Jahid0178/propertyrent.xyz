@@ -23,7 +23,7 @@ const DashboardHeader = () => {
 
   useEffect(() => {
     if (!user) router.push("/");
-    handleUserObserver();
+    // handleUserObserver();
   }, [user]);
   return (
     <header>
@@ -34,16 +34,19 @@ const DashboardHeader = () => {
               <DashboardMobileSidebar />
               <Logo type="text" href="/" />
             </div>
-            <div className="flex items-center">
+            <div className="flex gap-4 items-center">
+              <h5 className="hidden md:block text-lg font-medium">
+                Hello, {user?.name}
+              </h5>
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage
-                      src={user?.photoURL}
-                      alt={user?.displayName || ""}
+                      src={user?.avatar || ""}
+                      alt={user?.name || ""}
                     />
                     <AvatarFallback>
-                      {user?.displayName.slice(0, 1)}
+                      {user?.name?.slice(0, 1) || ""}
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
