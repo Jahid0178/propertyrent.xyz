@@ -17,7 +17,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { FaUser } from "react-icons/fa";
-import { handleRegisterUser } from "@/lib/actions/user.action";
+import { handleLoginUser, handleRegisterUser } from "@/lib/actions/user.action";
 import { toast } from "react-toastify";
 import { FaGoogle } from "react-icons/fa";
 import { onAuthStateChanged } from "firebase/auth";
@@ -64,7 +64,14 @@ const UserAuthenticationForm = () => {
 
   // onsubmit handler for form
   const onSubmit = async (data: z.infer<typeof loginFormSchema>) => {
-    console.log("user_auth_login_form_data", data);
+    const response = await handleLoginUser(data);
+    if (response.status === 200) {
+      toast.success(response.data.message);
+      if (!localStorage.getItem("token")) {
+        localStorage.setItem("token", response.data.access_token);
+      }
+      setUser(response.data.user);
+    }
     // loginForm.reset();
   };
 
