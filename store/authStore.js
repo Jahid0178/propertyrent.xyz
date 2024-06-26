@@ -9,15 +9,15 @@ const authStore = create(
     setUser: (user) => set({ user }),
 
     // handle user observer
-    handleUserObserver: () => {
-      return onAuthStateChanged(auth, (user) => {
-        if (user) {
-          set({ user });
-        } else {
-          set({ user: null });
-        }
-      });
-    },
+    // handleUserObserver: () => {
+    //   return onAuthStateChanged(auth, (user) => {
+    //     if (user) {
+    //       set({ user });
+    //     } else {
+    //       set({ user: null });
+    //     }
+    //   });
+    // },
 
     // google sign in
     handleGoogleSignIn: async () => {
