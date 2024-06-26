@@ -13,7 +13,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <DashboardSidebar />
       <>
         <DashboardHeader />
-        <main className="p-4 sm:ml-64 mt-16">{children}</main>
+        <main className="sm:ml-64 mt-16">{children}</main>
         <DashboardFooter />
       </>
     </>
