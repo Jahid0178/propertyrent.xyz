@@ -3,9 +3,10 @@ import axios from "axios";
 export const handleRegisterUser = async (userData: any): Promise<any> => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/signup`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
       userData
     );
+    console.log("user registered successfully", response);
     return response;
   } catch (error) {
     console.log("error from handle register user", error);
@@ -13,11 +14,11 @@ export const handleRegisterUser = async (userData: any): Promise<any> => {
 };
 
 export const handleLoginUser = async (data: any) => {
-  const { phoneNumber, password } = data;
+  const { phone, password } = data;
   const response = await axios.post(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/login`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
     {
-      phoneNumber,
+      phone,
       password,
     }
   );
