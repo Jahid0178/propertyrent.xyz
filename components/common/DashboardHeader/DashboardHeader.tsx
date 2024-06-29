@@ -36,17 +36,17 @@ const DashboardHeader = () => {
             </div>
             <div className="flex gap-4 items-center">
               <h5 className="hidden md:block text-lg font-medium">
-                Hello, {user?.name}
+                Hello, {user?.fullName}
               </h5>
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage
                       src={user?.avatar || ""}
-                      alt={user?.name || ""}
+                      alt={user?.fullName || ""}
                     />
                     <AvatarFallback>
-                      {user?.name?.slice(0, 1) || ""}
+                      {user?.fullName?.slice(0, 1) || ""}
                     </AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>

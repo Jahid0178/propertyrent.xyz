@@ -78,10 +78,10 @@ const HeaderMenus = () => {
                 <Avatar>
                   <AvatarImage
                     src={user?.avatar || ""}
-                    alt={user?.name || ""}
+                    alt={user?.fullName || ""}
                   />
                   <AvatarFallback>
-                    {user?.name?.slice(0, 1) || ""}
+                    {user?.fullName?.slice(0, 1) || ""}
                   </AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
