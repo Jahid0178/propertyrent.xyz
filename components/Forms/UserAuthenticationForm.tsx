@@ -27,13 +27,13 @@ import authStore from "@/store/authStore";
 
 // login form validation schema
 const loginFormSchema = z.object({
-  phoneNumber: z.string().trim().min(3, "Phone number is required"),
+  phone: z.string().trim().min(3, "Phone number is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
 // register form validation schema
 const registerFormSchema = z.object({
   name: z.string().trim().min(3, "Full name is required"),
-  phoneNumber: z.string().trim().min(3, "Phone number is required"),
+  phone: z.string().trim().min(3, "Phone number is required"),
   email: z.string().trim().email("Email is required"),
   password: z.string().trim().min(1, "Password is required"),
 });
@@ -46,7 +46,7 @@ const UserAuthenticationForm = () => {
   const loginForm = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
-      phoneNumber: "",
+      phone: "",
       password: "",
     },
   });
@@ -56,7 +56,7 @@ const UserAuthenticationForm = () => {
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
       name: "",
-      phoneNumber: "",
+      phone: "",
       email: "",
       password: "",
     },
@@ -122,7 +122,7 @@ const UserAuthenticationForm = () => {
               >
                 <FormField
                   control={loginForm.control}
-                  name="phoneNumber"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Phone Number:</FormLabel>
@@ -193,7 +193,7 @@ const UserAuthenticationForm = () => {
                 />
                 <FormField
                   control={registerForm.control}
-                  name="phoneNumber"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Phone Number:</FormLabel>
