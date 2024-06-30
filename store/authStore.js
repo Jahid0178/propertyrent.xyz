@@ -12,14 +12,18 @@ const authStore = create(
       if (!get().user) {
         return;
       }
-      // try {
-      //   const response = await axios.post(
-      //     `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`
-      //   );
-      //   if (response.status === 200) {
-      //     set({ user: null });
-      //   }
-      // } catch (error) {}
+      try {
+        const response = await axios.post(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`,
+          {},
+          {
+            withCredentials: true,
+          }
+        );
+        if (response.status === 200) {
+          set({ user: null });
+        }
+      } catch (error) {}
     },
   }))
 );

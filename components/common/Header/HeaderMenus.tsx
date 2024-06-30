@@ -28,7 +28,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const HeaderMenus = () => {
-  const { user } = authStore((state) => state);
+  const { user, logout } = authStore((state) => state);
   return (
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
@@ -97,9 +97,9 @@ const HeaderMenus = () => {
                   <Link href="/user/dashboard/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                {/* <DropdownMenuItem onClick={() => logout()}>
+                <DropdownMenuItem onClick={() => logout()}>
                   Log out
-                </DropdownMenuItem> */}
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
