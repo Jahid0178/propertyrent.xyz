@@ -20,8 +20,6 @@ import { FaUser } from "react-icons/fa";
 import { handleLoginUser, handleRegisterUser } from "@/lib/actions/user.action";
 import { toast } from "react-toastify";
 import { FaGoogle } from "react-icons/fa";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/config/firebase.config";
 
 import authStore from "@/store/authStore";
 
@@ -39,9 +37,7 @@ const registerFormSchema = z.object({
 });
 
 const UserAuthenticationForm = () => {
-  const { user, setUser, logout, handleGoogleSignIn } = authStore(
-    (state: any) => state
-  );
+  const { user, setUser } = authStore((state: any) => state);
   // login form
   const loginForm = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -86,20 +82,6 @@ const UserAuthenticationForm = () => {
     }
     registerForm.reset();
   };
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        console.log("user authenticated");
-      } else {
-        logout();
-        console.log("user not authenticated");
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   return (
     <Dialog>
@@ -159,11 +141,7 @@ const UserAuthenticationForm = () => {
             </Form>
             <hr className="my-5 block" />
             <div>
-              <Button
-                className="w-full"
-                variant="secondary"
-                onClick={handleGoogleSignIn}
-              >
+              <Button className="w-full" variant="secondary">
                 <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
               </Button>
             </div>
@@ -247,11 +225,7 @@ const UserAuthenticationForm = () => {
             </Form>
             <hr className="my-5 block" />
             <div>
-              <Button
-                className="w-full"
-                variant="secondary"
-                onClick={handleGoogleSignIn}
-              >
+              <Button className="w-full" variant="secondary">
                 <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
               </Button>
             </div>

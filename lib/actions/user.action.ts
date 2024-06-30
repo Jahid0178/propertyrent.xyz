@@ -20,6 +20,9 @@ export const handleLoginUser = async (data: any) => {
     {
       phone,
       password,
+    },
+    {
+      withCredentials: true,
     }
   );
   return response;
