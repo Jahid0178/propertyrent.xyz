@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Logo from "../Logo/Logo";
 import {
   DropdownMenu,
@@ -18,13 +18,7 @@ import DashboardMobileSidebar from "@/components/Sidebars/DashboardSidebar/Dashb
 
 const DashboardHeader = () => {
   const router = useRouter();
-  const { user, logout, handleUserObserver } = authStore((state) => state);
-  console.log("user info", user);
-
-  useEffect(() => {
-    if (!user) router.push("/");
-    // handleUserObserver();
-  }, [user]);
+  const { user } = authStore((state) => state);
   return (
     <header>
       <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -63,7 +57,7 @@ const DashboardHeader = () => {
                     <Link href="/user/dashboard/settings">Settings</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={logout}>Log out</DropdownMenuItem>
+                  {/* <DropdownMenuItem onClick={logout}>Log out</DropdownMenuItem> */}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
