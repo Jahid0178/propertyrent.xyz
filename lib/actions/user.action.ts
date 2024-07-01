@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { toast } from "react-toastify";
 
 export const handleRegisterUser = async (userData: any): Promise<any> => {
   try {
@@ -8,8 +9,14 @@ export const handleRegisterUser = async (userData: any): Promise<any> => {
     );
     console.log("user registered successfully", response);
     return response;
-  } catch (error) {
-    console.log("error from handle register user", error);
+  } catch (error: any) {
+    console.error("error from handle register user", error);
+    if ((error as AxiosError)?.response?.data) {
+      const responseData = error.response.data as { message: string };
+      toast.error(responseData.message);
+    } else {
+      toast.error("An error occurred");
+    }
   }
 };
 
