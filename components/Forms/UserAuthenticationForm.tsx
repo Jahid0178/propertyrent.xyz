@@ -31,6 +31,7 @@ const loginFormSchema = z.object({
 // register form validation schema
 const registerFormSchema = z.object({
   name: z.string().trim().min(3, "Full name is required"),
+  username: z.string().trim().min(3, "Username is required"),
   phone: z.string().trim().min(3, "Phone number is required"),
   email: z.string().trim().email("Email is required"),
   password: z.string().trim().min(1, "Password is required"),
@@ -52,6 +53,7 @@ const UserAuthenticationForm = () => {
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
       name: "",
+      username: "",
       phone: "",
       email: "",
       password: "",
@@ -74,13 +76,17 @@ const UserAuthenticationForm = () => {
   const handleRegisterOnSubmit = async (
     data: z.infer<typeof registerFormSchema>
   ) => {
-    const response = await handleRegisterUser(data);
-    if (response.statusText === "OK") {
-      toast.success(response.data.message);
+    try {
+      const response = await handleRegisterUser(data);
+      if (response?.statusText === "OK") {
+        toast.success(response.data.message);
 
-      console.log("user_auth_register_form_data", response.data);
+        console.log("user_auth_register_form_data", response.data);
+      }
+      registerForm.reset();
+    } catch (error) {
+      console.log("register error", error);
     }
-    registerForm.reset();
   };
 
   return (
@@ -161,6 +167,23 @@ const UserAuthenticationForm = () => {
                       <FormControl>
                         <Input
                           placeholder="Enter your full name"
+                          {...field}
+                          type="text"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={registerForm.control}
+                  name="username"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>User Name:</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your user name"
                           {...field}
                           type="text"
                         />
