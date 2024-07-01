@@ -34,6 +34,9 @@ import {
   propertyTypes,
   waterTypes,
 } from "@/data/data";
+import { createPropertyListing } from "@/lib/actions/property.action";
+import { PropertyProps } from "@/typescript/interface";
+import { toast } from "react-toastify";
 
 const FormSchema = z.object({
   title: z
@@ -123,7 +126,7 @@ const FormSchema = z.object({
           invalid_type_error: "Number of Garage must be a string",
         })
         .nonempty("Number of Garage is required"),
-      numberOfBelconies: z
+      numberOfBalconies: z
         .string({
           required_error: "Number of Balconies is required",
           invalid_type_error: "Number of Balconies must be a string",
@@ -247,7 +250,7 @@ const PropertyListingForm = () => {
           numberOfBathrooms: "",
           numberOfDiningrooms: "",
           numberOfGarage: "",
-          numberOfBelconies: "",
+          numberOfBalconies: "",
           renovation: "",
           yearBuilt: "",
         },
@@ -273,8 +276,17 @@ const PropertyListingForm = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log("listing_form_data", data);
+  const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+    const updatedData = {
+      ...data,
+      listingType: data.listingType as "Rent" | "Sale" | "Buy" | "Lease",
+    };
+    const response = await createPropertyListing(updatedData);
+    console.log(response);
+    if (response?.status === 201) {
+      toast.success(response.data.message);
+      form.reset();
+    }
   };
   return (
     <Form {...form}>
@@ -582,7 +594,7 @@ const PropertyListingForm = () => {
             />
             <FormField
               control={form.control}
-              name="propertyDetails.propertyFeatures.numberOfBelconies"
+              name="propertyDetails.propertyFeatures.numberOfBalconies"
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel>Belcony</FormLabel>
