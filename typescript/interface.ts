@@ -36,49 +36,48 @@ export interface ITrendingProperty {
 }
 
 export interface PropertyProps {
-  id: string;
-  propertyId: string;
-  name: string;
-  location: string;
-  address: string;
-  price: number;
-  currency: string;
-  bedrooms: number;
-  bathrooms: number;
-  squareFeet: number;
-  type: string;
-  image: {
-    url?: string;
-    gallery?: string[];
-  };
-  listingType: "Rent" | "Sell" | "Buy" | "Lease";
+  title: string;
   description: string;
-  propertyFeatures: {
-    parking: string;
-    coolingSystem: string;
-    heatingSystem: string;
-    flooring: string;
-    renovation: string;
-    constructionYear: string;
-    furnishing: string;
+  propertyType: string;
+  listingType: "Rent" | "Sale" | "Buy" | "Lease";
+  currency: string;
+  address: {
+    street: string;
+    city: string;
+    country: string;
+    zipCode: string;
   };
-  propertyUtilities: {
-    water: string;
-    electricity: string;
-    gas: string;
-    internet: string;
+  price: string;
+  propertyDetails: {
+    propertyFeatures: {
+      propertySize: string;
+      propertySizeUnit: string;
+      numberOfBedrooms: string;
+      numberOfBathrooms: string;
+      numberOfDiningrooms: string;
+      numberOfGarage: string;
+      numberOfBalconies: string;
+      renovation: string;
+      yearBuilt: string;
+    };
+    propertyUtilities: {
+      gas: string;
+      electricity: string;
+      internet: string;
+      water: string;
+    };
+    outdoorFeatures: {
+      garden: string;
+      pool: string;
+      playground: string;
+      fencing: string;
+    };
+    nearby: {
+      school: string;
+      hospital: string;
+      shoppingCenter: string;
+      publicTransport: string;
+    };
   };
-  outdoorFeatures: {
-    garden: string;
-    pool: string;
-    playground: string;
-    fencing: string;
-  };
-  nearby: {
-    schools: string[];
-    hospitals: string[];
-    shoppingCenters: string[];
-    publicTransport: string[];
-  };
-  author?: AuthorInfo;
+  author?: any;
 }
