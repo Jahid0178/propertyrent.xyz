@@ -22,6 +22,7 @@ const authStore = create(
         );
         if (response.status === 200) {
           set({ user: null });
+          window.location.href = "/";
         }
       } catch (error) {}
     },
