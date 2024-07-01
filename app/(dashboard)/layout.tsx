@@ -3,6 +3,9 @@ import DashboardSidebar from "@/components/Sidebars/DashboardSidebar/DashboardSi
 import DashboardHeader from "@/components/common/DashboardHeader/DashboardHeader";
 import DashboardFooter from "@/components/common/DashboardFooter/DashboardFooter";
 import isAuthenticated from "@/utils/isAuthenticated";
+import { ToastContainer } from "react-toastify";
+// React toastify css
+import "react-toastify/dist/ReactToastify.css";
 
 type DashboardLayoutProps = {
   children: React.ReactNode;
@@ -16,6 +19,7 @@ const DashboardLayout = async ({ children }: DashboardLayoutProps) => {
       <>
         <DashboardHeader />
         <main className="sm:ml-64 mt-16">{children}</main>
+        <ToastContainer />
         <DashboardFooter />
       </>
     </>

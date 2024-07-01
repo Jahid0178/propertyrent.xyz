@@ -1,5 +1,52 @@
-import { PropertyProps } from "@/typescript/interface";
 import axios from "axios";
+import { PropertyProps } from "@/typescript/interface";
+
+const defaultProperty: PropertyProps = {
+  title: "",
+  description: "",
+  propertyType: "",
+  listingType: "Rent",
+  currency: "",
+  address: {
+    street: "",
+    city: "",
+    country: "",
+    zipCode: "",
+  },
+  price: "",
+  propertyDetails: {
+    propertyFeatures: {
+      propertySize: "",
+      propertySizeUnit: "",
+      numberOfBedrooms: "",
+      numberOfBathrooms: "",
+      numberOfDiningrooms: "",
+      numberOfGarage: "",
+      numberOfBalconies: "",
+      renovation: "",
+      yearBuilt: "",
+    },
+    propertyUtilities: {
+      gas: "",
+      electricity: "",
+      internet: "",
+      water: "",
+    },
+    outdoorFeatures: {
+      garden: "",
+      pool: "",
+      playground: "",
+      fencing: "",
+    },
+    nearby: {
+      school: "",
+      hospital: "",
+      shoppingCenter: "",
+      publicTransport: "",
+    },
+  },
+};
+
 export const getAllPropertiesType = async () => {
   try {
     const response = await axios.get(
@@ -18,64 +65,20 @@ export const getAllProperties = async (searchParams: string = "") => {
   } catch (error) {}
 };
 
-const defaultProperty: PropertyProps = {
-  id: "",
-  name: "",
-  location: "",
-  address: "",
-  description: "",
-  propertyFeatures: {
-    parking: "",
-    coolingSystem: "",
-    heatingSystem: "",
-    flooring: "",
-    renovation: "",
-    constructionYear: "",
-    furnishing: "",
-  },
-  propertyUtilities: {
-    water: "",
-    electricity: "",
-    gas: "",
-    internet: "",
-  },
-  outdoorFeatures: {
-    garden: "",
-    pool: "",
-    playground: "",
-    fencing: "",
-  },
-  nearby: {
-    schools: [],
-    hospitals: [],
-    shoppingCenters: [],
-    publicTransport: [],
-  },
-  price: 0,
-  currency: "USD",
-  listingType: "Rent",
-  type: "unknown",
-  propertyId: "N/A",
-  image: {},
-  bedrooms: 0,
-  bathrooms: 0,
-  squareFeet: 0,
-  author: {
-    id: "",
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-    contactInformation: {
-      phone: "",
-      email: "",
-    },
-    avatar: "",
-    points: 0,
-    rating: 0,
-    credit: 0,
-    paymentMethod: "",
-  },
+// create property listing
+export const createPropertyListing = async (data: PropertyProps) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`,
+      data,
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error("createPropertyListing", error);
+  }
 };
 
 export const getPropertyById = async (
