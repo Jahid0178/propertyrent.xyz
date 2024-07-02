@@ -1,6 +1,6 @@
 export interface AuthorInfo {
   id: string;
-  name: string;
+  fullName: string;
   phone: string;
   email: string;
   address: string;
