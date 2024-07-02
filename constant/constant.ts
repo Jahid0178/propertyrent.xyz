@@ -1,0 +1,3 @@
+const USER_MINIMUM_CREDIT = 50;
+
+export { USER_MINIMUM_CREDIT };

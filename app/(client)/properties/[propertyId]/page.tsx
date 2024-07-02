@@ -22,7 +22,9 @@ interface PropertyDetailsPageProps {
  *     title: string;
  *     description: string;
  *     url: string;
- *     images: string[];
+ *     images: {
+ *        url: string;
+ *  }[];
  *   };
  * }>} - A promise that resolves to an object containing the generated metadata.
  */
@@ -35,13 +37,15 @@ export async function generateMetadata({
     title: string;
     description: string;
     url: string;
-    images: string[];
+    images: {
+      url: string;
+    }[];
   };
 }> {
   const property = await getPropertyById(propertyId);
-  const title = `${property?.name} - PropertyRent.xyz` || "PropertyRent.xyz";
+  const title = `${property?.title} - PropertyRent.xyz` || "PropertyRent.xyz";
   const description = property?.description || "";
-  const image = property?.image?.url || "";
+  const image = property?.images[0]?.url || "";
   const url = `https://propertyrent.xyz/properties/${propertyId}`;
 
   return {
@@ -51,7 +55,11 @@ export async function generateMetadata({
       title,
       description,
       url,
-      images: [image],
+      images: [
+        {
+          url: image,
+        },
+      ],
     },
   };
 }
@@ -61,14 +69,15 @@ const PropertyDetailsPage = async ({
 }: PropertyDetailsPageProps) => {
   const propertyData = await getPropertyById(propertyId);
 
-  const { name, price, currency, listingType, type, image } = propertyData;
+  const { _id, title, price, currency, listingType, propertyType, images } =
+    propertyData;
 
   return (
     <section>
       <div className="container">
         <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-semibold">{name}</h2>
+            <h2 className="text-2xl font-semibold">{title}</h2>
             <p>
               Price: {formatNumberWithCommas(price as number)} {currency}
             </p>
@@ -76,20 +85,17 @@ const PropertyDetailsPage = async ({
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <Badge>{listingType}</Badge>
-              <Link
-                href={`/property-category/${type.toLowerCase()}`}
-                className="hover:text-orange-500"
-              >
-                {type}
+              <Link href={`#`} className="hover:text-orange-500">
+                {propertyType}
               </Link>
-              <p>Property ID: {propertyId}</p>
+              <p>Property ID: {_id}</p>
               <p>Views: 6352</p>
             </div>
             <div>2</div>
           </div>
         </div>
         <div className="mt-6">
-          {image?.gallery && <PropertyImageGallery gallery={image?.gallery} />}
+          {images && <PropertyImageGallery gallery={images} />}
         </div>
         <PropertyDetailsSection propertyData={propertyData} />
       </div>

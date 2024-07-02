@@ -99,9 +99,10 @@ export const getPropertyById = async (
 ): Promise<PropertyProps> => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_TEST_API_URL}/properties/${propertyId}`
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/${propertyId}`
     );
-    return response.data ?? defaultProperty;
+
+    return response.data.property ?? defaultProperty;
   } catch (error) {
     console.log(error);
     return defaultProperty;
