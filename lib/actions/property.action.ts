@@ -66,7 +66,7 @@ export const getAllProperties = async (searchParams: string = "") => {
 };
 
 // create property listing
-export const createPropertyListing = async (data: PropertyProps) => {
+export const createPropertyListing = async (data: any) => {
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`,
