@@ -36,18 +36,22 @@ export interface ITrendingProperty {
 }
 
 export interface PropertyProps {
+  _id: string;
   title: string;
   description: string;
   propertyType: string;
   listingType: "Rent" | "Sale" | "Buy" | "Lease";
   currency: string;
+  images: {
+    url: string;
+  }[];
   address: {
     street: string;
     city: string;
     country: string;
     zipCode: string;
   };
-  price: string;
+  price: number;
   propertyDetails: {
     propertyFeatures: {
       propertySize: string;
