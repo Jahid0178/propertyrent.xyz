@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import AuthorCard from "@/components/Cards/AuthorCard";
 import { PropertyProps } from "@/typescript/interface";
@@ -17,6 +18,7 @@ import { LuFlower2, LuSchool } from "react-icons/lu";
 import { FaRegHospital } from "react-icons/fa";
 import { Span } from "next/dist/trace";
 import { Button } from "@/components/ui/button";
+import PropertyLocation from "./PropertyLocation";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -26,17 +28,25 @@ const PropertyDetailsSection = ({
   propertyData,
 }: PropertyDetailsSectionProps) => {
   const {
-    description,
-    bedrooms,
-    bathrooms,
-    squareFeet,
-    address,
     author,
-    propertyFeatures: { constructionYear, renovation },
-    propertyUtilities: { gas, electricity, internet, water },
-    outdoorFeatures: { pool, garden, playground, fencing },
-    nearby: { schools, hospitals, shoppingCenters, publicTransport },
-    location,
+    description,
+    address: { city, country, zipCode, street },
+    propertyDetails: {
+      propertyFeatures: {
+        propertySize,
+        propertySizeUnit,
+        numberOfBedrooms,
+        numberOfBathrooms,
+        numberOfDiningrooms,
+        numberOfGarage,
+        numberOfBalconies,
+        renovation,
+        yearBuilt,
+      },
+      propertyUtilities: { gas, electricity, internet, water },
+      outdoorFeatures: { garden, pool, playground, fencing },
+      nearby: { school, hospital, shoppingCenter, publicTransport },
+    },
   } = propertyData;
 
   return (
@@ -57,21 +67,23 @@ const PropertyDetailsSection = ({
                   <RxSize size={22} />
                 </span>
                 <span>Size</span>
-                <span className="ml-auto">{squareFeet} sq.ft</span>
+                <span className="ml-auto">
+                  {propertySize} {propertySizeUnit}
+                </span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <IoBedOutline size={22} />
                 </span>
                 <span>Bedrooms</span>
-                <span className="ml-auto">{bedrooms}</span>
+                <span className="ml-auto">{numberOfBedrooms}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <TbBath size={22} />
                 </span>
                 <span>Bathrooms</span>
-                <span className="ml-auto">{bathrooms}</span>
+                <span className="ml-auto">{numberOfBathrooms}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
@@ -85,14 +97,14 @@ const PropertyDetailsSection = ({
                   <CiCalendarDate size={22} />
                 </span>
                 <span>Construction Year</span>
-                <span className="ml-auto">{constructionYear}</span>
+                <span className="ml-auto">{yearBuilt}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <IoLocationOutline size={22} />
                 </span>
                 <span>Location</span>
-                <span className="ml-auto">{location}</span>
+                <span className="ml-auto">{city}</span>
               </div>
             </div>
           </div>
@@ -170,54 +182,39 @@ const PropertyDetailsSection = ({
                   <LuSchool size={22} />
                 </span>
                 <span>Schools</span>
-                <span className="ml-auto flex gap-2">
-                  {schools.map((school) => (
-                    <span>{school}</span>
-                  ))}
-                </span>
+                <span className="ml-auto flex gap-2">{school}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <FaRegHospital size={22} />
                 </span>
                 <span>Hospital</span>
-                <span className="ml-auto flex gap-2">
-                  {hospitals.map((hospital) => (
-                    <span>{hospital}</span>
-                  ))}
-                </span>
+                <span className="ml-auto flex gap-2">{hospital}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <MdOutlineShoppingCart size={22} />
                 </span>
                 <span>Shopping Center</span>
-                <span className="ml-auto flex gap-2">
-                  {shoppingCenters.map((shoppingCenter) => (
-                    <span>{shoppingCenter}</span>
-                  ))}
-                </span>
+                <span className="ml-auto flex gap-2">{shoppingCenter}</span>
               </div>
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <IoBusOutline size={22} />
                 </span>
                 <span>Public Transport</span>
-                <span className="ml-auto flex gap-2">
-                  {publicTransport.map((transport) => (
-                    <span>{transport}</span>
-                  ))}
-                </span>
+                <span className="ml-auto flex gap-2">{publicTransport}</span>
               </div>
             </div>
           </div>
-          <div className="mt-4">
-            <h3 className="mb-2 text-lg font-semibold">Property Address</h3>
-            <div className="flex justify-between items-center">
-              <address>{address}</address>
-              <Button>Show on map</Button>
-            </div>
-          </div>
+          <PropertyLocation
+            location={{
+              city,
+              country,
+              zipCode,
+              street,
+            }}
+          />
         </div>
       </div>
       <div className="col-span-12 md:col-span-4">
