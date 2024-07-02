@@ -56,6 +56,7 @@ const FormSchema = z.object({
   propertyType: z.string().nonempty("Property Type is required"),
   listingType: z.string().nonempty("Listing Type is required"),
   currency: z.string().min(1, { message: "Currency is required" }),
+  images: z.any(),
   address: z.object({
     street: z
       .string({
@@ -235,6 +236,7 @@ const PropertyListingForm = () => {
       propertyType: "",
       listingType: "",
       currency: "",
+      images: {},
       address: {
         street: "",
         city: "",
@@ -277,20 +279,41 @@ const PropertyListingForm = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-    const updatedData = {
-      ...data,
-      listingType: data.listingType as "Rent" | "Sale" | "Buy" | "Lease",
-    };
-    const response = await createPropertyListing(updatedData);
-    console.log(response);
-    if (response?.status === 201) {
-      toast.success(response.data.message);
-      form.reset();
+    try {
+      const formData = new FormData();
+
+      // Append files
+      // if(data.images) {
+      //   data.images.forEach((image: any) => {
+      //     console.log(image)
+      //     formData.append("images", image);
+      //   })
+      // }
+      if (data.images && data.images.length > 0) {
+        for (let i = 0; i < data.images.length; i++) {
+          formData.append("images", data.images[i]);
+        }
+      }
+
+      formData.append("data", JSON.stringify(data));
+
+      const response = createPropertyListing(formData);
+      await toast.promise(response, {
+        pending: "Creating property listing...",
+        success: "Property listing created successfully",
+        error: "Error creating property listing",
+      });
+    } catch (error) {
+      console.error("Error uploading image:", error);
     }
   };
   return (
     <Form {...form}>
-      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        className="space-y-8"
+        onSubmit={form.handleSubmit(onSubmit)}
+        encType="multipart/form-data"
+      >
         <div className="bg-gray-100 rounded-md p-4">
           <h3 className="text-lg font-medium">Basic Information</h3>
           <div className="mt-4 space-y-4">
@@ -427,6 +450,26 @@ const PropertyListingForm = () => {
                       placeholder="Enter Property Description"
                       {...field}
                       rows={8}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="images"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Property Image</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="file"
+                      className="bg-white"
+                      placeholder="Enter Property Image"
+                      // {...field}
+                      multiple
+                      onChange={(e) => field.onChange(e.target.files)}
                     />
                   </FormControl>
                   <FormMessage />
