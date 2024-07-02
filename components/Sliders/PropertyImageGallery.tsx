@@ -9,7 +9,9 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 interface IPropertyImageGallery {
-  gallery: string[];
+  gallery: {
+    url: string;
+  }[];
 }
 
 const PropertyImageGallery = ({ gallery }: IPropertyImageGallery) => {
@@ -26,7 +28,7 @@ const PropertyImageGallery = ({ gallery }: IPropertyImageGallery) => {
         {gallery.map((image, ind) => (
           <SwiperSlide key={ind}>
             <Image
-              src={image}
+              src={image.url}
               alt="property image"
               width={1280}
               height={500}
@@ -48,7 +50,7 @@ const PropertyImageGallery = ({ gallery }: IPropertyImageGallery) => {
         {gallery.map((image, ind) => (
           <SwiperSlide key={ind}>
             <Image
-              src={image}
+              src={image.url}
               alt="property image"
               width={1280}
               height={500}
