@@ -2,18 +2,20 @@ import axios from "axios";
 import { PropertyProps } from "@/typescript/interface";
 
 const defaultProperty: PropertyProps = {
+  _id: "",
   title: "",
   description: "",
   propertyType: "",
   listingType: "Rent",
   currency: "",
+  images: [],
   address: {
     street: "",
     city: "",
     country: "",
     zipCode: "",
   },
-  price: "",
+  price: 0,
   propertyDetails: {
     propertyFeatures: {
       propertySize: "",
@@ -54,6 +56,17 @@ export const getAllPropertiesType = async () => {
     );
     return response.data;
   } catch (error) {}
+};
+
+export const getAllPropertyListings = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("getAllPropertyListings", error);
+  }
 };
 
 export const getAllProperties = async (searchParams: string = "") => {
