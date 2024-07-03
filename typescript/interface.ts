@@ -85,3 +85,12 @@ export interface PropertyProps {
   };
   author?: any;
 }
+
+export interface IPackage {
+  _id: string;
+  packageTitle: string;
+  creditTitle: string;
+  price: string;
+  features: string[];
+  description?: string;
+}
