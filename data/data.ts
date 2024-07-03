@@ -6,6 +6,8 @@ import {
 import { FaRegUser } from "react-icons/fa";
 import { BsBuilding, BsBuildingAdd, BsBuildingCheck } from "react-icons/bs";
 import { GoGear } from "react-icons/go";
+import { features } from "process";
+import { IPackage } from "@/typescript/interface";
 
 export const navigationMenus: {
   id: number;
@@ -401,5 +403,82 @@ export const waterTypes: {
     id: "4",
     label: "Rainwater Harvesting",
     value: "Rainwater Harvesting",
+  },
+];
+
+export const creditPackages: IPackage[] = [
+  {
+    _id: "1",
+    packageTitle: "Budget Bliss Package",
+    creditTitle: "50 Credits",
+    price: "50 BDT",
+    features: ["50 Credits", "No hidden fees", "Unilimited Validity"],
+    description:
+      "Perfect for those seeking value and essential features at an unbeatable price. Enjoy 50 credits with no hidden fees and unlimited validity.",
+  },
+  {
+    _id: "2",
+    packageTitle: "Comfort Choice Package",
+    creditTitle: "100 Credits",
+    price: "100 BDT",
+    features: ["100 Credits", "No hidden fees", "Unilimited Validity"],
+    description:
+      "A balanced option providing 100 credits. Ideal for moderate needs with the assurance of no hidden fees and unlimited validity.",
+  },
+  {
+    _id: "3",
+    packageTitle: "Premium Plus Package",
+    creditTitle: "200 Credits",
+    price: "200 BDT",
+    features: [
+      "200 Credits",
+      "Free 24/7 support",
+      "No hidden fees",
+      "Unilimited Validity",
+    ],
+    description:
+      "Upgrade to 200 credits with added benefits like free 24/7 support. Experience premium features with the convenience of no hidden fees and unlimited validity.",
+  },
+  {
+    _id: "4",
+    packageTitle: "Elite Excellence Package",
+    creditTitle: "500 Credits",
+    price: "500 BDT",
+    features: [
+      "500 Credits",
+      "Free 24/7 support",
+      "No hidden fees",
+      "Unilimited Validity",
+    ],
+    description:
+      "For those who seek excellence, this package offers 500 credits and premium support services. No hidden fees and unlimited validity make it a top choice.",
+  },
+  {
+    _id: "5",
+    packageTitle: "Luxury Living Package",
+    creditTitle: "1000 Credits",
+    price: "1000 BDT",
+    features: [
+      "1000 Credits",
+      "Free 24/7 support",
+      "No hidden fees",
+      "Unilimited Validity",
+    ],
+    description:
+      "Designed for the luxury seeker, this package offers 1000 credits and unparalleled support. Enjoy a seamless experience with no hidden fees and unlimited validity.",
+  },
+  {
+    _id: "6",
+    packageTitle: "Ultimate Prestige Package",
+    creditTitle: "2000 Credits",
+    price: "2000 BDT",
+    features: [
+      "2000 Credits",
+      "Free 24/7 support",
+      "No hidden fees",
+      "Unilimited Validity",
+    ],
+    description:
+      "The epitome of prestige and value. Receive 2000 credits with top-tier support, no hidden fees, and unlimited validity for the ultimate property rental experience.",
   },
 ];
