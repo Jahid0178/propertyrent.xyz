@@ -121,3 +121,15 @@ export const getPropertyByRegion = async (
     return [];
   }
 };
+
+export const getPropertyByUserId = async (userId: string) => {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+    const response = await axios.get(`${baseUrl}/users/${userId}`);
+    if (response.status === 200) {
+      return response.data?.user;
+    }
+  } catch (error) {
+    console.error("get property by user id error", error);
+  }
+};
