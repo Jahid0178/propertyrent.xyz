@@ -34,3 +34,15 @@ export const handleLoginUser = async (data: any) => {
   );
   return response;
 };
+
+export const handleUpdateUser = async (userId: string, data: any) => {
+  try {
+    const response = await axios.put(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/${userId}`,
+      data
+    );
+    return response;
+  } catch (error: any) {
+    console.log("error from handle update user", error);
+  }
+};

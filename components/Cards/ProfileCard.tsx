@@ -80,7 +80,7 @@ const ProfileCard = () => {
       </CardContent>
       <CardFooter className="justify-between">
         <Button asChild size="sm">
-          <Link href="#" className="text-sm">
+          <Link href="/user/dashboard/profile/edit" className="text-sm">
             Edit Profile
           </Link>
         </Button>
