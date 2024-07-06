@@ -9,6 +9,7 @@ const defaultProperty: PropertyProps = {
   listingType: "Rent",
   currency: "",
   images: [],
+  views: 0,
   address: {
     street: "",
     city: "",
