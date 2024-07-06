@@ -69,8 +69,16 @@ const PropertyDetailsPage = async ({
 }: PropertyDetailsPageProps) => {
   const propertyData = await getPropertyById(propertyId);
 
-  const { _id, title, price, currency, listingType, propertyType, images } =
-    propertyData;
+  const {
+    _id,
+    title,
+    price,
+    currency,
+    listingType,
+    propertyType,
+    images,
+    views,
+  } = propertyData;
 
   return (
     <section>
@@ -89,7 +97,7 @@ const PropertyDetailsPage = async ({
                 {propertyType}
               </Link>
               <p>Property ID: {_id}</p>
-              <p>Views: 6352</p>
+              <p>Views: {views}</p>
             </div>
             <div>2</div>
           </div>
