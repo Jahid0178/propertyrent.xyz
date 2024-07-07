@@ -3,13 +3,13 @@ import axios from "axios";
 import Link from "next/link";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
 import TredingPropertyCard from "@/components/Cards/TrendingPropertyCard";
-import { ITrendingProperty } from "@/typescript/interface";
+import { ITrendingProperty, PropertyProps } from "@/typescript/interface";
 import { Button } from "@/components/ui/button";
+import { getTrendingProperties } from "@/lib/actions/property.action";
 
 const TrendingPropertySection = async () => {
-  const { data: trendingProperties } = await axios.get(
-    `${process.env.NEXT_PUBLIC_TEST_API_URL}/trendingProperties`
-  );
+  const trendingProperties = await getTrendingProperties();
+
   return (
     <section>
       <div className="container">
@@ -26,9 +26,9 @@ const TrendingPropertySection = async () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {trendingProperties
               .slice(0, 8)
-              .map((trendingProperty: ITrendingProperty) => (
+              .map((trendingProperty: PropertyProps) => (
                 <TredingPropertyCard
-                  key={trendingProperty.id}
+                  key={trendingProperty?._id}
                   propertyData={trendingProperty}
                 />
               ))}
