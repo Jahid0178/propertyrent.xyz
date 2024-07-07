@@ -201,3 +201,19 @@ export const handleSavedProperty = async (
     console.error("error from handler saved property", error);
   }
 };
+
+export const handleGetSavedPropertyByUserId = async (userId: string) => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/saved-property/${userId}`
+    );
+
+    if (response.status === 200) {
+      return response.data.userSavedProperties;
+    } else {
+      throw new Error(response.data.message);
+    }
+  } catch (error) {
+    console.error("error from handler saved property", error);
+  }
+};
