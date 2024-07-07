@@ -39,6 +39,8 @@ const SavedPropertyTable = () => {
         <TableHead>Property ID</TableHead>
         <TableHead>Name</TableHead>
         <TableHead>Price</TableHead>
+        <TableHead>Property Type</TableHead>
+        <TableHead>Listing Type</TableHead>
         <TableHead>Saved at</TableHead>
         <TableHead className="text-right">Action</TableHead>
       </TableHeader>
@@ -73,6 +75,8 @@ const SavedPropertyTable = () => {
               <TableCell>{_id}</TableCell>
               <TableCell>{title}</TableCell>
               <TableCell>{formattedPrice}</TableCell>
+              <TableCell>{propertyType}</TableCell>
+              <TableCell>{listingType}</TableCell>
               <TableCell>{formattedTime}</TableCell>
               <TableCell className="text-right space-x-4">
                 <Button variant="outline" size="sm" asChild>
