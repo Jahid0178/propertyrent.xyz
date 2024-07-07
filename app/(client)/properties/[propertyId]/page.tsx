@@ -5,6 +5,7 @@ import PropertyImageGallery from "@/components/Sliders/PropertyImageGallery";
 import { getPropertyById } from "@/lib/actions/property.action";
 import { Badge } from "@/components/ui/badge";
 import PropertyDetailsSection from "./_component/PropertyDetailsSection";
+import PropertyActionButtons from "./_component/PropertyActionButton";
 
 interface PropertyDetailsPageProps {
   params: { propertyId: string };
@@ -99,7 +100,7 @@ const PropertyDetailsPage = async ({
               <p>Property ID: {_id}</p>
               <p>Views: {views}</p>
             </div>
-            <div>2</div>
+            <PropertyActionButtons propertyId={_id} />
           </div>
         </div>
         <div className="mt-6">
