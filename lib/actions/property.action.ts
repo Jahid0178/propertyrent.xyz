@@ -134,3 +134,42 @@ export const getPropertyByUserId = async (userId: string) => {
     console.error("get property by user id error", error);
   }
 };
+
+export const getTrendingProperties = async (): Promise<PropertyProps[]> => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/trending`
+    );
+
+    return response.data?.trendingProperty;
+  } catch (error) {
+    console.log("trending property error", error);
+    return [];
+  }
+};
+
+export const getFeaturedProperties = async (): Promise<PropertyProps[]> => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/featured`
+    );
+
+    return response.data?.featuredProperties;
+  } catch (error) {
+    console.log("trending property error", error);
+    return [];
+  }
+};
+
+export const getRecentProperties = async (): Promise<PropertyProps[]> => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/recent`
+    );
+
+    return response.data?.recentProperties;
+  } catch (error) {
+    console.log("recent property error", error);
+    return [];
+  }
+};
