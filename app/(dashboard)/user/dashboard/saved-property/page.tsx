@@ -1,7 +1,8 @@
 import React from "react";
+import SavedPropertySection from "./_components/SavedPropertySection";
 
 const SavedPropertyPage = () => {
-  return <div>Saved Property Page</div>;
+  return <SavedPropertySection />;
 };
 
 export default SavedPropertyPage;
