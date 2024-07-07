@@ -13,11 +13,15 @@ import {
 import { FaRegTrashAlt, FaLink } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import authStore from "@/store/authStore";
-import { handleGetSavedPropertyByUserId } from "@/lib/actions/property.action";
+import {
+  handleDeleteSavedProperty,
+  handleGetSavedPropertyByUserId,
+} from "@/lib/actions/property.action";
 import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
 import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
+import { toast } from "react-toastify";
 
 const SavedPropertyTable = () => {
   const [savedProperties, setSavedProperties] = useState([]);
@@ -29,7 +33,18 @@ const SavedPropertyTable = () => {
       setSavedProperties(savedProperties);
     };
     getSavedPropertyByUserId();
-  }, []);
+  }, [savedProperties]);
+
+  const handleDelete = async (savedPropertyId: string) => {
+    try {
+      const response = await handleDeleteSavedProperty(savedPropertyId);
+      if (response.status === 200) {
+        toast.success(response.message);
+      }
+    } catch (error) {
+      console.error("error from handle delete", error);
+    }
+  };
 
   return (
     <Table className="border">
@@ -84,7 +99,11 @@ const SavedPropertyTable = () => {
                     <FaLink />
                   </Link>
                 </Button>
-                <Button variant="destructive" size="sm">
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => handleDelete(_id)}
+                >
                   <FaRegTrashAlt />
                 </Button>
               </TableCell>

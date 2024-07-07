@@ -217,3 +217,18 @@ export const handleGetSavedPropertyByUserId = async (userId: string) => {
     console.error("error from handler saved property", error);
   }
 };
+
+export const handleDeleteSavedProperty = async (propertyId: string) => {
+  try {
+    const response = await axios.delete(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/saved-property/${propertyId}`
+    );
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      throw new Error(response.data.message);
+    }
+  } catch (error) {
+    console.error("error from handler saved property", error);
+  }
+};
