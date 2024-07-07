@@ -173,3 +173,31 @@ export const getRecentProperties = async (): Promise<PropertyProps[]> => {
     return [];
   }
 };
+
+export const handleSavedProperty = async (
+  propertyId: string,
+  userId: string
+) => {
+  try {
+    const data = {
+      propertyId,
+      userId,
+    };
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/saved-property`,
+      {
+        data,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      throw new Error(response.data.message);
+    }
+  } catch (error) {
+    console.error("error from handler saved property", error);
+  }
+};
