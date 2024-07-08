@@ -1,7 +1,8 @@
 import React from "react";
+import SettingsSection from "./_components/SettingsSection";
 
 const SettingsPage = () => {
-  return <div>Settings Page</div>;
+  return <SettingsSection />;
 };
 
 export default SettingsPage;
