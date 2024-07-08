@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -18,15 +20,21 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
+const formSchema = z.object({
+  theme: z.string(),
+  language: z.string(),
+});
+
 const SettingsForm = () => {
-  const form = useForm({
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       theme: "light",
       language: "bn",
     },
   });
 
-  const handleFormSubmit = async (data: any) => {
+  const handleFormSubmit = async (data: z.infer<typeof formSchema>) => {
     console.log(data);
   };
   return (
