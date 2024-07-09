@@ -35,7 +35,7 @@ const PropertyListingTable = ({ properties }: any) => {
           <TableRow key={property._id}>
             <TableCell>
               <Image
-                src={property?.images[0]?.url}
+                src={property?.images[0]?.url || "/images/placeholder.png"}
                 alt={property.title}
                 width={100}
                 height={100}
