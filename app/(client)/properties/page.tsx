@@ -1,6 +1,7 @@
 import React from "react";
 import PropertyCard from "@/components/Cards/PropertyCard";
 import PropertyListingTopbar from "@/components/PropertyListingTopbar/PropertyListingTopbar";
+import PaginationWrapper from "@/components/common/Pagination/PaginationWrapper";
 import { getAllPropertyListings } from "@/lib/actions/property.action";
 
 type PropertiesPageProps = {
@@ -20,6 +21,9 @@ const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
           {properties.map((property: any) => (
             <PropertyCard key={property._id} propertyData={property} />
           ))}
+        </div>
+        <div className="mt-8">
+          <PaginationWrapper />
         </div>
       </div>
     </section>
