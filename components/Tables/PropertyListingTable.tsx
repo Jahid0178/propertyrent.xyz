@@ -60,6 +60,13 @@ const PropertyListingTable = ({ properties }: any) => {
             </TableCell>
           </TableRow>
         ))}
+        {properties.length === 0 && (
+          <TableRow>
+            <TableCell colSpan={8} className="text-center">
+              No property found
+            </TableCell>
+          </TableRow>
+        )}
       </TableBody>
     </Table>
   );

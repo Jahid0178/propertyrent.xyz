@@ -110,6 +110,13 @@ const SavedPropertyTable = () => {
             </TableRow>
           );
         })}
+        {savedProperties.length === 0 && (
+          <TableRow>
+            <TableCell colSpan={8} className="text-center">
+              No saved property found
+            </TableCell>
+          </TableRow>
+        )}
       </TableBody>
     </Table>
   );
