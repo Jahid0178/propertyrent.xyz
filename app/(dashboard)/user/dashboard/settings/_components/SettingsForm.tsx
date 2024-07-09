@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 const formSchema = z.object({
   theme: z.string(),
@@ -26,6 +27,7 @@ const formSchema = z.object({
 });
 
 const SettingsForm = () => {
+  const { setTheme } = useTheme();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,7 +37,8 @@ const SettingsForm = () => {
   });
 
   const handleFormSubmit = async (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    console.log(data.theme);
+    setTheme(data.theme);
   };
   return (
     <div className="w-full max-w-screen-md mx-auto bg-white shadow-md">
@@ -62,6 +65,7 @@ const SettingsForm = () => {
                   <SelectContent>
                     <SelectItem value="light">Light</SelectItem>
                     <SelectItem value="dark">Dark</SelectItem>
+                    <SelectItem value="system">System</SelectItem>
                   </SelectContent>
                 </Select>
               </FormItem>

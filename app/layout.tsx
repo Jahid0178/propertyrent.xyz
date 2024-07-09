@@ -5,6 +5,7 @@ import "./globals.css";
 // Import Swiper styles
 import "swiper/css";
 import InitializeStore from "./InitializeStore";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <InitializeStore user={data?.user?.user}>
-        <body className={inter.className}>{children}</body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <body className={inter.className}>{children}</body>
+        </ThemeProvider>
       </InitializeStore>
     </html>
   );
