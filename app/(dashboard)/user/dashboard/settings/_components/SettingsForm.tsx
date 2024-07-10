@@ -41,7 +41,7 @@ const SettingsForm = () => {
     setTheme(data.theme);
   };
   return (
-    <div className="w-full max-w-screen-md mx-auto bg-white shadow-md">
+    <div className="w-full max-w-screen-md mx-auto bg-white dark:bg-gray-900 rounded-md shadow-md">
       <Form {...form}>
         <form
           className="p-4 space-y-4"

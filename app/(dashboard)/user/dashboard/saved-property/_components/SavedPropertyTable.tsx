@@ -47,7 +47,7 @@ const SavedPropertyTable = () => {
   };
 
   return (
-    <Table className="border">
+    <Table className="border dark:border-gray-800">
       <TableCaption>A list of your saved properties</TableCaption>
       <TableHeader className="border-b">
         <TableHead className="w-[100px]">Image</TableHead>

@@ -24,14 +24,16 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <InitializeStore user={data?.user?.user}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <body className={inter.className}>{children}</body>
-        </ThemeProvider>
+        <body className={`${inter.className} dark:bg-gray-950`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
       </InitializeStore>
     </html>
   );

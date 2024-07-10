@@ -13,7 +13,7 @@
     @apply h-dvh bg-[url('/images/home/hero-banner-img.jpg')] bg-cover bg-center bg-no-repeat flex justify-center items-center;
   }
   .property-search-form-wrapper {
-    @apply p-4 bg-white rounded-md;
+    @apply p-4 bg-white dark:bg-gray-950 rounded-md;
   }
 
   .form-wrapper {

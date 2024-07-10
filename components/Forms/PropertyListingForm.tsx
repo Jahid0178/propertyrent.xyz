@@ -314,7 +314,7 @@ const PropertyListingForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         encType="multipart/form-data"
       >
-        <div className="bg-gray-100 rounded-md p-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4">
           <h3 className="text-lg font-medium">Basic Information</h3>
           <div className="mt-4 space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -478,7 +478,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Price & Area Details</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
@@ -576,7 +576,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Property Features</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
@@ -675,7 +675,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Property Utilities</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
@@ -787,7 +787,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Outdoor Features</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
@@ -878,7 +878,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Near By</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
@@ -957,7 +957,7 @@ const PropertyListingForm = () => {
             />
           </div>
         </div>
-        <div className="bg-gray-100 rounded-md p-4 space-y-4">
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4 space-y-4">
           <h3 className="text-lg font-medium">Property Address</h3>
           <div className="flex flex-col md:flex-row gap-4">
             <FormField
