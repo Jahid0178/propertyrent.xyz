@@ -52,13 +52,13 @@ const ProfileEditForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="space-y-4 border rounded-md p-4 bg-white shadow-md"
+          className="space-y-4 border dark:border-gray-800 rounded-md p-4 bg-white dark:bg-gray-900 shadow-md"
         >
           <FormField
             control={form.control}
             name="fullName"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="John Doe" />
@@ -70,7 +70,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="username"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel className="inline-flex gap-2 items-center">
                   Username{" "}
                   <TooltipProvider>
@@ -95,7 +95,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="johndoe@example.com" />
@@ -107,7 +107,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="phone"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel className="inline-flex gap-2 items-center">
                   Phone{" "}
                   <TooltipProvider>
@@ -134,7 +134,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="address.street"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>Street</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="123 Main St" />
@@ -146,7 +146,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="address.city"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>City</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Anytown" />
@@ -158,7 +158,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="address.state"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>State</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="DHK" />
@@ -170,7 +170,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="address.country"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>Country</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="BD" />
@@ -182,7 +182,7 @@ const ProfileEditForm = () => {
             control={form.control}
             name="address.zipCode"
             render={({ field }) => (
-              <FormItem className="bg-white">
+              <FormItem className="bg-white dark:bg-gray-900">
                 <FormLabel>Zip Code</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="12345" />

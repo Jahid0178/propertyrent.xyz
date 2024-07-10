@@ -16,7 +16,7 @@ import { Badge } from "../ui/badge";
 
 const PropertyListingTable = ({ properties }: any) => {
   return (
-    <Table className="border">
+    <Table className="border dark:border-gray-800">
       <TableCaption>
         A list of your {properties.length > 1 ? "properties" : "property"}.
       </TableCaption>

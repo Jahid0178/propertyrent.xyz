@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
           {dashboardSidebarLinks.map((link) => (
             <li
               key={link.id}
-              className={`${pathname === link.href ? "bg-orange-500 text-white rounded-sm" : "hover:bg-orange-50"}`}
+              className={`${pathname === link.href ? "bg-orange-500 text-white rounded-sm" : "hover:bg-orange-50 dark:hover:bg-gray-700"}`}
             >
               <Link
                 href={
