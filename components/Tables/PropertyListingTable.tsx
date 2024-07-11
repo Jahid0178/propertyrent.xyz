@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
 import { Badge } from "../ui/badge";
+import Link from "next/link";
 
 const PropertyListingTable = ({ properties }: any) => {
   return (
@@ -51,8 +52,10 @@ const PropertyListingTable = ({ properties }: any) => {
               <Badge>Active</Badge>
             </TableCell>
             <TableCell className="text-right space-x-2">
-              <Button size="icon">
-                <FaRegEdit size={16} />
+              <Button size="icon" asChild>
+                <Link href={`/user/dashboard/my-property/edit/${property._id}`}>
+                  <FaRegEdit size={16} />
+                </Link>
               </Button>
               <Button size="icon" variant="destructive">
                 <FaRegTrashAlt size={16} />
