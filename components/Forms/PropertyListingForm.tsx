@@ -34,7 +34,10 @@ import {
   propertyTypes,
   waterTypes,
 } from "@/data/data";
-import { createPropertyListing } from "@/lib/actions/property.action";
+import {
+  createPropertyListing,
+  updatePropertyListing,
+} from "@/lib/actions/property.action";
 import { PropertyProps } from "@/typescript/interface";
 import { toast } from "react-toastify";
 
@@ -227,52 +230,77 @@ const FormSchema = z.object({
   }),
 });
 
-const PropertyListingForm = () => {
+interface PropertyListingFormProps {
+  property?: any;
+  formType?: "create" | "edit";
+}
+
+const PropertyListingForm = ({
+  property,
+  formType = "create",
+}: PropertyListingFormProps) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      title: "",
-      description: "",
-      propertyType: "",
-      listingType: "",
-      currency: "",
-      images: {},
+      title: property?.title || "",
+      description: property?.description || "",
+      propertyType: property?.propertyType || "",
+      listingType: property?.listingType || "",
+      currency: property?.currency || "",
+      images: property?.images || [],
       address: {
-        street: "",
-        city: "",
-        country: "",
-        zipCode: "",
+        street: property?.address?.street || "",
+        city: property?.address?.city || "",
+        country: property?.address?.country || "",
+        zipCode: property?.address?.zipCode || "",
       },
-      price: "",
+      price: property?.price || "",
       propertyDetails: {
         propertyFeatures: {
-          propertySize: "",
-          propertySizeUnit: "",
-          numberOfBedrooms: "",
-          numberOfBathrooms: "",
-          numberOfDiningrooms: "",
-          numberOfGarage: "",
-          numberOfBalconies: "",
-          renovation: "",
-          yearBuilt: "",
+          propertySize:
+            property?.propertyDetails?.propertyFeatures?.propertySize || "",
+          propertySizeUnit:
+            property?.propertyDetails?.propertyFeatures?.propertySizeUnit || "",
+          numberOfBedrooms:
+            property?.propertyDetails?.propertyFeatures?.numberOfBedrooms || "",
+          numberOfBathrooms:
+            property?.propertyDetails?.propertyFeatures?.numberOfBathrooms ||
+            "",
+          numberOfDiningrooms:
+            property?.propertyDetails?.propertyFeatures?.numberOfDiningrooms ||
+            "",
+          numberOfGarage:
+            property?.propertyDetails?.propertyFeatures?.numberOfGarage || "",
+          numberOfBalconies:
+            property?.propertyDetails?.propertyFeatures?.numberOfBalconies ||
+            "",
+          renovation:
+            property?.propertyDetails?.propertyFeatures?.renovation || "",
+          yearBuilt:
+            property?.propertyDetails?.propertyFeatures?.yearBuilt || "",
         },
         propertyUtilities: {
-          gas: "",
-          electricity: "",
-          internet: "",
-          water: "",
+          gas: property?.propertyDetails?.propertyUtilities?.gas || "",
+          electricity:
+            property?.propertyDetails?.propertyUtilities?.electricity || "",
+          internet:
+            property?.propertyDetails?.propertyUtilities?.internet || "",
+          water: property?.propertyDetails?.propertyUtilities?.water || "",
         },
         outdoorFeatures: {
-          garden: "",
-          pool: "",
-          playground: "",
-          fencing: "",
+          garden: property?.propertyDetails?.outdoorFeatures?.garden || "",
+          pool: property?.propertyDetails?.outdoorFeatures?.pool || "",
+          playground:
+            property?.propertyDetails?.outdoorFeatures?.playground || "",
+          fencing: property?.propertyDetails?.outdoorFeatures?.fencing || "",
         },
         nearby: {
-          school: "",
-          hospital: "",
-          shoppingCenter: "",
-          publicTransport: "",
+          school: property?.propertyDetails?.nearby?.school || "",
+          hospital: property?.propertyDetails?.nearby?.hospital || "",
+          shoppingCenter:
+            property?.propertyDetails?.nearby?.shoppingCenter || "",
+          publicTransport:
+            property?.propertyDetails?.nearby?.publicTransport || "",
         },
       },
     },
@@ -297,11 +325,23 @@ const PropertyListingForm = () => {
 
       formData.append("data", JSON.stringify(data));
 
-      const response = createPropertyListing(formData);
+      const response =
+        formType === "create"
+          ? createPropertyListing(formData)
+          : updatePropertyListing(formData, property?._id);
       await toast.promise(response, {
-        pending: "Creating property listing...",
-        success: "Property listing created successfully",
-        error: "Error creating property listing",
+        pending:
+          formType === "create"
+            ? "Creating property listing"
+            : "Updating property listing",
+        success:
+          formType === "create"
+            ? "Property listing created successfully"
+            : "Property listing updated successfully",
+        error:
+          formType === "create"
+            ? "Error creating property listing"
+            : "Error updating property listing",
       });
     } catch (error) {
       console.error("Error uploading image:", error);
@@ -325,7 +365,10 @@ const PropertyListingForm = () => {
                   <FormItem>
                     <FormLabel>Listing Type</FormLabel>
                     <FormControl>
-                      <Select onValueChange={field.onChange}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <SelectTrigger className="bg-white">
                           <SelectValue placeholder="Select Listing Type" />
                         </SelectTrigger>
@@ -352,7 +395,10 @@ const PropertyListingForm = () => {
                   <FormItem>
                     <FormLabel>Property Type</FormLabel>
                     <FormControl>
-                      <Select onValueChange={field.onChange}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <SelectTrigger className="bg-white">
                           <SelectValue placeholder="Select Property Type" />
                         </SelectTrigger>
@@ -381,7 +427,10 @@ const PropertyListingForm = () => {
                   <FormItem>
                     <FormLabel>Build Year</FormLabel>
                     <FormControl>
-                      <Select onValueChange={field.onChange}>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
                         <SelectTrigger className="bg-white">
                           <SelectValue placeholder="Select Build Year" />
                         </SelectTrigger>
@@ -506,7 +555,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Currency</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Currency" />
                       </SelectTrigger>
@@ -554,7 +606,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Property Size Unit</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Unit" />
                       </SelectTrigger>
@@ -685,7 +740,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Gas</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Gas Type" />
                       </SelectTrigger>
@@ -709,7 +767,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Internet</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Internet Type" />
                       </SelectTrigger>
@@ -738,7 +799,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Electricity</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Electricity Type" />
                       </SelectTrigger>
@@ -765,7 +829,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Water</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select Water Type" />
                       </SelectTrigger>
@@ -797,7 +864,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Pool</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Does Property Have Pool?" />
                       </SelectTrigger>
@@ -818,7 +888,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Garden</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Does Property Have Garden?" />
                       </SelectTrigger>
@@ -841,7 +914,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Playground</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Does Property Have Playground?" />
                       </SelectTrigger>
@@ -862,7 +938,10 @@ const PropertyListingForm = () => {
                 <FormItem className="flex-1">
                   <FormLabel>Fencing</FormLabel>
                   <FormControl>
-                    <Select onValueChange={field.onChange}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Does Property Have Fencing?" />
                       </SelectTrigger>
@@ -1033,7 +1112,7 @@ const PropertyListingForm = () => {
           </div>
         </div>
         <Button type="submit" size="lg">
-          Add Property
+          {formType === "create" ? "Add Property" : "Update Property"}
         </Button>
       </form>
     </Form>
