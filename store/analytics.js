@@ -8,6 +8,7 @@ const analyticsStore = create(
     totalViews: 0,
     totalSales: 0,
     totalCredits: 0,
+    mostViewedProperties: [],
 
     getTotalProperty: async () => {
       const response = await axios.get(
@@ -22,6 +23,23 @@ const analyticsStore = create(
           totalProperty: response.data.data.properties.length,
           totalViews: response.data.data.totalPropertyViews,
         });
+      }
+    },
+
+    getMostViewedProperty: async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/analytics/most-viewed`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        set({
+          mostViewedProperties: response.data.data,
+        });
+      } catch (error) {
+        console.log("get error from most viewed", error);
       }
     },
   }))
