@@ -95,6 +95,21 @@ export const createPropertyListing = async (data: any) => {
   }
 };
 
+export const updatePropertyListing = async (data: any, propertyId: string) => {
+  try {
+    const response = await axios.put(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/${propertyId}`,
+      data,
+      {
+        withCredentials: true,
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error("updatePropertyListing", error);
+  }
+};
+
 export const getPropertyById = async (
   propertyId: string
 ): Promise<PropertyProps> => {
