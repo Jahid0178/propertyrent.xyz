@@ -21,7 +21,9 @@ const PropertyLocation = ({
             <br />
             Country: {country}
           </address>
-          <Button>Show on map</Button>
+          <Button asChild>
+            <Link href="/user/dashboard/buy-credit">Get Map Features</Link>
+          </Button>
         </div>
       ) : (
         <div className="flex gap-2">
