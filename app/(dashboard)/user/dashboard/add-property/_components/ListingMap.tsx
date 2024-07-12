@@ -15,8 +15,7 @@ const ListingMap: React.FC<ListingMapProps> = ({ onCoordinatesChange }) => {
     const map = new MapLibreMap({
       // @ts-ignore
       container: mapContainer.current,
-      style:
-        "https://api.maptiler.com/maps/streets-v2/style.json?key=Wr1PxvYpzszxQdCvA6tP",
+      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${process.env.NEXT_PUBLIC_MAPTILER_KEY}`,
       center: [DEFAULT_MAP_LNG, DEFAULT_MAP_LAT],
       zoom: 5,
       attributionControl: false,

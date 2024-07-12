@@ -19,6 +19,7 @@ import { FaRegHospital } from "react-icons/fa";
 import { Span } from "next/dist/trace";
 import { Button } from "@/components/ui/button";
 import PropertyLocation from "./PropertyLocation";
+import PropertyLocationMap from "./PropertyLocationMap";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -47,6 +48,7 @@ const PropertyDetailsSection = ({
       outdoorFeatures: { garden, pool, playground, fencing },
       nearby: { school, hospital, shoppingCenter, publicTransport },
     },
+    mapLocation,
   } = propertyData;
 
   return (
@@ -217,8 +219,9 @@ const PropertyDetailsSection = ({
           />
         </div>
       </div>
-      <div className="col-span-12 md:col-span-4">
+      <div className="col-span-12 md:col-span-4 space-y-4">
         {author && <AuthorCard author={author} />}
+        <PropertyLocationMap mapLocation={mapLocation} />
       </div>
     </div>
   );
