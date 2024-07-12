@@ -446,7 +446,7 @@ export const creditPackages: IPackage[] = [
     price: "500 BDT",
     features: [
       "500 Credits",
-      "Map Features",
+      "Premium Map Features",
       "Free 24/7 support",
       "No hidden fees",
       "Unilimited Validity",
@@ -461,7 +461,7 @@ export const creditPackages: IPackage[] = [
     price: "1000 BDT",
     features: [
       "1000 Credits",
-      "Map Features",
+      "Premium Map Features",
       "Free 24/7 support",
       "No hidden fees",
       "Unilimited Validity",
@@ -476,7 +476,7 @@ export const creditPackages: IPackage[] = [
     price: "2000 BDT",
     features: [
       "2000 Credits",
-      "Map Features",
+      "Premium Map Features",
       "Free 24/7 support",
       "No hidden fees",
       "Unilimited Validity",
