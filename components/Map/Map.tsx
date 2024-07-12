@@ -8,9 +8,10 @@ import "maplibre-gl/dist/maplibre-gl.css";
 interface MapProps {
   coordinates: number[];
   zoom: number;
+  className?: string;
 }
 
-const Map = ({ coordinates, zoom }: MapProps) => {
+const Map = ({ coordinates, zoom, className }: MapProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -47,7 +48,12 @@ const Map = ({ coordinates, zoom }: MapProps) => {
     return () => map.remove();
   }, []);
 
-  return <div ref={mapContainer} className="w-full h-64 relative rounded-md" />;
+  return (
+    <div
+      ref={mapContainer}
+      className={`w-full h-64 relative rounded-md overflow-hidden ${className}`}
+    />
+  );
 };
 
 export default Map;
