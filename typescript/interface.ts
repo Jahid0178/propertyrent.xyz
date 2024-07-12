@@ -85,6 +85,9 @@ export interface PropertyProps {
     };
   };
   author?: any;
+  mapLocation: {
+    coordinates: number[];
+  };
 }
 
 export interface IPackage {
