@@ -38,9 +38,9 @@ const ViewsAnalyticsChart = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Views Analytics</CardTitle>
+        <CardTitle>Top Property Views Analytics</CardTitle>
         <CardDescription>
-          Showing total views for the top properties
+          Analyzing the Popularity of Your Top Properties Based on View Counts
         </CardDescription>
       </CardHeader>
       <CardContent>
