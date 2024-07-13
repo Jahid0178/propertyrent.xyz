@@ -1,14 +1,38 @@
 "use client";
 
 import React from "react";
-import { Form, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import axios from "axios";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { toast } from "react-toastify";
+
+const formSchema = z.object({
+  name: z.string().trim().min(3, "Name must be at least 3 characters"),
+  email: z.string().trim().email("Email is required"),
+  phone: z
+    .string()
+    .trim()
+    .min(11, "Phone number must be at least 11 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(20, "Message is must be at least 20 characters"),
+});
 
 const ContactUsForm = () => {
-  const form = useForm({
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -17,8 +41,19 @@ const ContactUsForm = () => {
     },
   });
 
-  const handleContactUsForm = (data: any) => {
-    console.log(data);
+  const handleContactUsForm = async (data: z.infer<typeof formSchema>) => {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact/with-admin`,
+      data,
+      {
+        withCredentials: true,
+      }
+    );
+
+    if (response.status === 200) {
+      toast.success(response.data.message);
+      form.reset();
+    }
   };
 
   return (
@@ -34,6 +69,7 @@ const ContactUsForm = () => {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <Input placeholder="Enter your name" {...field} />
+              <FormMessage>{form.formState.errors.name?.message}</FormMessage>
             </FormItem>
           )}
         />
@@ -44,6 +80,7 @@ const ContactUsForm = () => {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <Input placeholder="Enter your email" {...field} />
+              <FormMessage>{form.formState.errors.email?.message}</FormMessage>
             </FormItem>
           )}
         />
@@ -54,6 +91,7 @@ const ContactUsForm = () => {
             <FormItem>
               <FormLabel>Phone</FormLabel>
               <Input placeholder="Enter your phone" {...field} />
+              <FormMessage>{form.formState.errors.phone?.message}</FormMessage>
             </FormItem>
           )}
         />
@@ -64,6 +102,9 @@ const ContactUsForm = () => {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <Textarea placeholder="Enter your message" {...field} rows={8} />
+              <FormMessage>
+                {form.formState.errors.message?.message}
+              </FormMessage>
             </FormItem>
           )}
         />
