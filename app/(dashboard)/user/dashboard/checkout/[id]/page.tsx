@@ -1,20 +1,17 @@
 import React from "react";
-import { creditPackages } from "@/data/data";
 import CheckoutPageSection from "./_components/CheckoutPageSection";
-import { IPackage } from "@/typescript/interface";
+import { handleGetSinglePackage } from "@/lib/actions/package.action";
 
 interface CheckoutPageProps {
   params: { id: string };
 }
 
-const CheckoutPage = ({ params }: CheckoutPageProps) => {
+const CheckoutPage = async ({ params }: CheckoutPageProps) => {
   const { id } = params;
 
-  const findPackage = creditPackages.find(
-    (creditPackage: IPackage) => creditPackage._id === id
-  );
+  const { creditPackage } = await handleGetSinglePackage(id);
 
-  return <CheckoutPageSection creditPackage={findPackage} />;
+  return <CheckoutPageSection creditPackage={creditPackage} />;
 };
 
 export default CheckoutPage;
