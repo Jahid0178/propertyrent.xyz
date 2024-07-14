@@ -5,7 +5,7 @@ import SectionHeading from "@/components/common/Heading/SectionHeading";
 import { IPackage } from "@/typescript/interface";
 
 interface CheckoutPageSectionProps {
-  creditPackage: IPackage | undefined;
+  creditPackage: IPackage;
 }
 
 const CheckoutPageSection = ({ creditPackage }: CheckoutPageSectionProps) => {

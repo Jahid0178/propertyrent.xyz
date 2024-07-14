@@ -1,9 +1,11 @@
 import React from "react";
 import PackageCard from "@/components/Cards/PackageCard";
-import { creditPackages } from "@/data/data";
 import { IPackage } from "@/typescript/interface";
+import { handleGetAllPackages } from "@/lib/actions/package.action";
 
-const BuyCreditPage = () => {
+const BuyCreditPage = async () => {
+  const { creditPackages } = await handleGetAllPackages();
+
   return (
     <section>
       <div className="container">
