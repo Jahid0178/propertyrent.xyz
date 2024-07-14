@@ -408,28 +408,33 @@ export const waterTypes: {
 
 export const creditPackages: IPackage[] = [
   {
-    _id: "1",
+    _id: "c9b1e8c72a974d2cbcdc9a6d77a1d7d3",
     packageTitle: "Budget Bliss Package",
     creditTitle: "50 Credits",
-    price: "50 BDT",
+    price: 50,
+    currency: "BDT",
     features: ["50 Credits", "No hidden fees", "Unilimited Validity"],
     description:
       "Perfect for those seeking value and essential features at an unbeatable price. Enjoy 50 credits with no hidden fees and unlimited validity.",
+    packageCode: "bbpkg001",
   },
   {
-    _id: "2",
+    _id: "ea7b8df93e6b4c1e92175f45f789a4c2",
     packageTitle: "Comfort Choice Package",
     creditTitle: "100 Credits",
-    price: "100 BDT",
+    price: 100,
+    currency: "BDT",
     features: ["100 Credits", "No hidden fees", "Unilimited Validity"],
     description:
       "A balanced option providing 100 credits. Ideal for moderate needs with the assurance of no hidden fees and unlimited validity.",
+    packageCode: "ccpkg002",
   },
   {
-    _id: "3",
+    _id: "7b23a23b8d4e44d2a1d9e58c0d6b7c8a",
     packageTitle: "Premium Plus Package",
     creditTitle: "200 Credits",
-    price: "200 BDT",
+    price: 200,
+    currency: "BDT",
     features: [
       "200 Credits",
       "Free 24/7 support",
@@ -438,12 +443,14 @@ export const creditPackages: IPackage[] = [
     ],
     description:
       "Upgrade to 200 credits with added benefits like free 24/7 support. Experience premium features with the convenience of no hidden fees and unlimited validity.",
+    packageCode: "pppkg003",
   },
   {
-    _id: "4",
+    _id: "ddc4f76e66374e0f844d3c283b65a5c1",
     packageTitle: "Elite Excellence Package",
     creditTitle: "500 Credits",
-    price: "500 BDT",
+    price: 500,
+    currency: "BDT",
     features: [
       "500 Credits",
       "Premium Map Features",
@@ -453,12 +460,14 @@ export const creditPackages: IPackage[] = [
     ],
     description:
       "For those who seek excellence, this package offers 500 credits and premium support services. No hidden fees and unlimited validity make it a top choice.",
+    packageCode: "eepkg004",
   },
   {
-    _id: "5",
+    _id: "46bc6f4d1c2b4e239e2d752a8b70f7d5",
     packageTitle: "Luxury Living Package",
     creditTitle: "1000 Credits",
-    price: "1000 BDT",
+    price: 1000,
+    currency: "BDT",
     features: [
       "1000 Credits",
       "Premium Map Features",
@@ -468,12 +477,14 @@ export const creditPackages: IPackage[] = [
     ],
     description:
       "Designed for the luxury seeker, this package offers 1000 credits and unparalleled support. Enjoy a seamless experience with no hidden fees and unlimited validity.",
+    packageCode: "llpkg005",
   },
   {
-    _id: "6",
+    _id: "0d846f374b6e4901bc597baf9ec391c0",
     packageTitle: "Ultimate Prestige Package",
     creditTitle: "2000 Credits",
-    price: "2000 BDT",
+    price: 2000,
+    currency: "BDT",
     features: [
       "2000 Credits",
       "Premium Map Features",
@@ -483,5 +494,6 @@ export const creditPackages: IPackage[] = [
     ],
     description:
       "The epitome of prestige and value. Receive 2000 credits with top-tier support, no hidden fees, and unlimited validity for the ultimate property rental experience.",
+    packageCode: "uppkg006",
   },
 ];
