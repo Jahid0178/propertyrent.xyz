@@ -16,8 +16,15 @@ type PackageCardProps = {
 };
 
 const PackageCard = ({ creditPackage }: PackageCardProps) => {
-  const { packageTitle, creditTitle, price, features, description } =
-    creditPackage;
+  const {
+    _id,
+    packageTitle,
+    creditTitle,
+    price,
+    features,
+    description,
+    currency,
+  } = creditPackage;
   return (
     <Card className="text-center bg-white">
       <CardHeader>
@@ -34,12 +41,12 @@ const PackageCard = ({ creditPackage }: PackageCardProps) => {
           ))}
         </ul>
         <p>
-          <strong>Price:</strong> {price}
+          <strong>Price:</strong> {price} {currency}
         </p>
       </CardContent>
       <CardFooter className="justify-center">
         <Button asChild size="lg">
-          <Link href="#">Buy Now</Link>
+          <Link href={`/user/dashboard/checkout/${_id}`}>Buy Now</Link>
         </Button>
       </CardFooter>
     </Card>
