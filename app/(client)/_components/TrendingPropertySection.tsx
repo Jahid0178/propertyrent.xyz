@@ -1,10 +1,9 @@
 import React from "react";
-import axios from "axios";
 import Link from "next/link";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
-import TredingPropertyCard from "@/components/Cards/TrendingPropertyCard";
-import { ITrendingProperty, PropertyProps } from "@/typescript/interface";
+import PropertyCard from "@/components/Cards/PropertyCard";
 import { Button } from "@/components/ui/button";
+import { PropertyProps } from "@/typescript/interface";
 import { getTrendingProperties } from "@/lib/actions/property.action";
 
 const TrendingPropertySection = async () => {
@@ -27,7 +26,7 @@ const TrendingPropertySection = async () => {
             {trendingProperties
               .slice(0, 8)
               .map((trendingProperty: PropertyProps) => (
-                <TredingPropertyCard
+                <PropertyCard
                   key={trendingProperty?._id}
                   propertyData={trendingProperty}
                 />

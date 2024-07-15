@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import axios from "axios";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
+import PropertyCard from "@/components/Cards/PropertyCard";
 import { Button } from "@/components/ui/button";
-import { ITrendingProperty } from "@/typescript/interface";
-import TredingPropertyCard from "@/components/Cards/TrendingPropertyCard";
 import { getFeaturedProperties } from "@/lib/actions/property.action";
 
 const FeaturedPropertySection = async () => {
@@ -24,7 +22,7 @@ const FeaturedPropertySection = async () => {
         <div className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {featuredProperties.slice(0, 8).map((featuredProperty: any) => (
-              <TredingPropertyCard
+              <PropertyCard
                 key={featuredProperty._id}
                 propertyData={featuredProperty}
               />
