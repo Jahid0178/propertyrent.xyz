@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AuthorCard from "@/components/Cards/AuthorCard";
+import PropertyLocation from "./PropertyLocation";
+import PropertyLocationMap from "./PropertyLocationMap";
+import moment from "moment";
+
 import { PropertyProps } from "@/typescript/interface";
 import { IoBedOutline, IoLocationOutline, IoBusOutline } from "react-icons/io5";
 import { TbBath, TbFence } from "react-icons/tb";
@@ -16,10 +20,7 @@ import { MdOutlinePool } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
 import { LuFlower2, LuSchool } from "react-icons/lu";
 import { FaRegHospital } from "react-icons/fa";
-import { Span } from "next/dist/trace";
 import { Button } from "@/components/ui/button";
-import PropertyLocation from "./PropertyLocation";
-import PropertyLocationMap from "./PropertyLocationMap";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -31,6 +32,7 @@ const PropertyDetailsSection = ({
   const {
     author,
     description,
+    availableFrom,
     address: { city, country, zipCode, street },
     propertyDetails: {
       propertyFeatures: {
@@ -59,8 +61,9 @@ const PropertyDetailsSection = ({
           <p>{description}</p>
         </div>
         <div>
-          <h2 className="mb-2 text-xl font-semibold">Property Features</h2>
-          <p>Here will be property features</p>
+          <h2 className="mb-2 text-lg font-semibold">
+            Property Available From: {moment(availableFrom).format("ll")}
+          </h2>
           <div className="mt-4">
             <h3 className="mb-2 text-lg font-semibold">Property details</h3>
             <div className="divide-y divide-gray-300">

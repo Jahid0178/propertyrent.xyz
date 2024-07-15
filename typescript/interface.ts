@@ -43,6 +43,7 @@ export interface PropertyProps {
   listingType: "Rent" | "Sale" | "Buy" | "Lease";
   currency: string;
   views: number;
+  availableFrom: string;
   images: {
     url: string;
   }[];

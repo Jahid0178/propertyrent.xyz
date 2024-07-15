@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import moment from "moment";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -50,6 +51,9 @@ import {
 } from "../ui/tooltip";
 import { DEFAULT_MAP_LAT, DEFAULT_MAP_LNG } from "@/constant/constant";
 import { propertyListingFormValidation } from "@/validation/validation";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Calendar } from "../ui/calendar";
+import { cn } from "@/lib/utils";
 
 const FormSchema = z.object(propertyListingFormValidation);
 
@@ -71,6 +75,7 @@ const PropertyListingForm = ({
       listingType: property?.listingType || "",
       currency: property?.currency || "",
       images: property?.images || [],
+      availableFrom: property?.availableFrom || "",
       address: {
         street: property?.address?.street || "",
         city: property?.address?.city || "",
@@ -294,24 +299,63 @@ const PropertyListingForm = ({
                 )}
               />
             </div>
-            <FormField
-              control={form.control}
-              name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Property Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="text"
-                      className="bg-white"
-                      placeholder="Enter Property Title"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="title"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Property Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        className="bg-white"
+                        placeholder="Enter Property Title"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="availableFrom"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Available From</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full pl-3 font-normal",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value ? (
+                              moment(field.value).format("DD MMM YYYY")
+                            ) : (
+                              <span>Pick a date</span>
+                            )}
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="description"
