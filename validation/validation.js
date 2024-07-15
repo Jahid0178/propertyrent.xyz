@@ -18,6 +18,7 @@ export const propertyListingFormValidation = {
   propertyType: z.string().nonempty("Property Type is required"),
   listingType: z.string().nonempty("Listing Type is required"),
   currency: z.string().min(1, { message: "Currency is required" }),
+  availableFrom: z.date({ required_error: "Available From is required" }),
   images: z.any(),
   address: z.object({
     street: z
