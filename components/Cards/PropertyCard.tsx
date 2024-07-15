@@ -51,7 +51,9 @@ const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
           />
         </CardHeader>
         <CardContent>
-          <CardTitle className="mb-3">{title}</CardTitle>
+          <CardTitle className="mb-3 truncate" title={title}>
+            {title}
+          </CardTitle>
           <div className="space-y-2">
             <div className="flex justify-between items-center gap-2">
               <p className="text-sm flex gap-1 items-center">
