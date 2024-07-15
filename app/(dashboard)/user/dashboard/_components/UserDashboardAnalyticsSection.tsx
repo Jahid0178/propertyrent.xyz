@@ -1,6 +1,7 @@
 import React from "react";
 import MostViewedSection from "./MostViewedSection";
 import ViewsAnalyticsChart from "@/components/Charts/ViewsAnalyticsChart";
+import AllPropertyLocationMap from "@/components/Map/AllPropertyLocationMap";
 
 const UserDashboardAnalyticsSection = async () => {
   return (
@@ -8,8 +9,9 @@ const UserDashboardAnalyticsSection = async () => {
       <div className="col-span-12 md:col-span-8">
         <ViewsAnalyticsChart />
       </div>
-      <div className="col-span-12 md:col-span-4">
+      <div className="col-span-12 md:col-span-4 space-y-4">
         <MostViewedSection />
+        <AllPropertyLocationMap />
       </div>
     </div>
   );
