@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { FormEvent, useState } from "react";
+import Image from "next/image";
+import authStore from "@/store/authStore";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -17,12 +19,16 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { PiWarningCircleBold } from "react-icons/pi";
-import authStore from "@/store/authStore";
 import { Button } from "@/components/ui/button";
-import { handleUpdateUser } from "@/lib/actions/user.action";
+import {
+  handleUpdateUser,
+  handleUserProfileImage,
+} from "@/lib/actions/user.action";
 import { toast } from "react-toastify";
+import { FaTrash } from "react-icons/fa6";
 
 const ProfileEditForm = () => {
+  const [avatar, setAvatar] = useState<null>(null);
   const { user } = authStore((state) => state);
   const form = useForm({
     defaultValues: {
@@ -41,10 +47,41 @@ const ProfileEditForm = () => {
   });
 
   const handleSubmit = async (data: any) => {
-    const response = await handleUpdateUser(user?._id, data);
-    if (response?.status === 200) {
-      toast.success(response?.data.message);
+    await toast.promise(handleUpdateUser(user?._id, data), {
+      pending: "Updating user profile",
+      success: {
+        async render({ data }) {
+          if (avatar) {
+            const formData = new FormData();
+            formData.append("avatar", avatar);
+            await toast.promise(handleUserProfileImage(user?._id, formData), {
+              pending: "Updating user avatar",
+              success: {
+                render({ data }) {
+                  return data?.data?.message;
+                },
+              },
+              error: "Error updating user profile",
+            });
+          }
+
+          return data?.data?.message;
+        },
+      },
+      error: "Error updating user profile",
+    });
+  };
+
+  const handleAvatarChange = (event: any) => {
+    const file = event.target.files[0];
+    console.log(event);
+    if (file) {
+      setAvatar(file);
     }
+  };
+
+  const handleAvatarRemove = () => {
+    setAvatar(null);
   };
 
   return (
@@ -54,6 +91,39 @@ const ProfileEditForm = () => {
           onSubmit={form.handleSubmit(handleSubmit)}
           className="space-y-4 border dark:border-gray-800 rounded-md p-4 bg-white dark:bg-gray-900 shadow-md"
         >
+          <div className="w-40 h-40 mx-auto border">
+            <label
+              htmlFor="avatar"
+              className="w-full h-full flex justify-center items-center"
+            >
+              {avatar ? (
+                <div className="relative w-full h-full">
+                  <Image
+                    src={URL.createObjectURL(avatar)}
+                    alt="avatar"
+                    width={100}
+                    height={100}
+                    className="w-full h-full"
+                  />
+                  <FaTrash
+                    color="red"
+                    onClick={handleAvatarRemove}
+                    className="absolute top-2 right-2"
+                  />
+                </div>
+              ) : (
+                <div>
+                  <p>Upload Avatar</p>
+                </div>
+              )}
+            </label>
+            <input
+              id="avatar"
+              type="file"
+              onChange={handleAvatarChange}
+              className="hidden"
+            />
+          </div>
           <FormField
             control={form.control}
             name="fullName"

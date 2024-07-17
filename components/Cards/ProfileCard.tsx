@@ -31,11 +31,11 @@ const ProfileCard = () => {
       <CardHeader className="items-center">
         <span className="relative">
           <Image
-            src={user?.avatar || "/images/user_placeholder2.png"}
+            src={user?.avatar?.url || "/images/user_placeholder2.png"}
             alt={`${user?.fullName} Avatar`}
             width={100}
             height={100}
-            className="rounded-full"
+            className="rounded-full w-28 h-28"
           />
           <span className="absolute right-1 top-0">
             {isProfileVerified ? (
