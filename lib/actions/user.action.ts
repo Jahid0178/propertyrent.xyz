@@ -46,3 +46,21 @@ export const handleUpdateUser = async (userId: string, data: any) => {
     console.log("error from handle update user", error);
   }
 };
+
+export const handleUserProfileImage = async (userId: string, data: any) => {
+  try {
+    const response = await axios.put(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/${userId}/avatar`,
+      data,
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    return response;
+  } catch (error) {
+    console.log("error from handle update user image", error);
+  }
+};
