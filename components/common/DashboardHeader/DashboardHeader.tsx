@@ -36,7 +36,7 @@ const DashboardHeader = () => {
                 <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage
-                      src={user?.avatar || ""}
+                      src={user?.avatar?.url || ""}
                       alt={user?.fullName || ""}
                     />
                     <AvatarFallback>
