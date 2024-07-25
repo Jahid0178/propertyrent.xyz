@@ -23,12 +23,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { handlePayout } from "@/lib/actions/payout.action";
+import { toast } from "react-toastify";
 
 interface CheckoutFormProps {
   packageId: string | undefined;
 }
 
 const formSchema = z.object({
+  userId: z.string().nonempty("User Id is required"),
   fullName: z.string().trim().min(3, "Full name must be at least 3 characters"),
   email: z.string().trim().email("Email is required"),
   phone: z
@@ -44,6 +47,7 @@ const CheckoutForm = ({ packageId }: CheckoutFormProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      userId: user?._id || "",
       fullName: user?.fullName || "",
       email: user?.email || "",
       phone: user?.phone || "",
@@ -52,13 +56,17 @@ const CheckoutForm = ({ packageId }: CheckoutFormProps) => {
     },
   });
 
-  const handleCheckoutForm = (data: z.infer<typeof formSchema>) => {
+  const handleCheckoutForm = async (data: z.infer<typeof formSchema>) => {
     const mergedData = {
       ...data,
       packageId,
     };
 
-    console.log("checkout form data", mergedData);
+    const response = await handlePayout(mergedData);
+    if (response.status === 200) {
+      toast.success(response.message);
+      window.location.replace(response.url);
+    }
   };
 
   return (
