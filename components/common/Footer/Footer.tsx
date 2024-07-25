@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { footerLinks } from "@/data/data";
 
 const Footer = () => {
@@ -23,6 +24,26 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="mt-4">
+          <Image
+            src={
+              "https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-03.png"
+            }
+            alt="payment_methods"
+            width={1600}
+            height={100}
+            className="hidden md:block"
+          />
+          <Image
+            src={
+              "https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-02.png"
+            }
+            alt="payment_methods"
+            width={1600}
+            height={100}
+            className="block md:hidden"
+          />
         </div>
       </div>
     </footer>
