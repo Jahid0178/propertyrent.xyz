@@ -101,3 +101,14 @@ export interface IPackage {
   description?: string;
   packageCode: string;
 }
+
+export interface IPaymentData {
+  _id: string;
+  userId: string;
+  tranId: string;
+  amount: number;
+  status: boolean;
+  packageId: IPackage;
+  createdAt: Date;
+  updatedAt: Date;
+}
