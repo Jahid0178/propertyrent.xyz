@@ -105,7 +105,9 @@ const Map = ({ coordinates, zoom, className, properties }: MapProps) => {
       });
 
       const [lng, lat] = coordinates.slice(0, 2);
-      map.jumpTo({ center: [lat || DEFAULT_MAP_LAT, lng || DEFAULT_MAP_LNG] });
+      map.jumpTo({
+        center: [lng || DEFAULT_MAP_LNG, lat || DEFAULT_MAP_LAT],
+      });
     });
 
     return () => map.remove();
