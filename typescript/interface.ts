@@ -8,7 +8,9 @@ export interface AuthorInfo {
     phone: string;
     email: string;
   };
-  avatar: string;
+  avatar: {
+    url: string;
+  };
   points: number;
   rating: number;
   credit: number;
