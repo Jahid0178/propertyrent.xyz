@@ -1,7 +1,8 @@
 import React from "react";
+import HistoryPageSection from "./components/HistoryPageSection";
 
 const HistoryPage = () => {
-  return <div>History Page</div>;
+  return <HistoryPageSection />;
 };
 
 export default HistoryPage;
