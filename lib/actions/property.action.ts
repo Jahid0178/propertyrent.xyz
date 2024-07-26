@@ -10,6 +10,7 @@ const defaultProperty: PropertyProps = {
   currency: "",
   images: [],
   views: 0,
+  availableFrom: "",
   address: {
     street: "",
     city: "",
@@ -47,6 +48,9 @@ const defaultProperty: PropertyProps = {
       shoppingCenter: "",
       publicTransport: "",
     },
+  },
+  mapLocation: {
+    coordinates: [],
   },
 };
 
