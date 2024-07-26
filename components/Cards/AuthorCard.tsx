@@ -20,7 +20,7 @@ const AuthorCard = ({ author }: AuthorCardProps) => {
     <Card>
       <CardHeader>
         <Image
-          src={avatar || "/images/user_placeholder2.png"}
+          src={avatar?.url || "/images/user_placeholder2.png"}
           alt={`${fullName} Avatar`}
           width={100}
           height={100}
