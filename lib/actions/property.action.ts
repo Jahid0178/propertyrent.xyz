@@ -1,5 +1,6 @@
 import axios from "axios";
 import { PropertyProps } from "@/typescript/interface";
+import { toast } from "react-toastify";
 
 const defaultProperty: PropertyProps = {
   _id: "",
@@ -94,7 +95,8 @@ export const createPropertyListing = async (data: any) => {
       }
     );
     return response;
-  } catch (error) {
+  } catch (error: any) {
+    toast.error(error?.response?.data?.message);
     console.error("createPropertyListing", error);
   }
 };
