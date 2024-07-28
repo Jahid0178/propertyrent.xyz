@@ -497,3 +497,50 @@ export const creditPackages: IPackage[] = [
     packageCode: "uppkg006",
   },
 ];
+
+export const locations: {
+  id: number;
+  name: string;
+  value: string;
+}[] = [
+  {
+    id: 1,
+    name: "Barisal",
+    value: "barisal",
+  },
+  {
+    id: 2,
+    name: "Chittagong",
+    value: "chittagong",
+  },
+  {
+    id: 3,
+    name: "Dhaka",
+    value: "dhaka",
+  },
+  {
+    id: 4,
+    name: "Khulna",
+    value: "khulna",
+  },
+  {
+    id: 5,
+    name: "Rajshahi",
+    value: "rajshahi",
+  },
+  {
+    id: 6,
+    name: "Sylhet",
+    value: "sylhet",
+  },
+  {
+    id: 7,
+    name: "Rangpur",
+    value: "rangpur",
+  },
+  {
+    id: 8,
+    name: "Mymensingh",
+    value: "mymensingh",
+  },
+];
