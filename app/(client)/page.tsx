@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <PopularSection />
+      {/* <PopularSection /> */}
       <TrendingPropertySection />
       <FeaturedPropertySection />
       <RecentPropertySection />
