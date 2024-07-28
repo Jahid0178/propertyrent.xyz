@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Select,
   SelectContent,
@@ -13,10 +13,9 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { Form, FormField, FormItem, FormMessage } from "../ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { getAllLocations } from "../../lib/actions/location.action";
-import { getAllPropertiesType } from "../../lib/actions/property.action";
 import { BsSearch } from "react-icons/bs";
 import AdvancedSearchForm from "../Forms/AdvancedSearchForm";
+import { locations, propertyTypes } from "@/data/data";
 
 const FormSchema = z.object({
   propertyType: z.string({
@@ -31,8 +30,6 @@ const FormSchema = z.object({
 });
 
 const PropertySearch = () => {
-  const [locations, setLocations] = useState([]);
-  const [propertiesType, setPropertiesType] = useState([]);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -45,23 +42,6 @@ const PropertySearch = () => {
     };
     console.log(propertyFormData);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [locations, propertiesType] = await Promise.all([
-          getAllLocations(),
-          getAllPropertiesType(),
-        ]);
-        setLocations(locations);
-        setPropertiesType(propertiesType);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <div className="property-search-form-wrapper text-end">
@@ -81,9 +61,9 @@ const PropertySearch = () => {
                       <SelectValue placeholder="Select Property Type" />
                     </SelectTrigger>
                     <SelectContent>
-                      {propertiesType.map(({ id, name, value }) => (
+                      {propertyTypes.map(({ id, label, value }) => (
                         <SelectItem key={id} value={value}>
-                          {name}
+                          {label}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -152,7 +132,7 @@ const PropertySearch = () => {
       </Form>
       <AdvancedSearchForm
         locations={locations}
-        propertiesType={propertiesType}
+        propertiesType={propertyTypes}
       />
     </div>
   );
