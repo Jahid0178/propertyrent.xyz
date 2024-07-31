@@ -18,6 +18,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import analyticsStore from "@/store/analytics";
+import { useEffect } from "react";
 
 const chartConfig = {
   views: {
@@ -27,18 +28,22 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const ViewsAnalyticsChart = () => {
-  const { mostViewedProperties } = analyticsStore((state) => state);
-  const chartData = mostViewedProperties
-    .map((property: any) => ({
-      title: property.title,
-      views: property.views,
-    }))
-    .reverse();
+  const { chartAnalyticsData, getChartAnalyticsData } = analyticsStore(
+    (state) => state
+  );
+  const chartData = chartAnalyticsData.map((property: any) => ({
+    title: property.title,
+    views: property.views,
+  }));
+
+  useEffect(() => {
+    getChartAnalyticsData();
+  }, []);
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Top Property Views Analytics</CardTitle>
+        <CardTitle>All Property Views Analytics</CardTitle>
         <CardDescription>
           Analyzing the Popularity of Your Top Properties Based on View Counts
         </CardDescription>
