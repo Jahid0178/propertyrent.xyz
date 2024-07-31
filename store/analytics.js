@@ -9,6 +9,7 @@ const analyticsStore = create(
     totalSales: 0,
     totalCredits: 0,
     mostViewedProperties: [],
+    chartAnalyticsData: [],
 
     getTotalProperty: async () => {
       const response = await axios.get(
@@ -40,6 +41,23 @@ const analyticsStore = create(
         });
       } catch (error) {
         console.log("get error from most viewed", error);
+      }
+    },
+
+    getChartAnalyticsData: async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/analytics/chart-analytics`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        set({
+          chartAnalyticsData: response.data.data,
+        });
+      } catch (error) {
+        console.log("get error from chart analytics data", error);
       }
     },
   }))
