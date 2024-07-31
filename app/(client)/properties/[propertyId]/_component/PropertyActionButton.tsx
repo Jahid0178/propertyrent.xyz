@@ -41,6 +41,7 @@ const PropertyActionButtons: React.FC<PropertyActionButtonsProps> = ({
         onClick={handleSave}
         className="flex items-center gap-2 p-2"
         variant="outline"
+        disabled={!user}
       >
         <FaStar />
         Save
