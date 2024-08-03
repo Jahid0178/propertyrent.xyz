@@ -50,14 +50,16 @@ const SavedPropertyTable = () => {
     <Table className="border dark:border-gray-800">
       <TableCaption>A list of your saved properties</TableCaption>
       <TableHeader className="border-b">
-        <TableHead className="w-[100px]">Image</TableHead>
-        <TableHead>Property ID</TableHead>
-        <TableHead>Name</TableHead>
-        <TableHead>Price</TableHead>
-        <TableHead>Property Type</TableHead>
-        <TableHead>Listing Type</TableHead>
-        <TableHead>Saved at</TableHead>
-        <TableHead className="text-right">Action</TableHead>
+        <TableRow>
+          <TableHead className="w-[100px]">Image</TableHead>
+          <TableHead>Property ID</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Price</TableHead>
+          <TableHead>Property Type</TableHead>
+          <TableHead>Listing Type</TableHead>
+          <TableHead>Saved at</TableHead>
+          <TableHead className="text-right">Action</TableHead>
+        </TableRow>
       </TableHeader>
       <TableBody>
         {savedProperties.map((savedProperty, ind) => {
