@@ -33,12 +33,8 @@ export const propertyListingFormValidation = {
         invalid_type_error: "City must be a string",
       })
       .min(3, { message: "City must be at least 3 characters" }),
-    country: z
-      .string({
-        required_error: "Country is required",
-        invalid_type_error: "Country must be a string",
-      })
-      .min(3, { message: "Country must be at least 3 characters" }),
+    upazilla: z.string().nonempty("Upazilla is required"),
+    country: z.string({}).nonempty("Country is required"),
     zipCode: z
       .string({
         required_error: "Zip Code is required",
