@@ -85,9 +85,9 @@ const PropertySearch = () => {
                       <SelectValue placeholder="Select Location" />
                     </SelectTrigger>
                     <SelectContent>
-                      {locations.map(({ id, name, value }) => (
-                        <SelectItem key={id} value={value}>
-                          {name}
+                      {locations.map(({ district }, ind) => (
+                        <SelectItem key={ind} value={district}>
+                          {district}
                         </SelectItem>
                       ))}
                     </SelectContent>
