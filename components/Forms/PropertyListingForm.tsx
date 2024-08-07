@@ -31,6 +31,7 @@ import {
   gasTypes,
   internetTypes,
   listingTypes,
+  locations,
   propertySizeUnits,
   propertyTypes,
   waterTypes,
@@ -39,7 +40,6 @@ import {
   createPropertyListing,
   updatePropertyListing,
 } from "@/lib/actions/property.action";
-import { PropertyProps } from "@/typescript/interface";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { toast } from "react-toastify";
 import ListingMap from "@/app/(dashboard)/user/dashboard/add-property/_components/ListingMap";
@@ -79,6 +79,7 @@ const PropertyListingForm = ({
       address: {
         street: property?.address?.street || "",
         city: property?.address?.city || "",
+        upazilla: property?.address?.upazilla || "",
         country: property?.address?.country || "",
         zipCode: property?.address?.zipCode || "",
       },
@@ -140,6 +141,7 @@ const PropertyListingForm = ({
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
+      console.log("data", data);
       const formData = new FormData();
 
       if (data.images && data.images.length > 0) {
@@ -932,11 +934,22 @@ const PropertyListingForm = ({
                 <FormItem className="flex-1">
                   <FormLabel>City</FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      className="bg-white"
-                      placeholder="Enter your city"
-                    />
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="bg-white">
+                        <SelectValue placeholder="Select your city" />
+                      </SelectTrigger>
+
+                      <SelectContent>
+                        {locations.map((location, ind) => (
+                          <SelectItem key={ind} value={location.district}>
+                            {location.district}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -944,6 +957,38 @@ const PropertyListingForm = ({
             />
           </div>
           <div className="flex flex-col md:flex-row gap-4">
+            <FormField
+              control={form.control}
+              name="address.upazilla"
+              render={({ field }) => (
+                <FormItem className="flex-1">
+                  <FormLabel>Upazilla</FormLabel>
+                  <FormControl>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="bg-white">
+                        <SelectValue placeholder="Select your upazilla" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {locations
+                          .filter(
+                            (location) =>
+                              location.district === form.watch("address.city")
+                          )[0]
+                          ?.upazillas.map((upazilla, ind) => (
+                            <SelectItem key={ind} value={upazilla}>
+                              {upazilla}
+                            </SelectItem>
+                          ))}
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="address.zipCode"
@@ -961,6 +1006,8 @@ const PropertyListingForm = ({
                 </FormItem>
               )}
             />
+          </div>
+          <div className="flex flex-col md:flex-row gap-4">
             <FormField
               control={form.control}
               name="address.country"
@@ -968,11 +1015,20 @@ const PropertyListingForm = ({
                 <FormItem className="flex-1">
                   <FormLabel>Country</FormLabel>
                   <FormControl>
-                    <Input
-                      {...field}
-                      className="bg-white"
-                      placeholder="Enter your country"
-                    />
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="bg-white">
+                        <SelectValue
+                          placeholder="Select your country"
+                          defaultValue="Bangladesh"
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Bangladesh">Bangladesh</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
