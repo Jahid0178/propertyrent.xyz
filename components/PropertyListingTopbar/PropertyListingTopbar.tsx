@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
 import PropertyListingFilterOptions from "./PropertyListingFilterOptions";
 import LocationCarousel from "@/components/Carousel/LocationCarousel";
+import { locations } from "@/data/data";
 
 interface IPropertyListingTopbar {
   properties: any[];
@@ -10,14 +10,9 @@ interface IPropertyListingTopbar {
 const PropertyListingTopbar = async ({
   properties,
 }: IPropertyListingTopbar) => {
-  const response = await axios.get("https://bdapis.com/api/v1.2/divisions");
-
   return (
     <div className="space-y-4">
-      <LocationCarousel
-        locations={response.data?.data}
-        href="/property-region"
-      />
+      <LocationCarousel locations={locations} />
       <div className="flex justify-between items-center gap-4">
         <div>
           Showing <span className="font-semibold">{properties.length}</span>{" "}
