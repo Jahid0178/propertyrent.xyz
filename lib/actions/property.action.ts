@@ -253,3 +253,21 @@ export const handleDeleteSavedProperty = async (propertyId: string) => {
     console.error("error from handler saved property", error);
   }
 };
+
+export const handleGetPropertyByLocations = async (
+  region: string,
+  upazilla: string
+) => {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/search/${region}${upazilla ? `/${upazilla}` : ""}`
+    );
+    if (response.status === 200) {
+      return response.data?.data;
+    } else {
+      throw new Error(response.data.message);
+    }
+  } catch (error) {
+    console.error("error from handler get property by location", error);
+  }
+};
