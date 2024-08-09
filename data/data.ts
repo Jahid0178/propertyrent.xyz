@@ -1394,3 +1394,54 @@ export const locations: {
     ],
   },
 ];
+
+export const popularLocations = [
+  {
+    id: 1,
+    name: "Barisal",
+    value: "Barisal",
+    image: "/images/location-image/barisal.webp",
+  },
+  {
+    id: 2,
+    name: "Chattogram",
+    value: "Chattogram",
+    image: "/images/location-image/chittagong.webp",
+  },
+  {
+    id: 3,
+    name: "Dhaka",
+    value: "Dhaka",
+    image: "/images/location-image/dhaka.webp",
+  },
+  {
+    id: 4,
+    name: "Khulna",
+    value: "Khulna",
+    image: "/images/location-image/khulna.webp",
+  },
+  {
+    id: 5,
+    name: "Rajshahi",
+    value: "Rajshahi",
+    image: "/images/location-image/rajshahi.webp",
+  },
+  {
+    id: 6,
+    name: "Sylhet",
+    value: "Sylhet",
+    image: "/images/location-image/sylhet.webp",
+  },
+  {
+    id: 7,
+    name: "Rangpur",
+    value: "Rangpur",
+    image: "/images/location-image/rangpur.webp",
+  },
+  {
+    id: 8,
+    name: "Mymensingh",
+    value: "Mymensingh",
+    image: "/images/location-image/mymensingh.webp",
+  },
+];
