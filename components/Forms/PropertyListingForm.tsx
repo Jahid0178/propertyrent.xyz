@@ -49,11 +49,16 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { DEFAULT_MAP_LAT, DEFAULT_MAP_LNG } from "@/constant/constant";
+import {
+  DEFAULT_MAP_LAT,
+  DEFAULT_MAP_LNG,
+  USER_MINIMUM_CREDIT,
+} from "@/constant/constant";
 import { propertyListingFormValidation } from "@/validation/validation";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Calendar } from "../ui/calendar";
 import { cn } from "@/lib/utils";
+import authStore from "@/store/authStore";
 
 const FormSchema = z.object(propertyListingFormValidation);
 
@@ -66,6 +71,8 @@ const PropertyListingForm = ({
   property,
   formType = "create",
 }: PropertyListingFormProps) => {
+  const { user } = authStore((state) => state);
+
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -178,6 +185,10 @@ const PropertyListingForm = ({
   const onCoordinatesChange = (lat: number, lng: number) => {
     form.setValue("coordinates", { lat, lng });
   };
+
+  console.log("user", user);
+
+  const isButtonDisabled = user?.credit < USER_MINIMUM_CREDIT;
 
   return (
     <Form {...form}>
@@ -1052,9 +1063,15 @@ const PropertyListingForm = ({
           </h3>
           <ListingMap onCoordinatesChange={onCoordinatesChange} />
         </div>
-        <Button type="submit" size="lg">
+        <Button type="submit" size="lg" disabled={isButtonDisabled}>
           {formType === "create" ? "Add Property" : "Update Property"}
         </Button>
+
+        {isButtonDisabled && (
+          <p className="text-sm text-red-500 text-center">
+            Please purchase credit to add property
+          </p>
+        )}
       </form>
     </Form>
   );
