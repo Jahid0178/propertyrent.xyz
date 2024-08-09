@@ -10,7 +10,9 @@ type PropertiesPageProps = {
 
 const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
   const params = searchParams;
-  const { properties } = await getAllPropertyListings();
+
+  const { properties } = await getAllPropertyListings(params);
+
   return (
     <section>
       <div className="container">
