@@ -37,9 +37,9 @@ const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
   const imageURL = images[0]?.url ? images[0]?.url : "/images/placeholder.png";
   return (
     <Link href={`/properties/${_id}`}>
-      <Card className="overflow-hidden">
-        <CardHeader className="px-0 pt-0 pb-6 relative">
-          <Badge className="absolute top-3 left-3">{listingType}</Badge>
+      <Card className="overflow-hidden relative">
+        <Badge className="absolute top-3 left-3">{listingType}</Badge>
+        <CardHeader className="px-0 pt-0 pb-6">
           <Image
             src={imageURL}
             alt={title}
