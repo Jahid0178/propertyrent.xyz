@@ -64,11 +64,15 @@ export const getAllPropertiesType = async () => {
   } catch (error) {}
 };
 
-export const getAllPropertyListings = async () => {
+export const getAllPropertyListings = async (query: any = {}) => {
   try {
-    const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`
-    );
+    let baseURL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`;
+
+    if (query) {
+      baseURL += `?${new URLSearchParams(query).toString()}`;
+    }
+
+    const response = await axios.get(baseURL);
     return response.data;
   } catch (error) {
     console.error("getAllPropertyListings", error);
