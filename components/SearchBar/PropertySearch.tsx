@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import AdvancedSearchForm from "../Forms/AdvancedSearchForm";
+import { useRouter } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -14,33 +16,40 @@ import { Form, FormField, FormItem, FormMessage } from "../ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BsSearch } from "react-icons/bs";
-import AdvancedSearchForm from "../Forms/AdvancedSearchForm";
 import { locations, propertyTypes } from "@/data/data";
+import { Input } from "../ui/input";
 
 const FormSchema = z.object({
   propertyType: z.string({
     required_error: "Please select an property type",
   }),
-  location: z.string({
+  city: z.string({
     required_error: "Please select an location",
   }),
-  budget: z.string({
-    required_error: "Please select an budget range",
+  minPrice: z.string({
+    required_error: "Please enter your min price range",
+  }),
+  maxPrice: z.string({
+    required_error: "Please enter your max price range",
   }),
 });
 
 const PropertySearch = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const propertyFormData = {
       propertyType: data.propertyType as string,
-      location: data.location as string,
-      budget: data.budget as string,
+      city: data.city as string,
+      minPrice: data.minPrice as string,
+      maxPrice: data.maxPrice as string,
     };
-    console.log(propertyFormData);
+
+    router.push(`/properties?${new URLSearchParams(propertyFormData)}`);
   };
 
   return (
@@ -74,7 +83,7 @@ const PropertySearch = () => {
             />
             <FormField
               control={form.control}
-              name="location"
+              name="city"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <Select
@@ -98,27 +107,28 @@ const PropertySearch = () => {
             />
             <FormField
               control={form.control}
-              name="budget"
+              name="minPrice"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Budget" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any">Any</SelectItem>
-                      <SelectItem value="100000-500000">
-                        1,00,000 - 50,000
-                      </SelectItem>
-                      <SelectItem value="50000-25000">
-                        50,000 - 25,000
-                      </SelectItem>
-                      <SelectItem value="25000-500">25,000 - 500</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Input
+                    type="text"
+                    placeholder="Enter Your Min Price"
+                    {...field}
+                  />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="maxPrice"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <Input
+                    type="text"
+                    placeholder="Enter Your Max Price"
+                    {...field}
+                  />
                   <FormMessage />
                 </FormItem>
               )}
