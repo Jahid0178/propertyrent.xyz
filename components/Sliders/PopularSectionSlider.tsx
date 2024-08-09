@@ -11,10 +11,6 @@ const PopularSectionSlider = ({
 }: {
   popularProperties: IPopularLocation[];
 }) => {
-  const sortedProperties = popularProperties.toSorted(
-    (a, b) => b.totalProperties - a.totalProperties
-  );
-
   return (
     <Swiper
       slidesPerView={1}
@@ -37,7 +33,7 @@ const PopularSectionSlider = ({
         },
       }}
     >
-      {sortedProperties.map((popularProperty: any) => (
+      {popularProperties.map((popularProperty: any) => (
         <SwiperSlide key={popularProperty.id}>
           <PopularPropertyCard popularProperty={popularProperty} />
         </SwiperSlide>

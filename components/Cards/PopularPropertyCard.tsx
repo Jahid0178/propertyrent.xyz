@@ -25,7 +25,6 @@ const PopularPropertyCard = ({ popularProperty }: PopularPropertyCardProps) => {
         </CardHeader>
         <div className="absolute bottom-0 left-0 right-0 text-white p-4">
           <h3 className="text-2xl">{popularProperty.name}</h3>
-          <p>{popularProperty.totalProperties} Properties</p>
         </div>
       </Card>
     </Link>
