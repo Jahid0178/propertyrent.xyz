@@ -22,8 +22,6 @@ export interface IPopularLocation {
   name: string;
   value: string;
   image: string;
-  properties: string[];
-  totalProperties: number;
 }
 
 export interface ITrendingProperty {

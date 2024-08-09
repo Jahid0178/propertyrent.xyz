@@ -2,12 +2,9 @@ import React from "react";
 import axios from "axios";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
 import PopularSectionSlider from "@/components/Sliders/PopularSectionSlider";
+import { popularLocations } from "@/data/data";
 
 const PopularSection = async () => {
-  const { data: popularProperties } = await axios.get(
-    `${process.env.NEXT_PUBLIC_TEST_API_URL}/popularLocation`
-  );
-
   return (
     <section>
       <div className="container">
@@ -17,7 +14,7 @@ const PopularSection = async () => {
           titleClassName="text-xl md:text-2xl"
         />
         <div className="mt-8">
-          <PopularSectionSlider popularProperties={popularProperties} />
+          <PopularSectionSlider popularProperties={popularLocations} />
         </div>
       </div>
     </section>
