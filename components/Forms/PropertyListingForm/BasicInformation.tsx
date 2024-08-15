@@ -26,7 +26,15 @@ import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
 import { Textarea } from "@/components/ui/textarea";
 
-const BasicInformation = ({ form }: any) => {
+interface BasicInformationProps {
+  form: any;
+  propertyCategory: string;
+}
+
+const BasicInformation = ({
+  form,
+  propertyCategory,
+}: BasicInformationProps) => {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 rounded-md p-4">
       <h3 className="text-lg font-medium">Basic Information</h3>
@@ -77,7 +85,7 @@ const BasicInformation = ({ form }: any) => {
                       <SelectValue placeholder="Select Property Type" />
                     </SelectTrigger>
                     <SelectContent>
-                      {propertyTypes.map((propertyType) => (
+                      {propertyTypes?.map((propertyType) => (
                         <SelectItem
                           key={propertyType.id}
                           value={propertyType.value}
@@ -151,8 +159,9 @@ const BasicInformation = ({ form }: any) => {
                   <Input
                     type="text"
                     className="bg-white"
-                    placeholder="Enter Property Title"
+                    placeholder="Select listing and property type title will be generated automatically"
                     {...field}
+                    readOnly
                   />
                 </FormControl>
                 <FormMessage />
@@ -206,7 +215,7 @@ const BasicInformation = ({ form }: any) => {
               <FormControl>
                 <Textarea
                   className="bg-white resize-none"
-                  placeholder="Enter Property Description"
+                  placeholder="Enter Full Property Description"
                   {...field}
                   rows={8}
                 />
