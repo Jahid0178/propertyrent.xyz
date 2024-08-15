@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const propertyListingFormValidation = {
+  propertyId: z.string(),
   title: z
     .string({
       required_error: "Title is required",
@@ -17,6 +18,7 @@ export const propertyListingFormValidation = {
     .trim(),
   propertyType: z.string().nonempty("Property Type is required"),
   listingType: z.string().nonempty("Listing Type is required"),
+  category: z.string().nonempty("Category is required"),
   currency: z.string().min(1, { message: "Currency is required" }),
   availableFrom: z.date({ required_error: "Available From is required" }),
   images: z.any(),
@@ -74,24 +76,11 @@ export const propertyListingFormValidation = {
           invalid_type_error: "Number of Bathrooms must be a string",
         })
         .nonempty("Number of Bathrooms is required"),
-      numberOfDiningrooms: z
-        .string({
-          required_error: "Number of Diningrooms is required",
-          invalid_type_error: "Number of Diningrooms must be a string",
-        })
-        .nonempty("Number of Diningrooms is required"),
-      numberOfGarage: z
-        .string({
-          required_error: "Number of Garage is required",
-          invalid_type_error: "Number of Garage must be a string",
-        })
-        .nonempty("Number of Garage is required"),
-      numberOfBalconies: z
-        .string({
-          required_error: "Number of Balconies is required",
-          invalid_type_error: "Number of Balconies must be a string",
-        })
-        .nonempty("Number of Balconies is required"),
+      numberOfDiningrooms: z.string(),
+      numberOfGarage: z.string(),
+      numberOfBalconies: z.string(),
+      numberOfFloors: z.string(),
+      gender: z.string(),
       renovation: z
         .string({
           required_error: "Renovation is required",
@@ -130,58 +119,6 @@ export const propertyListingFormValidation = {
           invalid_type_error: "Water must be a string",
         })
         .nonempty("Water is required"),
-    }),
-    outdoorFeatures: z.object({
-      garden: z
-        .string({
-          required_error: "Garden is required",
-          invalid_type_error: "Garden must be a string",
-        })
-        .nonempty("Garden is required"),
-      pool: z
-        .string({
-          required_error: "Pool is required",
-          invalid_type_error: "Pool must be a string",
-        })
-        .nonempty("Pool is required"),
-      playground: z
-        .string({
-          required_error: "Playground is required",
-          invalid_type_error: "Playground must be a string",
-        })
-        .nonempty("Playground is required"),
-      fencing: z
-        .string({
-          required_error: "Fencing is required",
-          invalid_type_error: "Fencing must be a string",
-        })
-        .nonempty("Fencing is required"),
-    }),
-    nearby: z.object({
-      school: z
-        .string({
-          required_error: "Schools is required",
-          invalid_type_error: "Schools must be a string",
-        })
-        .min(1, { message: "Schools is required" }),
-      hospital: z
-        .string({
-          required_error: "Hospitals is required",
-          invalid_type_error: "Hospitals must be a string",
-        })
-        .min(1, { message: "Hospitals is required" }),
-      shoppingCenter: z
-        .string({
-          required_error: "Shopping Centers is required",
-          invalid_type_error: "Shopping Centers must be a string",
-        })
-        .min(1, { message: "Shopping Centers is required" }),
-      publicTransport: z
-        .string({
-          required_error: "Public Transport is required",
-          invalid_type_error: "Public Transport must be a string",
-        })
-        .min(1, { message: "Public Transport is required" }),
     }),
   }),
   coordinates: z.object({
