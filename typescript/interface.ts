@@ -65,6 +65,7 @@ export interface PropertyProps {
       numberOfBalconies: string;
       renovation: string;
       yearBuilt: string;
+      gender: string;
     };
     propertyUtilities: {
       gas: string;
