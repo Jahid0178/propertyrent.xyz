@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import moment from "moment";
 import { useForm } from "react-hook-form";
 import {
@@ -62,6 +62,14 @@ import PriceAndAreaDetails from "./PriceAndAreaDetails";
 import PropertyFeatures from "./PropertyFeatures";
 import PropertyUtilities from "./PropertyUtilities";
 import PropertyAddress from "./PropertyAddress";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { Calendar } from "@/components/ui/calendar";
+import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
 
 const FormSchema = z.object(propertyListingFormValidation);
 
@@ -81,6 +89,7 @@ const PropertyListingForm = ({
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
+      propertyId: property?.propertyId || "",
       title: property?.title || "",
       description: property?.description || "",
       propertyType: property?.propertyType || "",
@@ -116,6 +125,9 @@ const PropertyListingForm = ({
           numberOfBalconies:
             property?.propertyDetails?.propertyFeatures?.numberOfBalconies ||
             "",
+          numberOfFloors:
+            property?.propertyDetails?.propertyFeatures?.numberOfFloors || "",
+          gender: property?.propertyDetails?.propertyFeatures?.gender || "",
           renovation:
             property?.propertyDetails?.propertyFeatures?.renovation || "",
           yearBuilt:
@@ -137,37 +149,54 @@ const PropertyListingForm = ({
     },
   });
 
+  const getTitle = () => {
+    if (property?.title) return property?.title;
+
+    const propertyType = form.watch("propertyType");
+    const listingType = form.watch("listingType");
+
+    if (!propertyType || !listingType) return "";
+
+    const modifiedPropertyCategory = capitalizeFirstLetter(propertyCategory!);
+
+    return `${modifiedPropertyCategory} ${propertyType} For ${listingType}`;
+  };
+
+  useEffect(() => {
+    form.setValue("title", getTitle());
+  }, [property, form.watch("propertyType"), form.watch("listingType")]);
+
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
       console.log("data", data);
-      // const formData = new FormData();
+      const formData = new FormData();
 
-      // if (data.images && data.images.length > 0) {
-      //   for (let i = 0; i < data.images.length; i++) {
-      //     formData.append("images", data.images[i]);
-      //   }
-      // }
+      if (data.images && data.images.length > 0) {
+        for (let i = 0; i < data.images.length; i++) {
+          formData.append("images", data.images[i]);
+        }
+      }
 
-      // formData.append("data", JSON.stringify(data));
+      formData.append("data", JSON.stringify(data));
 
-      // const response =
-      //   formType === "create"
-      //     ? createPropertyListing(formData)
-      //     : updatePropertyListing(formData, property?._id);
-      // await toast.promise(response, {
-      //   pending:
-      //     formType === "create"
-      //       ? "Creating property listing"
-      //       : "Updating property listing",
-      //   success:
-      //     formType === "create"
-      //       ? "Property listing created successfully"
-      //       : "Property listing updated successfully",
-      //   error:
-      //     formType === "create"
-      //       ? "Error creating property listing"
-      //       : "Error updating property listing",
-      // });
+      const response =
+        formType === "create"
+          ? createPropertyListing(formData)
+          : updatePropertyListing(formData, property?._id);
+      await toast.promise(response, {
+        pending:
+          formType === "create"
+            ? "Creating property listing"
+            : "Updating property listing",
+        success:
+          formType === "create"
+            ? "Property listing created successfully"
+            : "Property listing updated successfully",
+        error:
+          formType === "create"
+            ? "Error creating property listing"
+            : "Error updating property listing",
+      });
     } catch (error) {
       console.error("Error uploading image:", error);
     }
@@ -177,9 +206,9 @@ const PropertyListingForm = ({
     form.setValue("coordinates", { lat, lng });
   };
 
-  console.log("property category", propertyCategory);
-
   const isButtonDisabled = user?.credit < USER_MINIMUM_CREDIT;
+
+  console.log("property", property);
 
   return (
     <Form {...form}>
@@ -188,11 +217,11 @@ const PropertyListingForm = ({
         onSubmit={form.handleSubmit(onSubmit)}
         encType="multipart/form-data"
       >
-        <BasicInformation form={form} />
+        <BasicInformation form={form} propertyCategory={propertyCategory!} />
         <PriceAndAreaDetails form={form} />
-        {propertyCategory?.toLowerCase() === "family" && (
+        {["family", "bachelor", "sublet"].includes(propertyCategory ?? "") && (
           <>
-            <PropertyFeatures form={form} />
+            <PropertyFeatures form={form} propertyCategory={propertyCategory} />
             <PropertyUtilities form={form} />
           </>
         )}
