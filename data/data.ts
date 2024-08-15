@@ -176,27 +176,26 @@ export const propertyTypes: {
   label: string;
   value: string;
 }[] = [
-  { id: "1", label: "Apartment", value: "Apartment" },
-  { id: "2", label: "Flat", value: "Flat" },
-  { id: "3", label: "House", value: "House" },
-  { id: "4", label: "Condominium", value: "Condominium" },
-  { id: "5", label: "Townhouse", value: "Townhouse" },
-  { id: "6", label: "Villa", value: "Villa" },
-  { id: "7", label: "Cottage", value: "Cottage" },
-  { id: "8", label: "Bungalow", value: "Bungalow" },
-  { id: "9", label: "Duplex", value: "Duplex" },
-  { id: "10", label: "Penthouse", value: "Penthouse" },
-  { id: "11", label: "Loft", value: "Loft" },
-  { id: "12", label: "Studio", value: "Studio" },
-  { id: "13", label: "Farmhouse", value: "Farmhouse" },
-  { id: "14", label: "Ranch", value: "Ranch" },
-  { id: "15", label: "Mobile Home", value: "Mobile Home" },
-  { id: "16", label: "Multi-family Home", value: "Multi-family Home" },
-  { id: "17", label: "Commercial Property", value: "Commercial Property" },
-  { id: "18", label: "Land", value: "Land" },
-  { id: "19", label: "Manufactured Home", value: "Manufactured Home" },
-  { id: "20", label: "Cabin", value: "Cabin" },
-  { id: "21", label: "Chateau", value: "Chateau" },
+  {
+    id: "1",
+    label: "House",
+    value: "House",
+  },
+  {
+    id: "2",
+    label: "Flat",
+    value: "Flat",
+  },
+  {
+    id: "3",
+    label: "Apartment",
+    value: "Apartment",
+  },
+  {
+    id: "4",
+    label: "Room",
+    value: "Room",
+  },
 ];
 
 export const buildYears: {
@@ -1443,5 +1442,68 @@ export const popularLocations = [
     name: "Mymensingh",
     value: "Mymensingh",
     image: "/images/location-image/mymensingh.webp",
+  },
+];
+
+export const propertyCategories: {
+  id: string;
+  label: string;
+  value: string;
+  icon: any;
+  href: string;
+  disabled?: boolean;
+}[] = [
+  {
+    id: "1",
+    label: "Family",
+    value: "family",
+    icon: "house",
+    href: "/user/dashboard/add-property/family",
+  },
+  {
+    id: "2",
+    label: "Bachelor",
+    value: "bachelor",
+    icon: "house-plus",
+    href: "/user/dashboard/add-property/bachelor",
+  },
+  {
+    id: "3",
+    label: "Office",
+    value: "office",
+    icon: "building",
+    href: "/user/dashboard/add-property",
+    disabled: true,
+  },
+  {
+    id: "4",
+    label: "Sublet",
+    value: "sublet",
+    icon: "share-2",
+    href: "/user/dashboard/add-property/sublet",
+  },
+  {
+    id: "5",
+    label: "Hostel",
+    value: "hostel",
+    icon: "bed-single",
+    href: "/user/dashboard/add-property",
+    disabled: true,
+  },
+  {
+    id: "6",
+    label: "Shop",
+    value: "shop",
+    icon: "store",
+    href: "/user/dashboard/add-property",
+    disabled: true,
+  },
+  {
+    id: "7",
+    label: "Land",
+    value: "land",
+    icon: "land-plot",
+    href: "/user/dashboard/add-property",
+    disabled: true,
   },
 ];
