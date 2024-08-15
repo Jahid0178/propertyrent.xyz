@@ -30,6 +30,7 @@ const defaultProperty: PropertyProps = {
       numberOfBalconies: "",
       renovation: "",
       yearBuilt: "",
+      gender: "",
     },
     propertyUtilities: {
       gas: "",
