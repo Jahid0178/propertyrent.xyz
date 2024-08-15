@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
-import PropertyListingForm from "@/components/Forms/PropertyListingForm";
+import PropertyListingForm from "@/components/Forms/PropertyListingForm/PropertyListingForm";
 import { getPropertyById } from "@/lib/actions/property.action";
 
 interface PageProps {

@@ -12,11 +12,10 @@ import { TbBath, TbFence } from "react-icons/tb";
 import { RxSize } from "react-icons/rx";
 import { GiPaintRoller } from "react-icons/gi";
 import { CiCalendarDate } from "react-icons/ci";
-import { PiFireSimple } from "react-icons/pi";
+import { PiFireSimple, PiGarage, PiPerson } from "react-icons/pi";
 import { FaWifi } from "react-icons/fa6";
 import { MdElectricBolt, MdOutlineShoppingCart } from "react-icons/md";
-import { MdOutlineWaterDrop } from "react-icons/md";
-import { MdOutlinePool } from "react-icons/md";
+import { MdLocalDining, MdOutlineWaterDrop, MdBalcony } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
 import { LuFlower2, LuSchool } from "react-icons/lu";
 import { FaRegHospital } from "react-icons/fa";
@@ -45,10 +44,9 @@ const PropertyDetailsSection = ({
         numberOfBalconies,
         renovation,
         yearBuilt,
+        gender,
       },
       propertyUtilities: { gas, electricity, internet, water },
-      outdoorFeatures: { garden, pool, playground, fencing },
-      nearby: { school, hospital, shoppingCenter, publicTransport },
     },
     mapLocation,
   } = propertyData;
@@ -76,20 +74,60 @@ const PropertyDetailsSection = ({
                   {propertySize} {propertySizeUnit}
                 </span>
               </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <IoBedOutline size={22} />
-                </span>
-                <span>Bedrooms</span>
-                <span className="ml-auto">{numberOfBedrooms}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <TbBath size={22} />
-                </span>
-                <span>Bathrooms</span>
-                <span className="ml-auto">{numberOfBathrooms}</span>
-              </div>
+              {numberOfBedrooms > "0" && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <IoBedOutline size={22} />
+                  </span>
+                  <span>Bedrooms</span>
+                  <span className="ml-auto">{numberOfBedrooms}</span>
+                </div>
+              )}
+              {numberOfBathrooms > "0" && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <TbBath size={22} />
+                  </span>
+                  <span>Bathrooms</span>
+                  <span className="ml-auto">{numberOfBathrooms}</span>
+                </div>
+              )}
+              {numberOfDiningrooms > "0" && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <MdLocalDining size={22} />
+                  </span>
+                  <span>Dining Room</span>
+                  <span className="ml-auto">{numberOfDiningrooms}</span>
+                </div>
+              )}
+              {numberOfGarage > "0" && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <PiGarage size={22} />
+                  </span>
+                  <span>Garage</span>
+                  <span className="ml-auto">{numberOfGarage}</span>
+                </div>
+              )}
+              {numberOfBalconies > "0" && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <MdBalcony size={22} />
+                  </span>
+                  <span>Balcony</span>
+                  <span className="ml-auto">{numberOfBalconies}</span>
+                </div>
+              )}
+              {gender && (
+                <div className="flex items-center gap-2 p-2">
+                  <span>
+                    <PiPerson size={22} />
+                  </span>
+                  <span>Gender</span>
+                  <span className="ml-auto">{gender}</span>
+                </div>
+              )}
               <div className="flex items-center gap-2 p-2">
                 <span>
                   <GiPaintRoller size={22} />
@@ -143,72 +181,6 @@ const PropertyDetailsSection = ({
                 </span>
                 <span>Water</span>
                 <span className="ml-auto">{water}</span>
-              </div>
-            </div>
-          </div>
-          <div className="mt-4">
-            <h3 className="mb-2 text-lg font-semibold">Outdoor features</h3>
-            <div className="divide-y divide-gray-300">
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <MdOutlinePool size={22} />
-                </span>
-                <span>Pool</span>
-                <span className="ml-auto">{pool}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <LuFlower2 size={22} />
-                </span>
-                <span>Garden</span>
-                <span className="ml-auto">{garden}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <IoMdFootball size={22} />
-                </span>
-                <span>Playground</span>
-                <span className="ml-auto">{playground}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <TbFence size={22} />
-                </span>
-                <span>Fence</span>
-                <span className="ml-auto">{fencing}</span>
-              </div>
-            </div>
-          </div>
-          <div className="hidden md:block mt-4">
-            <h3 className="mb-2 text-lg font-semibold">Near by</h3>
-            <div className="divide-y divide-gray-300">
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <LuSchool size={22} />
-                </span>
-                <span>Schools</span>
-                <span className="ml-auto flex gap-2">{school}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <FaRegHospital size={22} />
-                </span>
-                <span>Hospital</span>
-                <span className="ml-auto flex gap-2">{hospital}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <MdOutlineShoppingCart size={22} />
-                </span>
-                <span>Shopping Center</span>
-                <span className="ml-auto flex gap-2">{shoppingCenter}</span>
-              </div>
-              <div className="flex items-center gap-2 p-2">
-                <span>
-                  <IoBusOutline size={22} />
-                </span>
-                <span>Public Transport</span>
-                <span className="ml-auto flex gap-2">{publicTransport}</span>
               </div>
             </div>
           </div>
