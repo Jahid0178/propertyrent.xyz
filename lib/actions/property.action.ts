@@ -38,18 +38,6 @@ const defaultProperty: PropertyProps = {
       internet: "",
       water: "",
     },
-    outdoorFeatures: {
-      garden: "",
-      pool: "",
-      playground: "",
-      fencing: "",
-    },
-    nearby: {
-      school: "",
-      hospital: "",
-      shoppingCenter: "",
-      publicTransport: "",
-    },
   },
   mapLocation: {
     coordinates: [],
