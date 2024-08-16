@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const propertyListingFormValidation = {
-  propertyId: z.string(),
   title: z
     .string({
       required_error: "Title is required",

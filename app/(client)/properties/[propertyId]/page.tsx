@@ -72,6 +72,7 @@ const PropertyDetailsPage = async ({
 
   const {
     _id,
+    puid,
     title,
     price,
     currency,
@@ -97,7 +98,7 @@ const PropertyDetailsPage = async ({
               <Link href={`#`} className="hover:text-orange-500">
                 {propertyType}
               </Link>
-              <p>Property ID: {_id}</p>
+              <p>Property ID: {puid}</p>
               <p>Views: {views}</p>
             </div>
             <PropertyActionButtons propertyId={_id} />

@@ -89,7 +89,6 @@ const PropertyListingForm = ({
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      propertyId: property?.propertyId || "",
       title: property?.title || "",
       description: property?.description || "",
       propertyType: property?.propertyType || "",

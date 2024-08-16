@@ -37,6 +37,7 @@ export interface ITrendingProperty {
 
 export interface PropertyProps {
   _id: string;
+  puid?: string;
   title: string;
   description: string;
   propertyType: string;
@@ -72,18 +73,6 @@ export interface PropertyProps {
       electricity: string;
       internet: string;
       water: string;
-    };
-    outdoorFeatures: {
-      garden: string;
-      pool: string;
-      playground: string;
-      fencing: string;
-    };
-    nearby: {
-      school: string;
-      hospital: string;
-      shoppingCenter: string;
-      publicTransport: string;
     };
   };
   author?: any;
