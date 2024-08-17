@@ -14,7 +14,7 @@ const PropertyLocation = ({
   return (
     <div className="mt-4">
       <h3 className="mb-2 text-lg font-semibold">Property Address</h3>
-      {user?.credit > USER_MINIMUM_CREDIT ? (
+      {user?.credit >= USER_MINIMUM_CREDIT ? (
         <div className="flex justify-between items-center">
           <address>
             Street: {street},<br /> City: {city},<br /> Zip Code: {zipCode},

@@ -20,9 +20,11 @@ import {
   SelectValue,
 } from "../ui/select";
 import { useForm } from "react-hook-form";
-import { Form, FormField, FormItem } from "../ui/form";
+import { Form, FormField, FormItem, FormMessage } from "../ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { buildYears, propertyTypes } from "@/data/data";
+import { useRouter } from "next/navigation";
 
 interface AdvancedSearchFormProps {
   locations: any[];
@@ -30,28 +32,29 @@ interface AdvancedSearchFormProps {
 }
 
 const AdvancedFormSchema = z.object({
-  location: z.string(),
-  selectFor: z.string(),
-  propertyType: z.string(),
-  yearBuild: z.string(),
-  condition: z.string(),
-  propertySize: z.string(),
-  numberOfRoom: z.string(),
-  numberOfBath: z.string(),
-  minPrice: z.string(),
-  maxPrice: z.string(),
+  city: z.string({ message: "City is required" }),
+  listingType: z.string({ message: "Listing Type is required" }),
+  propertyType: z.string({ message: "Property type is required" }),
+  yearBuild: z.string({ message: "Year build is required" }),
+  propertySize: z.string({ message: "Property size is required" }),
+  numberOfBedrooms: z.string({ message: "Number of bedrooms is required" }),
+  numberOfBathrooms: z.string({ message: "Number of bathrooms is required" }),
+  minPrice: z.string({ message: "Minimum price is required" }),
+  maxPrice: z.string({ message: "Maximum price is required" }),
 });
 
 const AdvancedSearchForm = ({
   locations,
   propertiesType,
 }: AdvancedSearchFormProps) => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof AdvancedFormSchema>>({
     resolver: zodResolver(AdvancedFormSchema),
   });
 
-  const onSubmit = (data: any) => {
-    console.log("advanced_form_data", data);
+  const onSubmit = (data: z.infer<typeof AdvancedFormSchema>) => {
+    const advancedUrlSearchParams = new URLSearchParams(data);
+    router.push(`/properties?${advancedUrlSearchParams}`);
   };
   return (
     <Dialog>
@@ -69,7 +72,7 @@ const AdvancedSearchForm = ({
             <div>
               <FormField
                 control={form.control}
-                name="location"
+                name="city"
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <Select
@@ -77,16 +80,20 @@ const AdvancedSearchForm = ({
                       defaultValue={field.value}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select Location" />
+                        <SelectValue placeholder="Select city" />
                       </SelectTrigger>
                       <SelectContent>
-                        {locations.map(({ id, name, value }) => (
-                          <SelectItem key={id} value={value}>
-                            {name}
-                          </SelectItem>
-                        ))}
+                        {locations.map((location, ind) => {
+                          const { district } = location;
+                          return (
+                            <SelectItem key={ind} value={district}>
+                              {district}
+                            </SelectItem>
+                          );
+                        })}
                       </SelectContent>
                     </Select>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -99,23 +106,30 @@ const AdvancedSearchForm = ({
                 <div>
                   <FormField
                     control={form.control}
-                    name="selectFor"
+                    name="listingType"
                     render={({ field }) => (
                       <FormItem className="w-full">
-                        <Label className="mb-2 inline-block">Select For</Label>
+                        <Label className="mb-2 inline-block">
+                          Listing Type
+                        </Label>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select listing type" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="rent">Rent</SelectItem>
-                            <SelectItem value="sale">Sale</SelectItem>
-                            <SelectItem value="buy">Buy</SelectItem>
+                            <SelectItem value="Rent">Rent</SelectItem>
+                            <SelectItem value="Sale" disabled>
+                              Sale
+                            </SelectItem>
+                            <SelectItem value="Buy" disabled>
+                              Buy
+                            </SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -134,16 +148,17 @@ const AdvancedSearchForm = ({
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select property type" />
                           </SelectTrigger>
                           <SelectContent>
-                            {propertiesType.map(({ id, name, value }) => (
+                            {propertyTypes.map(({ id, label, value }) => (
                               <SelectItem key={id} value={value}>
-                                {name}
+                                {label}
                               </SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -160,39 +175,17 @@ const AdvancedSearchForm = ({
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select build year" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="2020">2020</SelectItem>
-                            <SelectItem value="2021">2021</SelectItem>
-                            <SelectItem value="2022">2022</SelectItem>
-                            <SelectItem value="2023">2023</SelectItem>
-                            <SelectItem value="2024">2024</SelectItem>
+                            {buildYears.map(({ id, label, value }) => (
+                              <SelectItem key={id} value={value}>
+                                {label}
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <FormField
-                    control={form.control}
-                    name="condition"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <Label className="mb-2 inline-block">Condition</Label>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="used">Used</SelectItem>
-                            <SelectItem value="new">New</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -211,14 +204,15 @@ const AdvancedSearchForm = ({
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select property size" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="1200sqf">1200sqf</SelectItem>
-                            <SelectItem value="1500sqf">1500sqf</SelectItem>
-                            <SelectItem value="2400sqf">2400sqf</SelectItem>
+                            <SelectItem value="1200">1200sqf</SelectItem>
+                            <SelectItem value="1500">1500sqf</SelectItem>
+                            <SelectItem value="2400">2400sqf</SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -226,18 +220,18 @@ const AdvancedSearchForm = ({
                 <div>
                   <FormField
                     control={form.control}
-                    name="numberOfRoom"
+                    name="numberOfBedrooms"
                     render={({ field }) => (
                       <FormItem className="w-full">
                         <Label className="mb-2 inline-block">
-                          Number Of Room
+                          Number Of Bed Room
                         </Label>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select number of bed" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="1">1</SelectItem>
@@ -247,6 +241,7 @@ const AdvancedSearchForm = ({
                             <SelectItem value="5">5</SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -254,26 +249,28 @@ const AdvancedSearchForm = ({
                 <div>
                   <FormField
                     control={form.control}
-                    name="numberOfBath"
+                    name="numberOfBathrooms"
                     render={({ field }) => (
                       <FormItem className="w-full">
                         <Label className="mb-2 inline-block">
-                          Number Of Bath
+                          Number Of Bath Room
                         </Label>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select number of bath" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="1">1</SelectItem>
                             <SelectItem value="2">2</SelectItem>
                             <SelectItem value="3">3</SelectItem>
                             <SelectItem value="4">4</SelectItem>
+                            <SelectItem value="5">5</SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -297,15 +294,19 @@ const AdvancedSearchForm = ({
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select min price" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="1">10,000</SelectItem>
-                            <SelectItem value="2">20,000</SelectItem>
-                            <SelectItem value="3">30,000</SelectItem>
-                            <SelectItem value="4">40,000</SelectItem>
+                            <SelectItem value="5000">5,000</SelectItem>
+                            <SelectItem value="10000">10,000</SelectItem>
+                            <SelectItem value="20000">20,000</SelectItem>
+                            <SelectItem value="30000">30,000</SelectItem>
+                            <SelectItem value="40000">40,000</SelectItem>
+                            <SelectItem value="50000">50,000</SelectItem>
+                            <SelectItem value="60000">60,000</SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -322,15 +323,19 @@ const AdvancedSearchForm = ({
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Select" />
+                            <SelectValue placeholder="Select max price" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="1">10,000</SelectItem>
-                            <SelectItem value="2">20,000</SelectItem>
-                            <SelectItem value="3">30,000</SelectItem>
-                            <SelectItem value="4">40,000</SelectItem>
+                            <SelectItem value="5000">5,000</SelectItem>
+                            <SelectItem value="10000">10,000</SelectItem>
+                            <SelectItem value="20000">20,000</SelectItem>
+                            <SelectItem value="30000">30,000</SelectItem>
+                            <SelectItem value="40000">40,000</SelectItem>
+                            <SelectItem value="50000">50,000</SelectItem>
+                            <SelectItem value="60000">60,000</SelectItem>
                           </SelectContent>
                         </Select>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
