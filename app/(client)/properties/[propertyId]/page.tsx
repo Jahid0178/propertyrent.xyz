@@ -88,7 +88,7 @@ const PropertyDetailsPage = async ({
         <div className="space-y-3">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-semibold">{title}</h2>
-            <p>
+            <p className="text-2xl font-semibold">
               Price: {formatNumberWithCommas(price as number)} {currency}
             </p>
           </div>

@@ -10,8 +10,7 @@ type PropertiesPageProps = {
 
 const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
   const params = searchParams;
-
-  const { properties } = await getAllPropertyListings(params);
+  const { properties, meta } = await getAllPropertyListings(params);
 
   return (
     <section>
@@ -25,7 +24,11 @@ const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
           ))}
         </div>
         <div className="mt-8">
-          <PaginationWrapper />
+          <PaginationWrapper
+            page={meta.page}
+            limit={meta.limit}
+            total={meta.total}
+          />
         </div>
       </div>
     </section>
