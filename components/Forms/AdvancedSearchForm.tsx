@@ -24,7 +24,7 @@ import { Form, FormField, FormItem, FormMessage } from "../ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { buildYears, propertyTypes } from "@/data/data";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface AdvancedSearchFormProps {
   locations: any[];
@@ -48,12 +48,20 @@ const AdvancedSearchForm = ({
   propertiesType,
 }: AdvancedSearchFormProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page") ?? "1";
+  const limit = searchParams.get("limit") ?? "12";
   const form = useForm<z.infer<typeof AdvancedFormSchema>>({
     resolver: zodResolver(AdvancedFormSchema),
   });
 
   const onSubmit = (data: z.infer<typeof AdvancedFormSchema>) => {
-    const advancedUrlSearchParams = new URLSearchParams(data);
+    const modifiedData = {
+      ...data,
+      page,
+      limit,
+    };
+    const advancedUrlSearchParams = new URLSearchParams(modifiedData);
     router.push(`/properties?${advancedUrlSearchParams}`);
   };
   return (

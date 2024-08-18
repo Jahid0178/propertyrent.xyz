@@ -2,7 +2,7 @@
 
 import React from "react";
 import AdvancedSearchForm from "../Forms/AdvancedSearchForm";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -36,6 +36,10 @@ const FormSchema = z.object({
 
 const PropertySearch = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const page = searchParams.get("page") ?? "1";
+  const limit = searchParams.get("limit") ?? "12";
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -47,6 +51,8 @@ const PropertySearch = () => {
       city: data.city as string,
       minPrice: data.minPrice as string,
       maxPrice: data.maxPrice as string,
+      page,
+      limit,
     };
 
     router.push(`/properties?${new URLSearchParams(propertyFormData)}`);
