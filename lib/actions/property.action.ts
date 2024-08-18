@@ -53,7 +53,11 @@ export const getAllPropertiesType = async () => {
   } catch (error) {}
 };
 
-export const getAllPropertyListings = async (query: any = {}) => {
+export const getAllPropertyListings = async (
+  query: {
+    [key: string]: string;
+  } = {}
+): Promise<any> => {
   try {
     let baseURL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`;
 
@@ -62,7 +66,10 @@ export const getAllPropertyListings = async (query: any = {}) => {
     }
 
     const response = await axios.get(baseURL);
-    return response.data;
+    return {
+      properties: response.data.properties,
+      meta: response.data.meta,
+    };
   } catch (error) {
     console.error("getAllPropertyListings", error);
   }
