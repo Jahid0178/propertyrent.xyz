@@ -25,44 +25,44 @@ export const navigationMenus: {
     name: "Property Listing",
     children: [
       {
-        id: 1,
+        id: 3,
         name: "All Property",
         href: "/properties",
       },
       {
-        id: 2,
+        id: 4,
         name: "Barisal Division",
         href: "/property-region/Barisal",
       },
       {
-        id: 3,
+        id: 5,
         name: "Chattogram Division",
         href: "/property-region/Chattogram",
       },
       {
-        id: 4,
+        id: 6,
         name: "Dhaka Division",
         href: "/property-region/Dhaka",
       },
       {
-        id: 5,
+        id: 7,
         name: "Khulna Division",
         href: "/property-region/Khulna",
       },
       {
-        id: 6,
+        id: 8,
         name: "Rajshahi Division",
         href: "/property-region/Rajshahi",
       },
       {
-        id: 7,
+        id: 9,
         name: "Sylhet Division",
         href: "/property-region/Sylhet",
       },
     ],
   },
   {
-    id: 3,
+    id: 10,
     name: "Become a freelancer",
     href: "/become-a-freelancer",
   },
