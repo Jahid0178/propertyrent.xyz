@@ -6,7 +6,7 @@ import "./globals.css";
 import "swiper/css";
 import InitializeStore from "./InitializeStore";
 import ThemeProvider from "@/providers/ThemeProvider";
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +39,14 @@ export default async function RootLayout({
           </ThemeProvider>
         </body>
       </InitializeStore>
-      <GoogleAnalytics />
+
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ?? ""}
+      />
+
+      <GoogleAnalytics
+        gaId={process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID ?? ""}
+      />
     </html>
   );
 }
