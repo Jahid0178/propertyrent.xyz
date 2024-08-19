@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "PropertyRent.xyz",
   description:
     "PropertyRent.xyz is a platform that connects property owners with tenants.",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID,
+  },
 };
 
 export default async function RootLayout({
