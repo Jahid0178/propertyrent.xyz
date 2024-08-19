@@ -4,6 +4,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import HeaderMenus from "./HeaderMenus";
 import { usePathname } from "next/navigation";
+import ResponsiveSidebarMenu from "../Sidebar/ResponsiveSidebarMenu";
 
 const Header = () => {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
           <Logo type="text" href="/" />
           <HeaderMenus />
+          <ResponsiveSidebarMenu />
         </nav>
       </div>
     </header>
