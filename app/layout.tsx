@@ -6,6 +6,7 @@ import "./globals.css";
 import "swiper/css";
 import InitializeStore from "./InitializeStore";
 import ThemeProvider from "@/providers/ThemeProvider";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default async function RootLayout({
           </ThemeProvider>
         </body>
       </InitializeStore>
+      <GoogleAnalytics />
     </html>
   );
 }
