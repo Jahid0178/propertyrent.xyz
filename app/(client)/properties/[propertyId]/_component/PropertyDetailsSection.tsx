@@ -53,7 +53,7 @@ const PropertyDetailsSection = ({
 
   return (
     <div className="grid grid-cols-12 gap-6 mt-6">
-      <div className="col-span-12 md:col-span-8 space-y-6">
+      <div className="col-span-12 lg:col-span-8 space-y-6">
         <div>
           <h2 className="mb-2 text-xl font-semibold">Description</h2>
           <p>{description}</p>
@@ -194,7 +194,7 @@ const PropertyDetailsSection = ({
           />
         </div>
       </div>
-      <div className="col-span-12 md:col-span-4 space-y-4">
+      <div className="col-span-12 lg:col-span-4 space-y-4">
         {author && <AuthorCard author={author} />}
         <PropertyLocationMap mapLocation={mapLocation} />
       </div>
