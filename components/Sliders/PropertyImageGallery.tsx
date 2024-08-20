@@ -41,11 +41,21 @@ const PropertyImageGallery = ({ gallery }: IPropertyImageGallery) => {
         // @ts-ignore
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={8}
+        slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="property-gallery-thumbs-slider"
+        breakpoints={{
+          640: {
+            width: 640,
+            slidesPerView: 4,
+          },
+          768: {
+            width: 768,
+            slidesPerView: 5,
+          },
+        }}
       >
         {gallery.map((image, ind) => (
           <SwiperSlide key={ind}>
