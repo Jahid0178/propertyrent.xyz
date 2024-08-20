@@ -57,6 +57,7 @@
 
 .property-gallery-thumbs-slider {
   margin-top: 0.5rem !important;
+  height: 100px;
 }
 
 .property-gallery-thumbs-slider .swiper-slide {
