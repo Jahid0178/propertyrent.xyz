@@ -104,7 +104,7 @@ const Map = ({ coordinates, zoom, className, properties }: MapProps) => {
         map.getCanvas().style.cursor = "";
       });
 
-      const [lng, lat] = coordinates.slice(0, 2);
+      const [lat, lng] = coordinates.slice(0, 2);
       map.jumpTo({
         center: [lng || DEFAULT_MAP_LNG, lat || DEFAULT_MAP_LAT],
       });
