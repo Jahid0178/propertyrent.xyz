@@ -87,19 +87,19 @@ const PropertyDetailsPage = async ({
       <div className="container">
         <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-semibold">{title}</h2>
-            <p className="text-2xl font-semibold">
+            <h2 className="text-lg md:text-2xl font-semibold">{title}</h2>
+            <p className="text-lg md:text-2xl font-semibold">
               Price: {formatNumberWithCommas(price as number)} {currency}
             </p>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
               <Badge>{listingType}</Badge>
               <Link href={`#`} className="hover:text-orange-500">
                 {propertyType}
               </Link>
-              <p>Property ID: {puid}</p>
-              <p>Views: {views}</p>
+              <p className="text-nowrap">Property ID: {puid}</p>
+              <p className="text-nowrap">Views: {views}</p>
             </div>
             <PropertyActionButtons propertyId={_id} />
           </div>
