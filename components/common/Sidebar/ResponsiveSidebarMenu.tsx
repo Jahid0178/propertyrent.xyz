@@ -27,7 +27,7 @@ const ResponsiveSidebarMenu = () => {
   const { user, logout } = authStore((state) => state);
   return (
     <Sheet>
-      <SheetTrigger asChild className="flex md:hidden">
+      <SheetTrigger asChild className="flex lg:hidden">
         <Button variant="outline" size="icon">
           <FaBars size={20} />
         </Button>

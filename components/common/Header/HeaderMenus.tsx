@@ -30,7 +30,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const HeaderMenus = () => {
   const { user, logout } = authStore((state) => state);
   return (
-    <NavigationMenu className="hidden md:block">
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         {navigationMenus.map((navigationMenu) => (
           <NavigationMenuItem key={navigationMenu.id}>
