@@ -1,8 +1,15 @@
 import React from "react";
+import { Metadata } from "next";
 import PropertyCard from "@/components/Cards/PropertyCard";
 import PropertyListingTopbar from "@/components/PropertyListingTopbar/PropertyListingTopbar";
 import PaginationWrapper from "@/components/common/Pagination/PaginationWrapper";
 import { getAllPropertyListings } from "@/lib/actions/property.action";
+
+export const metadata: Metadata = {
+  title: "PropertyRent.xyz | All Property",
+  description:
+    "Explore a diverse selection of rental properties on PropertyRent.xyz. Browse all available listings, including apartments, houses, and commercial spaces in prime locations. Easily find the perfect property that meets your needs with detailed descriptions, photos, and up-to-date availability. Start your search now!",
+};
 
 type PropertiesPageProps = {
   searchParams: any;
