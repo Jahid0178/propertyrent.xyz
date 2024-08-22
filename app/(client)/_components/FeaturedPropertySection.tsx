@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import SectionHeading from "@/components/common/Heading/SectionHeading";
-import PropertyCard from "@/components/Cards/PropertyCard";
+import FeaturedPropertySlider from "@/components/Sliders/FeaturedPropertySlider";
 import { Button } from "@/components/ui/button";
 import { getFeaturedProperties } from "@/lib/actions/property.action";
 
@@ -20,14 +20,7 @@ const FeaturedPropertySection = async () => {
           </Button>
         </div>
         <div className="mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {featuredProperties.slice(0, 8).map((featuredProperty: any) => (
-              <PropertyCard
-                key={featuredProperty._id}
-                propertyData={featuredProperty}
-              />
-            ))}
-          </div>
+          <FeaturedPropertySlider featuredProperties={featuredProperties} />
         </div>
       </div>
     </section>

@@ -10,8 +10,8 @@ const HomePage = () => {
     <>
       <HeroSection />
       <PopularSection />
-      <TrendingPropertySection />
       <FeaturedPropertySection />
+      <TrendingPropertySection />
       <RecentPropertySection />
     </>
   );

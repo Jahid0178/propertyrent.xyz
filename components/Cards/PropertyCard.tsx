@@ -15,7 +15,7 @@ interface IPropertyCard {
   propertyData: PropertyProps;
 }
 
-const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
+const PropertyCard = ({ propertyData }: IPropertyCard) => {
   const {
     _id,
     images,
@@ -23,6 +23,7 @@ const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
     title,
     price,
     currency,
+    isFeatured,
     propertyDetails: {
       propertyFeatures: {
         propertySize,
@@ -39,6 +40,11 @@ const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
     <Link href={`/properties/${_id}`}>
       <Card className="overflow-hidden relative">
         <Badge className="absolute top-3 left-3">{listingType}</Badge>
+        {isFeatured && (
+          <Badge className="absolute top-3 right-3" variant="secondary">
+            {isFeatured ? "Premium Listing" : null}
+          </Badge>
+        )}
         <CardHeader className="px-0 pt-0 pb-6">
           <Image
             src={imageURL}
@@ -56,13 +62,13 @@ const PropertyCard = ({ propertyData }: { propertyData: PropertyProps }) => {
           </CardTitle>
           <div className="space-y-2">
             <div className="flex justify-between items-center gap-2">
-              <p className="text-sm flex gap-1 items-center">
+              <p className="text-sm flex gap-1 items-center text-nowrap">
                 <RxSize size={18} /> {propertySize} {propertySizeUnit}
               </p>
-              <p className="text-sm flex gap-1 items-center">
+              <p className="text-sm flex gap-1 items-center text-nowrap">
                 <IoBedOutline size={18} /> {numberOfBedrooms} Beds
               </p>
-              <p className="text-sm flex gap-1 items-center">
+              <p className="text-sm flex gap-1 items-center text-nowrap">
                 <TbBath size={18} /> {numberOfBathrooms} Baths
               </p>
             </div>

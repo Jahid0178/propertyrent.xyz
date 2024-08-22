@@ -45,6 +45,7 @@ export interface PropertyProps {
   currency: string;
   views: number;
   availableFrom: string;
+  isFeatured?: boolean;
   images: {
     url: string;
   }[];
