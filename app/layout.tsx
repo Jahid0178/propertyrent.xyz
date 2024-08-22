@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: "PropertyRent.xyz",
   description:
     "PropertyRent.xyz is a platform that connects property owners with tenants.",
+  keywords:
+    "Apartments for Rent in Bangaldesh, Houses for Rent in Bangaldesh, Rental Properties in Bangaldesh, Property for Rent, Property for Rent in Bangaldesh, Commercial Space for Rent in Bangaldesh, Real Estate Listings, Flats for Rent in Bangaldesh, Office Space for Rent in Bangaldesh, Student Housing in Bangladesh, Rental Market, Real Estate Market, Real Estate Market in Bangladesh, Real Estate Marketplace, Property Market, Property Market in Bangladesh, Real Estate Market in Bangladesh, PropertyRent.xyz, Property Rent, Property Rent in Bangladesh",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_ID,
   },
