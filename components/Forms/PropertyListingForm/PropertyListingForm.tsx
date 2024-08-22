@@ -62,13 +62,6 @@ import PriceAndAreaDetails from "./PriceAndAreaDetails";
 import PropertyFeatures from "./PropertyFeatures";
 import PropertyUtilities from "./PropertyUtilities";
 import PropertyAddress from "./PropertyAddress";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
 import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
 
 const FormSchema = z.object(propertyListingFormValidation);
@@ -205,9 +198,7 @@ const PropertyListingForm = ({
     form.setValue("coordinates", { lat, lng });
   };
 
-  const isButtonDisabled = user?.credit < USER_MINIMUM_CREDIT;
-
-  console.log("property", property);
+  const isMinimumCredit = user?.credit < USER_MINIMUM_CREDIT;
 
   return (
     <Form {...form}>
@@ -216,6 +207,11 @@ const PropertyListingForm = ({
         onSubmit={form.handleSubmit(onSubmit)}
         encType="multipart/form-data"
       >
+        {isMinimumCredit && (
+          <p className="text-sm text-red-500 text-center bg-red-500/10 p-4 rounded-md">
+            Please Purchase Credit To Add Property
+          </p>
+        )}
         <BasicInformation form={form} propertyCategory={propertyCategory!} />
         <PriceAndAreaDetails form={form} />
         {["family", "bachelor", "sublet"].includes(propertyCategory ?? "") && (
@@ -241,15 +237,9 @@ const PropertyListingForm = ({
           </h3>
           <ListingMap onCoordinatesChange={onCoordinatesChange} />
         </div>
-        <Button type="submit" size="lg" disabled={isButtonDisabled}>
+        <Button type="submit" size="lg" disabled={isMinimumCredit}>
           {formType === "create" ? "Add Property" : "Update Property"}
         </Button>
-
-        {isButtonDisabled && (
-          <p className="text-sm text-red-500 text-center">
-            Please purchase credit to add property
-          </p>
-        )}
       </form>
     </Form>
   );
