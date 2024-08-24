@@ -85,7 +85,7 @@ export interface PropertyProps {
 export interface IPackage {
   _id: string;
   packageTitle: string;
-  creditTitle: string;
+  packageType: string;
   price: number;
   currency: string;
   features: string[];
