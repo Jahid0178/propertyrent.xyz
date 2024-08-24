@@ -22,7 +22,6 @@ const OrderSummaryCard = ({ creditPackage }: OrderSummaryCardProps) => {
         <h5 className="font-semibold text-lg">
           Name: {creditPackage?.packageTitle}
         </h5>
-        <p className="text-sm">Credits: {creditPackage?.creditTitle}</p>
         <p className="text-sm">
           Price: {creditPackage?.price || 0} {creditPackage?.currency}
         </p>

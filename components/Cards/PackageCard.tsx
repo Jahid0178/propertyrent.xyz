@@ -19,7 +19,7 @@ const PackageCard = ({ creditPackage }: PackageCardProps) => {
   const {
     _id,
     packageTitle,
-    creditTitle,
+    packageType,
     price,
     features,
     description,
@@ -28,10 +28,9 @@ const PackageCard = ({ creditPackage }: PackageCardProps) => {
   return (
     <Card className="text-center bg-white">
       <CardHeader>
-        <CardTitle className="font-medium">{packageTitle}</CardTitle>
+        <CardTitle className="text-3xl font-semibold">{packageTitle}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <h3 className="text-3xl font-semibold">{creditTitle}</h3>
         <p>{description}</p>
         <ul>
           {features.map((feature, ind) => (
