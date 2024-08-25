@@ -77,6 +77,7 @@ export interface PropertyProps {
     };
   };
   author?: any;
+  expiresAt: string;
   mapLocation: {
     coordinates: number[];
   };
