@@ -39,6 +39,7 @@ const defaultProperty: PropertyProps = {
       water: "",
     },
   },
+  expiresAt: "",
   mapLocation: {
     coordinates: [],
   },
