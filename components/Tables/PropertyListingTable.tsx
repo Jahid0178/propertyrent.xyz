@@ -1,4 +1,8 @@
 import React from "react";
+import Image from "next/image";
+import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
+import moment from "moment";
+import PropertyListingActionButton from "./PropertyListingActionButton";
 import {
   Table,
   TableBody,
@@ -8,14 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
-import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
 import { Badge } from "../ui/badge";
-import Link from "next/link";
 import { PropertyProps } from "@/typescript/interface";
-import moment from "moment";
 
 interface PropertyListingTableProps {
   properties: PropertyProps[];
@@ -64,16 +62,7 @@ const PropertyListingTable = ({ properties }: PropertyListingTableProps) => {
                 <Badge>Active</Badge>
               </TableCell>
               <TableCell className="text-right space-x-2">
-                <Button size="icon" asChild>
-                  <Link
-                    href={`/user/dashboard/my-property/edit/${property._id}`}
-                  >
-                    <FaRegEdit size={16} />
-                  </Link>
-                </Button>
-                <Button size="icon" variant="destructive">
-                  <FaRegTrashAlt size={16} />
-                </Button>
+                <PropertyListingActionButton propertyId={property._id} />
               </TableCell>
             </TableRow>
           );
