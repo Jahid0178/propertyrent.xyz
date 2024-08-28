@@ -46,7 +46,6 @@ export interface PropertyProps {
   views: number;
   availableFrom: string;
   isFeatured?: boolean;
-  visibility?: "standard" | "enhanced" | "top-spot";
   status: boolean;
   images: {
     url: string;
