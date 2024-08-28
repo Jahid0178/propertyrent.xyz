@@ -37,8 +37,9 @@ const PropertyListingTable = ({ properties }: PropertyListingTableProps) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {properties.map((property: any) => {
+        {properties.map((property: PropertyProps) => {
           const formatExpiredDate = moment(property.expiresAt).format("ll");
+          const isPropertyActive = property.status;
           return (
             <TableRow key={property._id}>
               <TableCell>
@@ -59,7 +60,9 @@ const PropertyListingTable = ({ properties }: PropertyListingTableProps) => {
                 {formatNumberWithCommas(property.price)} {property.currency}
               </TableCell>
               <TableCell>
-                <Badge>Active</Badge>
+                <Badge variant={isPropertyActive ? "default" : "destructive"}>
+                  {isPropertyActive ? "Active" : "Inactive"}
+                </Badge>
               </TableCell>
               <TableCell className="text-right space-x-2">
                 <PropertyListingActionButton propertyId={property._id} />
