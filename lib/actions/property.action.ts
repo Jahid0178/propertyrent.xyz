@@ -12,6 +12,7 @@ const defaultProperty: PropertyProps = {
   images: [],
   views: 0,
   availableFrom: "",
+  status: false,
   address: {
     street: "",
     city: "",
