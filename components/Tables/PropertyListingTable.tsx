@@ -65,7 +65,7 @@ const PropertyListingTable = ({ properties }: PropertyListingTableProps) => {
                 </Badge>
               </TableCell>
               <TableCell className="text-right space-x-2">
-                <PropertyListingActionButton propertyId={property._id} />
+                <PropertyListingActionButton propertyId={property?._id} />
               </TableCell>
             </TableRow>
           );
