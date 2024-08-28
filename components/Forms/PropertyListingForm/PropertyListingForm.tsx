@@ -198,7 +198,7 @@ const PropertyListingForm = ({
     form.setValue("coordinates", { lat, lng });
   };
 
-  const isMinimumCredit = user?.credit < USER_MINIMUM_CREDIT;
+  const userCurrentPlanStatus = !user?.currentPlan?.status;
 
   return (
     <Form {...form}>
@@ -207,9 +207,9 @@ const PropertyListingForm = ({
         onSubmit={form.handleSubmit(onSubmit)}
         encType="multipart/form-data"
       >
-        {isMinimumCredit && (
+        {userCurrentPlanStatus && (
           <p className="text-sm text-red-500 text-center bg-red-500/10 p-4 rounded-md">
-            Please Purchase Credit To Add Property
+            You need to upgrade your plan to add property
           </p>
         )}
         <BasicInformation form={form} propertyCategory={propertyCategory!} />
@@ -237,7 +237,7 @@ const PropertyListingForm = ({
           </h3>
           <ListingMap onCoordinatesChange={onCoordinatesChange} />
         </div>
-        <Button type="submit" size="lg" disabled={isMinimumCredit}>
+        <Button type="submit" size="lg" disabled={userCurrentPlanStatus}>
           {formType === "create" ? "Add Property" : "Update Property"}
         </Button>
       </form>

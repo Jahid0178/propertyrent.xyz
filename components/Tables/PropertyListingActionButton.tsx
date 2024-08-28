@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
-import { MdOutlineMoreHoriz } from "react-icons/md";
+import { MdMoreVert } from "react-icons/md";
 
 const PropertyListingActionButton = ({
   propertyId,
@@ -19,27 +19,24 @@ const PropertyListingActionButton = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MdOutlineMoreHoriz size={18} />
+        <Button variant="ghost" size="icon">
+          <MdMoreVert size={18} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
-          <Button size="icon" asChild className="w-full">
-            <Link href={`/user/dashboard/my-property/edit/${propertyId}`}>
-              Edit
-            </Link>
-          </Button>
+        <DropdownMenuItem asChild>
+          <Link href={`/user/dashboard/my-property/edit/${propertyId}`}>
+            Edit
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Button onClick={() => console.log("Selected mark as featured")}>
-            Mark as featured
-          </Button>
+        <DropdownMenuItem
+          role="button"
+          onClick={() => console.log("Mark as featured")}
+        >
+          Mark as featured
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Button size="icon" variant="destructive" className="w-full">
-            Delete
-          </Button>
+        <DropdownMenuItem role="button" onClick={() => console.log("Delete")}>
+          Delete
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
