@@ -4,14 +4,14 @@ import React, { useEffect } from "react";
 import DashboardMetricCard from "@/components/Cards/DashboardMetricCard";
 import analyticsStore from "@/store/analytics";
 import authStore from "@/store/authStore";
-import { FaHouse, FaEye, FaMoneyBill1, FaCreditCard } from "react-icons/fa6";
+import { FaHouse, FaEye, FaMoneyBill1 } from "react-icons/fa6";
+import { GrStatusGood } from "react-icons/gr";
 
 const UserDashboardStatsSection = () => {
   const { getTotalProperty, totalProperty, totalViews } = analyticsStore(
     (state) => state
   );
   const { user } = authStore((state) => state);
-
   useEffect(() => {
     getTotalProperty();
   }, []);
@@ -34,9 +34,11 @@ const UserDashboardStatsSection = () => {
         icon={<FaMoneyBill1 size={20} />}
       />
       <DashboardMetricCard
-        title="Total Credits"
-        count={user?.credit || 0}
-        icon={<FaCreditCard size={20} />}
+        title={user?.currentPlan?.packageId?.packageTitle}
+        subTitle="Current Plan"
+        status={user?.currentPlan?.status}
+        showStatus={true}
+        icon={<GrStatusGood size={20} />}
       />
     </div>
   );
