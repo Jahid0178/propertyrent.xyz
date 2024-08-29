@@ -21,7 +21,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import authStore from "@/store/authStore";
-import UserAuthenticationForm from "@/components/Forms/UserAuthenticationForm";
 
 const ResponsiveSidebarMenu = () => {
   const { user, logout } = authStore((state) => state);
@@ -46,9 +45,9 @@ const ResponsiveSidebarMenu = () => {
             </SheetClose>
           </div>
         ) : (
-          <div className="mb-4">
-            <UserAuthenticationForm />
-          </div>
+          <Button asChild className="w-full mb-4">
+            <Link href="/login">Login</Link>
+          </Button>
         )}
         <ul className="space-y-4">
           {navigationMenus.map((navMenu) => {
