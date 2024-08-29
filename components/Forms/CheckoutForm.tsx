@@ -24,7 +24,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { handlePayout } from "@/lib/actions/payout.action";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 interface CheckoutFormProps {
   packageId: string | undefined;

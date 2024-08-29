@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const formSchema = z.object({
   name: z.string().trim().min(3, "Name must be at least 3 characters"),

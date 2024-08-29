@@ -14,8 +14,8 @@ import { navigationMenus } from "@/data/data";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { FaHouse } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
-import UserAuthenticationForm from "@/components/Forms/UserAuthenticationForm";
 import authStore from "@/store/authStore";
 import {
   DropdownMenu,
@@ -67,7 +67,7 @@ const HeaderMenus = () => {
         ))}
         <NavigationMenuItem className="!ml-5 flex gap-4">
           <Button asChild>
-            <Link href={`${user ? "/user/dashboard/add-property" : "/"}`}>
+            <Link href={`${user ? "/user/dashboard/add-property" : "/login"}`}>
               <FaHouse className="mr-2 h-4 w-4" /> Add Property
             </Link>
           </Button>
@@ -103,7 +103,11 @@ const HeaderMenus = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <UserAuthenticationForm />
+            <Button asChild variant="outline">
+              <Link href="/login">
+                <FaUser />
+              </Link>
+            </Button>
           )}
         </NavigationMenuItem>
       </NavigationMenuList>

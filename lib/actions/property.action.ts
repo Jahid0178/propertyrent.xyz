@@ -1,6 +1,6 @@
 import axios from "axios";
 import { PropertyProps } from "@/typescript/interface";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const defaultProperty: PropertyProps = {
   _id: "",

@@ -7,6 +7,7 @@ import "swiper/css";
 import InitializeStore from "./InitializeStore";
 import ThemeProvider from "@/providers/ThemeProvider";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,12 @@ export default async function RootLayout({
           >
             {children}
           </ThemeProvider>
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              duration: 3000,
+            }}
+          />
         </body>
       </InitializeStore>
 

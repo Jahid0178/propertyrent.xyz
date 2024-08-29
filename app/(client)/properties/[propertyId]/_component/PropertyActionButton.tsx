@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { Button } from "@/components/ui/button";
 import { FaStar, FaPrint } from "react-icons/fa";
 import { FaShareFromSquare } from "react-icons/fa6";
@@ -21,7 +21,7 @@ const PropertyActionButtons: React.FC<PropertyActionButtonsProps> = ({
     if (savedResponse?.status === 200) {
       toast.success(savedResponse?.message);
     } else {
-      toast.warning(savedResponse?.message);
+      toast.error(savedResponse?.message);
     }
   };
 

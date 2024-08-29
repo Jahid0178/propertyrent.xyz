@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { z } from "zod";
-import { Input } from "../ui/input";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import Logo from "@/components/common/Logo/Logo";
 import {
   Form,
   FormControl,
@@ -12,22 +19,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "../ui/button";
-import { FaUser } from "react-icons/fa";
-import { handleLoginUser, handleRegisterUser } from "@/lib/actions/user.action";
-import { toast } from "react-toastify";
-import { FaGoogle } from "react-icons/fa";
+} from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { handleRegisterUser } from "@/lib/actions/user.action";
+import { toast } from "react-hot-toast";
 
-import authStore from "@/store/authStore";
-
-// login form validation schema
-const loginFormSchema = z.object({
-  phone: z.string().trim().min(3, "Phone number is required"),
-  password: z.string().trim().min(1, "Password is required"),
-});
 // register form validation schema
 const registerFormSchema = z.object({
   fullName: z.string().trim().min(3, "Full name is required"),
@@ -37,17 +35,7 @@ const registerFormSchema = z.object({
   password: z.string().trim().min(1, "Password is required"),
 });
 
-const UserAuthenticationForm = () => {
-  const { user, setUser } = authStore((state: any) => state);
-  // login form
-  const loginForm = useForm<z.infer<typeof loginFormSchema>>({
-    resolver: zodResolver(loginFormSchema),
-    defaultValues: {
-      phone: "",
-      password: "",
-    },
-  });
-
+const RegisterPage = () => {
   // register form
   const registerForm = useForm<z.infer<typeof registerFormSchema>>({
     resolver: zodResolver(registerFormSchema),
@@ -59,19 +47,6 @@ const UserAuthenticationForm = () => {
       password: "",
     },
   });
-
-  // onsubmit handler for form
-  const onSubmit = async (data: z.infer<typeof loginFormSchema>) => {
-    const response = await handleLoginUser(data);
-    if (response.status === 200) {
-      toast.success(response.data.message);
-      if (!localStorage.getItem("token")) {
-        localStorage.setItem("token", response.data.access_token);
-      }
-      setUser(response.data.user);
-    }
-    // loginForm.reset();
-  };
 
   const handleRegisterOnSubmit = async (
     data: z.infer<typeof registerFormSchema>
@@ -88,71 +63,19 @@ const UserAuthenticationForm = () => {
       console.log("register error", error);
     }
   };
-
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
-          <FaUser />
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <Tabs defaultValue="login">
-          <TabsList className="grid grid-cols-2 w-full">
-            <TabsTrigger value="login">Login</TabsTrigger>
-            <TabsTrigger value="register">Register</TabsTrigger>
-          </TabsList>
-          <TabsContent value="login">
-            <Form {...loginForm}>
-              <form
-                onSubmit={loginForm.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={loginForm.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone Number:</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Enter your phone number"
-                          {...field}
-                          type="text"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={loginForm.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Password:</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Enter your password"
-                          {...field}
-                          type="password"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit">Login</Button>
-              </form>
-            </Form>
-            <hr className="my-5 block" />
-            <div>
-              <Button className="w-full" variant="secondary">
-                <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
-              </Button>
-            </div>
-          </TabsContent>
-          <TabsContent value="register">
+    <section className="h-dvh bg-gray-100">
+      <div className="container min-h-full flex justify-center items-center">
+        <Card className="mx-auto max-w-sm">
+          <Logo type="text" href="/" className="text-center px-4 pt-4" />
+          <CardHeader>
+            <CardTitle className="text-2xl">Register</CardTitle>
+            <CardDescription>
+              Provide your details below to create a new account and join our
+              service. Welcome aboard!
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
             <Form {...registerForm}>
               <form
                 onSubmit={registerForm.handleSubmit(handleRegisterOnSubmit)}
@@ -243,20 +166,26 @@ const UserAuthenticationForm = () => {
                     </FormItem>
                   )}
                 />
-                <Button type="submit">Register</Button>
+                <Button type="submit" className="w-full">
+                  Register
+                </Button>
+                <Button variant="outline" className="w-full">
+                  Login with Google
+                </Button>
               </form>
             </Form>
-            <hr className="my-5 block" />
-            <div>
-              <Button className="w-full" variant="secondary">
-                <FaGoogle className="mr-2 h-4 w-4" /> Login with Google
-              </Button>
+
+            <div className="mt-4 text-center text-sm">
+              Already have an account?{" "}
+              <Link href="/login" className="underline">
+                Login
+              </Link>
             </div>
-          </TabsContent>
-        </Tabs>
-      </DialogContent>
-    </Dialog>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
   );
 };
 
-export default UserAuthenticationForm;
+export default RegisterPage;
