@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 export const handleRegisterUser = async (userData: any): Promise<any> => {
   try {
