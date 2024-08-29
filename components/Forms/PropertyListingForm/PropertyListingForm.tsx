@@ -41,7 +41,7 @@ import {
   updatePropertyListing,
 } from "@/lib/actions/property.action";
 import { PiWarningCircleBold } from "react-icons/pi";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import ListingMap from "@/app/(dashboard)/user/dashboard/add-property/_components/ListingMap";
 import {
   Tooltip,
@@ -175,20 +175,7 @@ const PropertyListingForm = ({
         formType === "create"
           ? createPropertyListing(formData)
           : updatePropertyListing(formData, property?._id);
-      await toast.promise(response, {
-        pending:
-          formType === "create"
-            ? "Creating property listing"
-            : "Updating property listing",
-        success:
-          formType === "create"
-            ? "Property listing created successfully"
-            : "Property listing updated successfully",
-        error:
-          formType === "create"
-            ? "Error creating property listing"
-            : "Error updating property listing",
-      });
+      await toast.success("Property listing created successfully");
     } catch (error) {
       console.error("Error uploading image:", error);
     }
