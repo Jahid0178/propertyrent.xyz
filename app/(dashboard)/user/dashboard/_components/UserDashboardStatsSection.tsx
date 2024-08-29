@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import DashboardMetricCard from "@/components/Cards/DashboardMetricCard";
 import analyticsStore from "@/store/analytics";
 import authStore from "@/store/authStore";
@@ -15,6 +15,14 @@ const UserDashboardStatsSection = () => {
   useEffect(() => {
     getTotalProperty();
   }, []);
+
+  const currentPlanTitle = useMemo(() => {
+    return user?.currentPlan?.packageId?.packageTitle?.split(" ")[0] || "";
+  }, [user]);
+
+  const currentPlanStatus = useMemo(() => {
+    return user?.currentPlan?.status || false;
+  }, [user]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -34,10 +42,10 @@ const UserDashboardStatsSection = () => {
         icon={<FaMoneyBill1 size={20} />}
       />
       <DashboardMetricCard
-        title={user?.currentPlan?.packageId?.packageTitle}
-        subTitle="Current Plan"
-        status={user?.currentPlan?.status}
-        showStatus={true}
+        title={`Current Plan ${currentPlanTitle}`}
+        status={currentPlanStatus}
+        showStatus={Boolean(user?.currentPlan)}
+        count={currentPlanTitle || "No Plan"}
         icon={<GrStatusGood size={20} />}
       />
     </div>
