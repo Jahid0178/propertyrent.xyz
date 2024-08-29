@@ -24,7 +24,7 @@ import {
   handleUpdateUser,
   handleUserProfileImage,
 } from "@/lib/actions/user.action";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { FaTrash } from "react-icons/fa6";
 
 const ProfileEditForm = () => {
@@ -47,29 +47,14 @@ const ProfileEditForm = () => {
   });
 
   const handleSubmit = async (data: any) => {
-    await toast.promise(handleUpdateUser(user?._id, data), {
-      pending: "Updating user profile",
-      success: {
-        async render({ data }) {
-          if (avatar) {
-            const formData = new FormData();
-            formData.append("avatar", avatar);
-            await toast.promise(handleUserProfileImage(user?._id, formData), {
-              pending: "Updating user avatar",
-              success: {
-                render({ data }) {
-                  return data?.data?.message;
-                },
-              },
-              error: "Error updating user profile",
-            });
-          }
-
-          return data?.data?.message;
-        },
-      },
-      error: "Error updating user profile",
-    });
+    const res = await handleUpdateUser(user?._id, data);
+    console.log("res", res);
+    if (avatar) {
+      const formData = new FormData();
+      formData.append("avatar", avatar);
+      const res = await handleUserProfileImage(user?._id, formData);
+      console.log("res", res);
+    }
   };
 
   const handleAvatarChange = (event: any) => {

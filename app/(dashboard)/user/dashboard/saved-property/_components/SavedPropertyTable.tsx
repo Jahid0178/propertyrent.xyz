@@ -21,7 +21,7 @@ import formatNumberWithCommas from "@/utils/formatNumberWithCommas";
 import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const SavedPropertyTable = () => {
   const [savedProperties, setSavedProperties] = useState([]);
