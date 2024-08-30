@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,6 +22,7 @@ import { IoMdFootball } from "react-icons/io";
 import { LuFlower2, LuSchool } from "react-icons/lu";
 import { FaRegHospital } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import authStore from "@/store/authStore";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -28,6 +31,7 @@ type PropertyDetailsSectionProps = {
 const PropertyDetailsSection = ({
   propertyData,
 }: PropertyDetailsSectionProps) => {
+  const { user } = authStore((state) => state);
   const {
     author,
     description,
@@ -50,6 +54,12 @@ const PropertyDetailsSection = ({
     },
     mapLocation,
   } = propertyData;
+
+  const shouldRenderAuthorCard = !!user;
+
+  const shouldRenderMap =
+    user?.currentPlan?.status &&
+    user?.currentPlan?.packageId?.packageType === "premium";
 
   return (
     <div className="grid grid-cols-12 gap-6 mt-6">
@@ -195,8 +205,8 @@ const PropertyDetailsSection = ({
         </div>
       </div>
       <div className="col-span-12 lg:col-span-4 space-y-4">
-        {author && <AuthorCard author={author} />}
-        <PropertyLocationMap mapLocation={mapLocation} />
+        {shouldRenderAuthorCard && <AuthorCard author={author} />}
+        {shouldRenderMap && <PropertyLocationMap mapLocation={mapLocation} />}
       </div>
     </div>
   );
