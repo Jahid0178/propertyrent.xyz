@@ -51,7 +51,7 @@ const PropertyListingTable = ({ properties }: PropertyListingTableProps) => {
                   className="rounded-md"
                 />
               </TableCell>
-              <TableCell className="font-medium">{property._id}</TableCell>
+              <TableCell className="font-medium">{property.puid}</TableCell>
               <TableCell>{property.title}</TableCell>
               <TableCell>
                 {property.expiresAt ? formatExpiredDate : "-"}
