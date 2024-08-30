@@ -15,7 +15,7 @@ type AuthorCardProps = {
 };
 
 const AuthorCard = ({ author }: AuthorCardProps) => {
-  const { fullName, email, avatar } = author;
+  const { fullName, email, avatar, phone } = author;
   return (
     <Card>
       <CardHeader>
@@ -31,10 +31,7 @@ const AuthorCard = ({ author }: AuthorCardProps) => {
       </CardHeader>
       <CardContent className="space-y-2">
         <p>Email: {email}</p>
-        {/* <p>Phone: {phone}</p> */}
-        <Button className="!mt-6 w-full" size="lg">
-          Contact Me
-        </Button>
+        <p>Phone: {phone}</p>
       </CardContent>
     </Card>
   );
