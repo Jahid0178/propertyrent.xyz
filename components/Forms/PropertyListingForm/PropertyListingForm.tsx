@@ -160,7 +160,6 @@ const PropertyListingForm = ({
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
-      console.log("data", data);
       const formData = new FormData();
 
       if (data.images && data.images.length > 0) {
@@ -175,7 +174,12 @@ const PropertyListingForm = ({
         formType === "create"
           ? createPropertyListing(formData)
           : updatePropertyListing(formData, property?._id);
-      await toast.success("Property listing created successfully");
+
+      await toast.promise(response, {
+        loading: "Uploading...",
+        success: (res) => `${res?.data?.message}`,
+        error: "Error creating property",
+      });
     } catch (error) {
       console.error("Error uploading image:", error);
     }
