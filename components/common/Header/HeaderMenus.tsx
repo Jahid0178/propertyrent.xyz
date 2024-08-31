@@ -29,6 +29,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const HeaderMenus = () => {
   const { user, logout } = authStore((state) => state);
+  const userFullName = user?.fullName;
   return (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
@@ -85,7 +86,7 @@ const HeaderMenus = () => {
                 </Avatar>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>{`${userFullName} Account`}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link href="/user/dashboard/profile">Profile</Link>
