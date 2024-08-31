@@ -205,7 +205,26 @@ const PropertyDetailsSection = ({
         </div>
       </div>
       <div className="col-span-12 lg:col-span-4 space-y-4">
-        {shouldRenderAuthorCard && <AuthorCard author={author} />}
+        {shouldRenderAuthorCard ? (
+          <AuthorCard author={author} />
+        ) : (
+          <div className="relative">
+            <Image
+              src="/images/blur-author-card.png"
+              alt="blur author card"
+              width={300}
+              height={300}
+              draggable={false}
+              className="w-full rounded-md border"
+            />
+            <Button
+              asChild
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+              <Link href="/plans">Buy Plan To Unlock</Link>
+            </Button>
+          </div>
+        )}
         {shouldRenderMap && <PropertyLocationMap mapLocation={mapLocation} />}
       </div>
     </div>
