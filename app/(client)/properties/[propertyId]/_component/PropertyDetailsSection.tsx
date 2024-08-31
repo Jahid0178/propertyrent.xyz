@@ -23,6 +23,7 @@ import { LuFlower2, LuSchool } from "react-icons/lu";
 import { FaRegHospital } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import authStore from "@/store/authStore";
+import BlurredImageCard from "@/components/Cards/BlurredImageCard";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -208,24 +209,25 @@ const PropertyDetailsSection = ({
         {shouldRenderAuthorCard ? (
           <AuthorCard author={author} />
         ) : (
-          <div className="relative">
-            <Image
-              src="/images/blur-author-card.png"
-              alt="blur author card"
-              width={300}
-              height={300}
-              draggable={false}
-              className="w-full rounded-md border"
-            />
-            <Button
-              asChild
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            >
-              <Link href="/plans">Buy Plan To Unlock</Link>
-            </Button>
-          </div>
+          <BlurredImageCard
+            imageUrl="/images/blur-author-card.png"
+            altText="blur author card"
+            btnText="Buy Plan To Unlock"
+            planUrl="/choose-plan"
+            isBlurred={true}
+          />
         )}
-        {shouldRenderMap && <PropertyLocationMap mapLocation={mapLocation} />}
+        {shouldRenderMap ? (
+          <PropertyLocationMap mapLocation={mapLocation} />
+        ) : (
+          <BlurredImageCard
+            imageUrl="/images/blur-map.png"
+            altText="blur map"
+            btnText="Buy Plan To Unlock"
+            planUrl="/choose-plan"
+            isBlurred={true}
+          />
+        )}
       </div>
     </div>
   );
