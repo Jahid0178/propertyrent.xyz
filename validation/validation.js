@@ -120,8 +120,7 @@ export const propertyListingFormValidation = {
         .nonempty("Water is required"),
     }),
   }),
-  coordinates: z.object({
-    lat: z.number(),
-    lng: z.number(),
+  mapLocation: z.object({
+    coordinates: z.array(z.number()),
   }),
 };

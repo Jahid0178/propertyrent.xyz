@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
 import { Textarea } from "@/components/ui/textarea";
+import ImagePreviewUploader from "@/components/common/ImagePreviewUploader/ImagePreviewUploader";
 
 interface BasicInformationProps {
   form: any;
@@ -231,14 +232,7 @@ const BasicInformation = ({
             <FormItem>
               <FormLabel>Property Image</FormLabel>
               <FormControl>
-                <Input
-                  type="file"
-                  className="bg-white"
-                  placeholder="Enter Property Image"
-                  // {...field}
-                  multiple
-                  onChange={(e) => field.onChange(e.target.files)}
-                />
+                <ImagePreviewUploader form={form} name="images" />
               </FormControl>
               <FormMessage />
             </FormItem>
