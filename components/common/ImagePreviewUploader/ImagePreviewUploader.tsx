@@ -52,7 +52,6 @@ const ImagePreviewUploader = ({ form, name }: ImagePreviewUploaderProps) => {
   };
 
   useEffect(() => {
-    console.log("render when uploadedFiles changes");
     let formData = new FormData();
 
     [...uploadedFiles].forEach((file, ind) => {
