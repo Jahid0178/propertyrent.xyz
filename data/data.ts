@@ -1415,3 +1415,47 @@ export const propertyCategories: {
     disabled: true,
   },
 ];
+
+export const clientHeaderUserDropdownMenus: {
+  id: string;
+  label: string;
+  href: string;
+}[] = [
+  {
+    id: "1",
+    label: "Dashboard",
+    href: "user/dashboard",
+  },
+  {
+    id: "2",
+    label: "Profile",
+    href: "user/profile",
+  },
+  {
+    id: "3",
+    label: "Settings",
+    href: "user/settings",
+  },
+];
+
+export const userDropdownMenus: {
+  id: string;
+  label: string;
+  href: string;
+}[] = [
+  {
+    id: "1",
+    label: "Dashboard",
+    href: "dashboard",
+  },
+  {
+    id: "2",
+    label: "Profile",
+    href: "profile",
+  },
+  {
+    id: "3",
+    label: "Settings",
+    href: "settings",
+  },
+];
