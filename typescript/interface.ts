@@ -42,6 +42,7 @@ export interface PropertyProps {
   description: string;
   propertyType: string;
   listingType: "Rent" | "Sale" | "Buy" | "Lease";
+  category: string;
   currency: string;
   views: number;
   availableFrom: string;
@@ -53,6 +54,7 @@ export interface PropertyProps {
   address: {
     street: string;
     city: string;
+    upazilla: string;
     country: string;
     zipCode: string;
   };
@@ -66,6 +68,7 @@ export interface PropertyProps {
       numberOfDiningrooms: string;
       numberOfGarage: string;
       numberOfBalconies: string;
+      numberOfFloors: string;
       renovation: string;
       yearBuilt: string;
       gender: string;
@@ -80,7 +83,7 @@ export interface PropertyProps {
   author?: any;
   expiresAt: string;
   mapLocation: {
-    coordinates: number[];
+    coordinates: [number, number];
   };
 }
 
