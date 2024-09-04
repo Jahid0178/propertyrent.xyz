@@ -8,6 +8,7 @@ const defaultProperty: PropertyProps = {
   description: "",
   propertyType: "",
   listingType: "Rent",
+  category: "",
   currency: "",
   images: [],
   views: 0,
@@ -16,6 +17,7 @@ const defaultProperty: PropertyProps = {
   address: {
     street: "",
     city: "",
+    upazilla: "",
     country: "",
     zipCode: "",
   },
@@ -29,6 +31,7 @@ const defaultProperty: PropertyProps = {
       numberOfDiningrooms: "",
       numberOfGarage: "",
       numberOfBalconies: "",
+      numberOfFloors: "",
       renovation: "",
       yearBuilt: "",
       gender: "",
@@ -42,7 +45,7 @@ const defaultProperty: PropertyProps = {
   },
   expiresAt: "",
   mapLocation: {
-    coordinates: [],
+    coordinates: [0, 0],
   },
 };
 
@@ -87,7 +90,9 @@ export const getAllProperties = async (searchParams: string = "") => {
 };
 
 // create property listing
-export const createPropertyListing = async (data: any) => {
+export const createPropertyListing = async (
+  data: PropertyProps
+): Promise<any> => {
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing`,
@@ -115,6 +120,27 @@ export const updatePropertyListing = async (data: any, propertyId: string) => {
     return response;
   } catch (error) {
     console.error("updatePropertyListing", error);
+  }
+};
+
+export const uploadPropertyListingImage = async (
+  propertyId: string,
+  data: FormData
+) => {
+  try {
+    const response = await axios.put(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/property-listing/${propertyId}/images`,
+      data,
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error("uploadPropertyListingImage", error);
   }
 };
 
