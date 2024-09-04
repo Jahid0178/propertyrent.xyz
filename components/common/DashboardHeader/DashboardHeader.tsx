@@ -2,19 +2,11 @@
 
 import React from "react";
 import Logo from "../Logo/Logo";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
 import authStore from "@/store/authStore";
-import { useRouter } from "next/navigation";
 import DashboardMobileSidebar from "@/components/Sidebars/DashboardSidebar/DashboardMobileSidebar";
+import ProfileDropdownMenu from "../ProfileDropdownMenu/ProfileDropdownMenu";
+import { useRouter } from "next/navigation";
+import { userDropdownMenus } from "@/data/data";
 
 const DashboardHeader = () => {
   const router = useRouter();
@@ -32,36 +24,7 @@ const DashboardHeader = () => {
               <h5 className="hidden md:block text-lg font-medium">
                 Hello, {user?.fullName}
               </h5>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <Avatar>
-                    <AvatarImage
-                      src={user?.avatar?.url || ""}
-                      alt={user?.fullName || ""}
-                    />
-                    <AvatarFallback>
-                      {user?.fullName?.slice(0, 1) || ""}
-                    </AvatarFallback>
-                  </Avatar>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link href="/user/dashboard/profile">Profile</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/user/dashboard">Dashboard</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/user/dashboard/settings">Settings</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => logout()}>
-                    Log out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <ProfileDropdownMenu dropdownMenus={userDropdownMenus} />
             </div>
           </div>
         </div>

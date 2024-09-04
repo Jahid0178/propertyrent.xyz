@@ -10,26 +10,17 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { navigationMenus } from "@/data/data";
+import { clientHeaderUserDropdownMenus, navigationMenus } from "@/data/data";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { FaHouse } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
-import { MdOutlineLogout } from "react-icons/md";
 import authStore from "@/store/authStore";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ProfileDropdownMenu from "../ProfileDropdownMenu/ProfileDropdownMenu";
 
 const HeaderMenus = () => {
-  const { user, logout } = authStore((state) => state);
-  const userFullName = user?.fullName;
+  const { user } = authStore((state) => state);
+
   return (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
@@ -73,36 +64,9 @@ const HeaderMenus = () => {
             </Link>
           </Button>
           {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Avatar>
-                  <AvatarImage
-                    src={user?.avatar?.url || ""}
-                    alt={user?.fullName || ""}
-                  />
-                  <AvatarFallback>
-                    {user?.fullName?.slice(0, 1) || ""}
-                  </AvatarFallback>
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>{`${userFullName} Account`}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/user/dashboard/profile">Profile</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/user/dashboard">Dashboard</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/user/dashboard/settings">Settings</Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => logout()}>
-                  Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <ProfileDropdownMenu
+              dropdownMenus={clientHeaderUserDropdownMenus}
+            />
           ) : (
             <Button asChild variant="outline">
               <Link href="/login">
