@@ -1424,17 +1424,17 @@ export const clientHeaderUserDropdownMenus: {
   {
     id: "1",
     label: "Dashboard",
-    href: "user/dashboard",
+    href: "/user/dashboard",
   },
   {
     id: "2",
     label: "Profile",
-    href: "user/profile",
+    href: "/user/profile",
   },
   {
     id: "3",
     label: "Settings",
-    href: "user/settings",
+    href: "/user/settings",
   },
 ];
 
@@ -1446,16 +1446,16 @@ export const userDropdownMenus: {
   {
     id: "1",
     label: "Dashboard",
-    href: "dashboard",
+    href: "/user/dashboard",
   },
   {
     id: "2",
     label: "Profile",
-    href: "profile",
+    href: "/user/dashboard/profile",
   },
   {
     id: "3",
     label: "Settings",
-    href: "settings",
+    href: "/user/dashboard/settings",
   },
 ];
