@@ -39,6 +39,7 @@ import {
 import {
   createPropertyListing,
   updatePropertyListing,
+  uploadPropertyListingImage,
 } from "@/lib/actions/property.action";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { toast } from "react-hot-toast";
@@ -63,6 +64,7 @@ import PropertyFeatures from "./PropertyFeatures";
 import PropertyUtilities from "./PropertyUtilities";
 import PropertyAddress from "./PropertyAddress";
 import capitalizeFirstLetter from "@/utils/capitalizeFirstLetter";
+import { PropertyProps } from "@/typescript/interface";
 
 const FormSchema = z.object(propertyListingFormValidation);
 
@@ -79,9 +81,10 @@ const PropertyListingForm = ({
 }: PropertyListingFormProps) => {
   const { user } = authStore((state) => state);
 
-  const form = useForm({
+  const form = useForm<PropertyProps>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
+      _id: property?._id || "",
       title: property?.title || "",
       description: property?.description || "",
       propertyType: property?.propertyType || "",
@@ -134,9 +137,8 @@ const PropertyListingForm = ({
           water: property?.propertyDetails?.propertyUtilities?.water || "",
         },
       },
-      coordinates: {
-        lat: property?.coordinates?.lat || DEFAULT_MAP_LAT,
-        lng: property?.coordinates?.lng || DEFAULT_MAP_LNG,
+      mapLocation: {
+        coordinates: property?.coordinates,
       },
     },
   });
@@ -160,44 +162,47 @@ const PropertyListingForm = ({
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
-      const formData = new FormData();
-
-      if (data.images && data.images.length > 0) {
-        for (let i = 0; i < data.images.length; i++) {
-          formData.append("images", data.images[i]);
-        }
-      }
-
-      formData.append("data", JSON.stringify(data));
-
       const response =
         formType === "create"
-          ? createPropertyListing(formData)
-          : updatePropertyListing(formData, property?._id);
+          ? // @ts-ignore
+            createPropertyListing(data)
+          : updatePropertyListing(data, property?._id);
 
-      await toast.promise(response, {
-        loading: "Uploading...",
+      const res = await toast.promise(response, {
+        loading: "Creating property...",
         success: (res) => `${res?.data?.message}`,
         error: "Error creating property",
       });
+
+      const propertyId = res?.data?.property?._id;
+
+      const uploadImagesResponse = await toast.promise(
+        uploadPropertyListingImage(propertyId, data.images),
+        {
+          loading: "Image Uploading...",
+          success: (res) => `${res?.data?.message}`,
+          error: "Error uploading image",
+        }
+      );
+
+      if (uploadImagesResponse?.status === 200) {
+        toast.success(uploadImagesResponse?.data?.message);
+      }
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.error("Error on property submit form:", error);
     }
   };
 
   const onCoordinatesChange = (lat: number, lng: number) => {
-    form.setValue("coordinates", { lat, lng });
+    form.setValue("mapLocation.coordinates", [lat, lng]);
   };
 
   const userCurrentPlanStatus = !user?.currentPlan?.status;
 
   return (
     <Form {...form}>
-      <form
-        className="space-y-8"
-        onSubmit={form.handleSubmit(onSubmit)}
-        encType="multipart/form-data"
-      >
+      {/* @ts-ignore */}
+      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
         {userCurrentPlanStatus && (
           <p className="text-sm text-red-500 text-center bg-red-500/10 p-4 rounded-md">
             You need to upgrade your plan to add property
