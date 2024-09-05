@@ -1,3 +1,5 @@
+"use client";
+
 import { IPackage } from "@/typescript/interface";
 import React from "react";
 import Link from "next/link";
@@ -10,12 +12,14 @@ import {
 } from "../ui/card";
 import { Button } from "../ui/button";
 import { IoMdCheckmark } from "react-icons/io";
+import authStore from "@/store/authStore";
 
 type PackageCardProps = {
   creditPackage: IPackage;
 };
 
 const PackageCard = ({ creditPackage }: PackageCardProps) => {
+  const { user } = authStore((state) => state);
   const {
     _id,
     packageTitle,
@@ -25,6 +29,11 @@ const PackageCard = ({ creditPackage }: PackageCardProps) => {
     description,
     currency,
   } = creditPackage;
+
+  const isUserLoggedIn = Boolean(user);
+  const checkoutUrl = isUserLoggedIn
+    ? `/user/dashboard/checkout/${_id}`
+    : "/login";
   return (
     <Card className="text-center bg-white">
       <CardHeader>
@@ -45,7 +54,7 @@ const PackageCard = ({ creditPackage }: PackageCardProps) => {
       </CardContent>
       <CardFooter className="justify-center">
         <Button asChild size="lg">
-          <Link href={`/user/dashboard/checkout/${_id}`}>Buy Now</Link>
+          <Link href={checkoutUrl}>Buy Now</Link>
         </Button>
       </CardFooter>
     </Card>
