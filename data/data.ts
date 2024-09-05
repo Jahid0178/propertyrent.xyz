@@ -1434,12 +1434,12 @@ export const clientHeaderUserDropdownMenus: {
   {
     id: "2",
     label: "Profile",
-    href: "/user/profile",
+    href: "/user/dashboard/profile",
   },
   {
     id: "3",
     label: "Settings",
-    href: "/user/settings",
+    href: "/user/dashboard/settings",
   },
 ];
 
