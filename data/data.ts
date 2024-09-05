@@ -70,6 +70,11 @@ export const navigationMenus: {
 
 export const footerLinks: { id: number; name: string; href: string }[] = [
   {
+    id: 0,
+    name: "Choose Plan",
+    href: "/choose-plan",
+  },
+  {
     id: 1,
     name: "About Us",
     href: "/about-us",
