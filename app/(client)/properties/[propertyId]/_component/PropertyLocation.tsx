@@ -32,14 +32,14 @@ const PropertyLocation = ({
               <br />
               Country: {country}
             </address>
-            <Button asChild>
-              <Link href="/user/dashboard/buy-credit">Get Map Features</Link>
-            </Button>
           </>
         ) : (
           <div className="flex gap-2">
             <p>You need to buy plan to see location details</p>
-            <Link href="#" className="text-orange-500 hover:underline">
+            <Link
+              href="/choose-plan"
+              className="text-orange-500 hover:underline"
+            >
               Buy Plan
             </Link>
           </div>
