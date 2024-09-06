@@ -24,6 +24,7 @@ import { FaRegHospital } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import authStore from "@/store/authStore";
 import BlurredImageCard from "@/components/Cards/BlurredImageCard";
+import QRCodeGenerator from "@/components/QRCodeGenerator/QRCodeGenerator";
 
 type PropertyDetailsSectionProps = {
   propertyData: PropertyProps;
@@ -61,6 +62,8 @@ const PropertyDetailsSection = ({
   const shouldRenderMap =
     user?.currentPlan?.status &&
     user?.currentPlan?.packageId?.packageType === "premium";
+
+  const qrCodeData = `https://www.propertyrent.xyz/properties/${propertyData._id}`;
 
   return (
     <div className="grid grid-cols-12 gap-6 mt-6">
@@ -228,6 +231,9 @@ const PropertyDetailsSection = ({
             isBlurred={true}
           />
         )}
+        <div className="w-full h-full sm:w-40 sm:h-40 mx-auto">
+          <QRCodeGenerator value={qrCodeData} level="M" />
+        </div>
       </div>
     </div>
   );

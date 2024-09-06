@@ -101,7 +101,7 @@ const PropertyDetailsPage = async ({
                 {propertyType}
               </Link>
               <p className="text-nowrap">Property ID: {puid}</p>
-              <p className="text-nowrap">Views: {views}</p>
+              <p className="hidden md:block text-nowrap">Views: {views}</p>
             </div>
             <PropertyActionButtons propertyId={_id} />
           </div>
