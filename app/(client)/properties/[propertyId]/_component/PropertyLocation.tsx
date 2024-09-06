@@ -34,7 +34,7 @@ const PropertyLocation = ({
             </address>
           </>
         ) : (
-          <div className="flex gap-2">
+          <div className="flex flex-col md:flex-row gap-2">
             <p>You need to buy plan to see location details</p>
             <Link
               href="/choose-plan"
