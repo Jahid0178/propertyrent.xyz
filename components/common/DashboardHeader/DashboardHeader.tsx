@@ -5,12 +5,14 @@ import Logo from "../Logo/Logo";
 import authStore from "@/store/authStore";
 import DashboardMobileSidebar from "@/components/Sidebars/DashboardSidebar/DashboardMobileSidebar";
 import ProfileDropdownMenu from "../ProfileDropdownMenu/ProfileDropdownMenu";
-import { useRouter } from "next/navigation";
 import { userDropdownMenus } from "@/data/data";
+import { UserRole } from "@/typescript/types";
 
 const DashboardHeader = () => {
-  const router = useRouter();
-  const { user, logout } = authStore((state) => state);
+  const { user } = authStore((state) => state);
+
+  const userRole = user?.role as UserRole;
+
   return (
     <header>
       <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -24,7 +26,9 @@ const DashboardHeader = () => {
               <h5 className="hidden md:block text-lg font-medium">
                 Hello, {user?.fullName}
               </h5>
-              <ProfileDropdownMenu dropdownMenus={userDropdownMenus} />
+              <ProfileDropdownMenu
+                dropdownMenus={userDropdownMenus[userRole]}
+              />
             </div>
           </div>
         </div>
