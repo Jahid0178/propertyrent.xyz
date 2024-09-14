@@ -8,6 +8,7 @@ import { BsBuilding, BsBuildingAdd, BsBuildingCheck } from "react-icons/bs";
 import { GoGear } from "react-icons/go";
 import { features } from "process";
 import { IPackage } from "@/typescript/interface";
+import { UserRole } from "@/typescript/types";
 
 export const navigationMenus: {
   id: number;
@@ -101,61 +102,113 @@ export const footerLinks: { id: number; name: string; href: string }[] = [
   },
 ];
 
-export const dashboardSidebarLinks: {
-  id: number;
-  name: string;
-  href: string;
-  icon?: any;
-}[] = [
-  {
-    id: 1,
-    name: "Dashboard",
-    href: "/user/dashboard",
-    icon: MdOutlineSpaceDashboard as typeof MdOutlineSpaceDashboard,
-  },
-  {
-    id: 2,
-    name: "Profile",
-    href: "/user/dashboard/profile",
-    icon: FaRegUser as typeof FaRegUser,
-  },
-  {
-    id: 3,
-    name: "My Property",
-    href: "/user/dashboard/my-property",
-    icon: BsBuilding as typeof BsBuilding,
-  },
-  {
-    id: 4,
-    name: "Add Property",
-    href: "/user/dashboard/add-property",
-    icon: BsBuildingAdd as typeof BsBuildingAdd,
-  },
-  {
-    id: 5,
-    name: "Saved Property",
-    href: "/user/dashboard/saved-property",
-    icon: BsBuildingCheck as typeof BsBuildingCheck,
-  },
-  {
-    id: 6,
-    name: "History",
-    href: "/user/dashboard/history",
-    icon: MdHistory as typeof MdHistory,
-  },
-  {
-    id: 7,
-    name: "Buy Credit",
-    href: "/user/dashboard/buy-credit",
-    icon: MdCreditCard as typeof MdCreditCard,
-  },
-  {
-    id: 8,
-    name: "Settings",
-    href: "/user/dashboard/settings",
-    icon: GoGear as typeof GoGear,
-  },
-];
+export const dashboardSidebarLinks: Record<
+  UserRole,
+  { id: number; name: string; href: string; icon: any; query: boolean }[]
+> = {
+  user: [
+    {
+      id: 1,
+      name: "Dashboard",
+      href: "/user/dashboard",
+      icon: MdOutlineSpaceDashboard as typeof MdOutlineSpaceDashboard,
+      query: false,
+    },
+    {
+      id: 2,
+      name: "Profile",
+      href: "/user/dashboard/profile",
+      icon: FaRegUser as typeof FaRegUser,
+      query: false,
+    },
+    {
+      id: 3,
+      name: "My Property",
+      href: "/user/dashboard/my-property",
+      icon: BsBuilding as typeof BsBuilding,
+      query: true,
+    },
+    {
+      id: 4,
+      name: "Add Property",
+      href: "/user/dashboard/add-property",
+      icon: BsBuildingAdd as typeof BsBuildingAdd,
+      query: false,
+    },
+    {
+      id: 5,
+      name: "Saved Property",
+      href: "/user/dashboard/saved-property",
+      icon: BsBuildingCheck as typeof BsBuildingCheck,
+      query: false,
+    },
+    {
+      id: 6,
+      name: "History",
+      href: "/user/dashboard/history",
+      icon: MdHistory as typeof MdHistory,
+      query: false,
+    },
+    {
+      id: 7,
+      name: "Buy Credit",
+      href: "/user/dashboard/buy-credit",
+      icon: MdCreditCard as typeof MdCreditCard,
+      query: false,
+    },
+    {
+      id: 8,
+      name: "Settings",
+      href: "/user/dashboard/settings",
+      icon: GoGear as typeof GoGear,
+      query: false,
+    },
+  ],
+  admin: [
+    {
+      id: 1,
+      name: "Dashboard",
+      href: "/admin/dashboard",
+      icon: MdOutlineSpaceDashboard as typeof MdOutlineSpaceDashboard,
+      query: false,
+    },
+    {
+      id: 2,
+      name: "Profile",
+      href: "/admin/dashboard/profile",
+      icon: FaRegUser as typeof FaRegUser,
+      query: false,
+    },
+    {
+      id: 3,
+      name: "All Property",
+      href: "/admin/dashboard/all-property",
+      icon: BsBuilding as typeof BsBuilding,
+      query: false,
+    },
+    {
+      id: 5,
+      name: "User Control",
+      href: "/admin/dashboard/user-control",
+      icon: BsBuildingCheck as typeof BsBuildingCheck,
+      query: false,
+    },
+    {
+      id: 6,
+      name: "User Purchase History",
+      href: "/admin/dashboard/purchase-history",
+      icon: MdHistory as typeof MdHistory,
+      query: false,
+    },
+    {
+      id: 7,
+      name: "Settings",
+      href: "/admin/dashboard/settings",
+      icon: GoGear as typeof GoGear,
+      query: false,
+    },
+  ],
+};
 
 export const listingTypes: {
   id: number;
@@ -1444,23 +1497,49 @@ export const clientHeaderUserDropdownMenus: {
 ];
 
 export const userDropdownMenus: {
-  id: string;
-  label: string;
-  href: string;
-}[] = [
-  {
-    id: "1",
-    label: "Dashboard",
-    href: "/user/dashboard",
-  },
-  {
-    id: "2",
-    label: "Profile",
-    href: "/user/dashboard/profile",
-  },
-  {
-    id: "3",
-    label: "Settings",
-    href: "/user/dashboard/settings",
-  },
-];
+  user: {
+    id: string;
+    label: string;
+    href: string;
+  }[];
+  admin: {
+    id: string;
+    label: string;
+    href: string;
+  }[];
+} = {
+  user: [
+    {
+      id: "1",
+      label: "Dashboard",
+      href: "/user/dashboard",
+    },
+    {
+      id: "2",
+      label: "Profile",
+      href: "/user/dashboard/profile",
+    },
+    {
+      id: "3",
+      label: "Settings",
+      href: "/user/dashboard/settings",
+    },
+  ],
+  admin: [
+    {
+      id: "1",
+      label: "Dashboard",
+      href: "/admin/dashboard",
+    },
+    {
+      id: "2",
+      label: "Profile",
+      href: "/admin/dashboard/profile",
+    },
+    {
+      id: "3",
+      label: "Settings",
+      href: "/admin/dashboard/settings",
+    },
+  ],
+};
