@@ -41,7 +41,7 @@ const ProfileDropdownMenu = ({ dropdownMenus }: ProfileDropdownMenuProps) => {
       <DropdownMenuContent>
         <DropdownMenuLabel>{`${userFullName} Account`}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        {dropdownMenus.map((dropdownMenu: DropdownMenuProps) => (
+        {dropdownMenus?.map((dropdownMenu: DropdownMenuProps) => (
           <DropdownMenuItem key={dropdownMenu.id}>
             <Link href={`${dropdownMenu.href}`}>{dropdownMenu.label}</Link>
           </DropdownMenuItem>

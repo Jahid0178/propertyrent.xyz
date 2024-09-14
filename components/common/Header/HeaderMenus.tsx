@@ -10,16 +10,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { clientHeaderUserDropdownMenus, navigationMenus } from "@/data/data";
+import { navigationMenus, userDropdownMenus } from "@/data/data";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { FaHouse } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import authStore from "@/store/authStore";
 import ProfileDropdownMenu from "../ProfileDropdownMenu/ProfileDropdownMenu";
+import { UserRole } from "@/typescript/types";
 
 const HeaderMenus = () => {
   const { user } = authStore((state) => state);
+
+  // Get user role
+  const userRole = user?.role as UserRole;
 
   return (
     <NavigationMenu className="hidden lg:block">
@@ -64,9 +68,7 @@ const HeaderMenus = () => {
             </Link>
           </Button>
           {user ? (
-            <ProfileDropdownMenu
-              dropdownMenus={clientHeaderUserDropdownMenus}
-            />
+            <ProfileDropdownMenu dropdownMenus={userDropdownMenus[userRole]} />
           ) : (
             <Button asChild variant="outline">
               <Link href="/login">
