@@ -11,6 +11,9 @@ export default async function isAuthenticated(options) {
       withCredentials: true,
     });
 
+    console.log("cookie", cookieStore.toString());
+    console.log("user", user);
+
     return {
       user,
     };
